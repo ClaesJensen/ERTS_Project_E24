@@ -15,7 +15,7 @@ OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 # String substitution (suffix version without %).
 # As an example, ./build/hello.cpp.o turns into ./build/hello.cpp.d
 DEPS := $(OBJS:.o=.d)
-
+#sdasd
 # Ost
 SYSTEMC_LIB_DIR := $(SYSTEMC)/lib-linux64
 SYSTEMC_LIB := systemc
