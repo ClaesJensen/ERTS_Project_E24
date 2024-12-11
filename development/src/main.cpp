@@ -1,7 +1,8 @@
 #include "systemc.h"
 
-int main() {
-  sc_start();
-  printf("Hello, jeg elsker slamkode!\n");
-  return 0;
+int main()
+{
+    sc_start();
+    printf( "Hello, jeg elsker slamkode!\n" );
+    return 0;
 }
