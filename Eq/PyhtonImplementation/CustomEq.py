@@ -2,6 +2,8 @@ from math import cos, sin, sinh, pi, sqrt, floor, atan2, log, log10
 from enum import Enum
 import matplotlib.pyplot as plt
 from matplotlib import ticker
+import fixedpoint as fp
+import numpy as np
 
 class FilterParametersCase(Enum):
     Q = 1
@@ -43,17 +45,38 @@ class FilterParameters:
 
     @classmethod
     def S(cls, dbGain: float, f0: float, fs: int, S: float):
-        return cls(FilterParametersCase.S, dbGain, f0, fs, 0, 0, S)
+        return cls(FilterParametersCase.S, dbGain, f0, fs, 0, 0, S)  
 
 class Biquad:
     def __init__(self, fs: float, b0: float, b1: float, b2: float, a0: float, a1: float, a2: float):
         self.fs = fs
+
+        self.m = 4
+        self.n = 12
+        
+        # Float init
         self.b0 = b0
         self.b1 = b1
         self.b2 = b2
         self.a0 = a0
         self.a1 = a1
         self.a2 = a2
+
+        # FP init
+        self.fp_b0 = fp.FixedPoint(self.b0, signed=True, m=self.m, n=self.n)
+        self.fp_b1 = fp.FixedPoint(self.b1, signed=True, m=self.m, n=self.n)
+        self.fp_b2 = fp.FixedPoint(self.b2, signed=True, m=self.m, n=self.n)
+        self.fp_a0 = fp.FixedPoint(self.a0, signed=True, m=self.m, n=self.n)
+        self.fp_a1 = fp.FixedPoint(self.a1, signed=True, m=self.m, n=self.n)
+        self.fp_a2 = fp.FixedPoint(self.a2, signed=True, m=self.m, n=self.n)
+
+        self.fp_b0a0 = fp.FixedPoint(self.b0 / self.a0, signed=True, m=self.m, n=self.n)
+        self.fp_b1a0 = fp.FixedPoint(self.b1 / self.a0, signed=True, m=self.m, n=self.n)
+        self.fp_b2a0 = fp.FixedPoint(self.b2 / self.a0, signed=True, m=self.m, n=self.n)
+        self.fp_a1a0 = fp.FixedPoint(self.a1 / self.a0, signed=True, m=self.m, n=self.n)
+        self.fp_a2a0 = fp.FixedPoint(self.a2 / self.a0, signed=True, m=self.m, n=self.n)       
+
+        print(f'b0: {self.b0} | b1: {self.b1} | b2: {self.b2} | a0: {self.a0} | a1: {self.a1} | a2: {self.a2}')
 
     @staticmethod
     def divisionComplex(a_real: float, b_imag: float, c_real: float, d_imag: float) -> tuple[float, float]:
@@ -146,12 +169,12 @@ class Biquad:
         ax.set_title("Step Response")
         ax.grid(True)
 
-    def process(self, x: list[float]):
-        y: list[float] = [0] * len(x)
+    def process(self, x: np.ndarray[np.float64]):
+        y: np.array = np.zeros(shape=(len(x)), dtype=float)
         y[0] = self.single(x[0], x[1], x[2], 0, 0)
         y[1] = self.single(x[0], x[1], x[2], y[0], 0)
 
-        y[1:len(x)] = [self.single(x[i], x[i+1], x[i+2], y[i-1], y[i-2]) for i in range(len(x) - 2)]
+        y[2:len(x)] = [self.single(x[i], x[i-1], x[i-2], y[i-1], y[i-2]) for i in range(2, len(x))]
         return y
 
     def single(self, x0: float, x1: float, x2: float, y1: float, y2: float): 
@@ -302,6 +325,12 @@ class FilterCollection:
             phase[i] = phase[i] + adjustment
 
         return phase
+    
+    def process(self, x: np.ndarray[np.float64]):
+        y = x
+        for filter in self.filters:
+            y = filter.process(y)
+        return y
 
 
         
