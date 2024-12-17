@@ -1,0 +1,36 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 270 -defaultsOSRD
+preplace port PBLRCLK -pg 1 -y 360 -defaultsOSRD
+preplace port BCLK -pg 1 -y 340 -defaultsOSRD
+preplace port RECDAT -pg 1 -y 220 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 290 -defaultsOSRD
+preplace port PBDATA -pg 1 -y 400 -defaultsOSRD
+preplace port RECLRCLK -pg 1 -y 380 -defaultsOSRD
+preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 100 -defaultsOSRD
+preplace inst zybo_audio_ctrl_0 -pg 1 -lvl 3 -y 370 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 140 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 310 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 260 NJ 260 1060J
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 790
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 440
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 200 430
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 2 450 400 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 280 NJ 280 1060J
+preplace netloc zybo_audio_ctrl_0_RECLRCLK 1 3 1 NJ
+preplace netloc zybo_audio_ctrl_0_PBLRCLK 1 3 1 NJ
+preplace netloc zybo_audio_ctrl_0_BCLK 1 3 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 190 460 340 780
+preplace netloc RECDAT_1 1 0 3 10J 10 NJ 10 800J
+preplace netloc zybo_audio_ctrl_0_PBDATA 1 3 1 NJ
+levelinfo -pg 1 -10 230 630 930 1080 -top 0 -bot 450
+",
+}
+{
+   da_axi4_cnt: "10",
+   da_board_cnt: "2",
+   da_bram_cntlr_cnt: "2",
+   da_ps7_cnt: "2",
+}

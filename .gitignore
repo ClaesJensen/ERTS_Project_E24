@@ -2,3 +2,11 @@
 Makefile
 /development/Makefile
 /.vscode
+/Vivado/FPGAAudioEffects/ADVIOS
+/Vivado/FPGAAudioEffects/ADVIOS_SystemC
+/Vivado/FPGAAudioEffects/FPGAAudioEffects.cache
+/Vivado/FPGAAudioEffects/FPGAAudioEffects.runs
+/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/.metadata
+/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/webtalk
+/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/drivers/advios_top_v1_0/src
+/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0

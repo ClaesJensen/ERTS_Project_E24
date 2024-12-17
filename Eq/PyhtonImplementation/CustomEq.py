@@ -60,21 +60,14 @@ class Biquad:
         self.b2 = b2
         self.a0 = a0
         self.a1 = a1
-        self.a2 = a2
+        self.a2 = a2   
 
-        # FP init
-        self.fp_b0 = fp.FixedPoint(self.b0, signed=True, m=self.m, n=self.n)
-        self.fp_b1 = fp.FixedPoint(self.b1, signed=True, m=self.m, n=self.n)
-        self.fp_b2 = fp.FixedPoint(self.b2, signed=True, m=self.m, n=self.n)
-        self.fp_a0 = fp.FixedPoint(self.a0, signed=True, m=self.m, n=self.n)
-        self.fp_a1 = fp.FixedPoint(self.a1, signed=True, m=self.m, n=self.n)
-        self.fp_a2 = fp.FixedPoint(self.a2, signed=True, m=self.m, n=self.n)
-
-        self.fp_b0a0 = fp.FixedPoint(self.b0 / self.a0, signed=True, m=self.m, n=self.n)
-        self.fp_b1a0 = fp.FixedPoint(self.b1 / self.a0, signed=True, m=self.m, n=self.n)
-        self.fp_b2a0 = fp.FixedPoint(self.b2 / self.a0, signed=True, m=self.m, n=self.n)
-        self.fp_a1a0 = fp.FixedPoint(self.a1 / self.a0, signed=True, m=self.m, n=self.n)
-        self.fp_a2a0 = fp.FixedPoint(self.a2 / self.a0, signed=True, m=self.m, n=self.n)       
+        # Precompute coefficients
+        self.coef0 = self.b0/self.a0
+        self.coef1 = self.b1/self.a0
+        self.coef2 = self.b2/self.a0
+        self.coef3 = self.a1/self.a0
+        self.coef4 = self.a2/self.a0
 
         print(f'b0: {self.b0} | b1: {self.b1} | b2: {self.b2} | a0: {self.a0} | a1: {self.a1} | a2: {self.a2}')
 
@@ -114,7 +107,7 @@ class Biquad:
                 else:
                     power[i] = 20*log10(power[i])
         else:
-            power = [sqrt(pow(H_real[i], 2) + pow(H_imag[i], 2)) for i in range(len(w))]
+            power = [round(sqrt(pow(H_real[i], 2) + pow(H_imag[i], 2)), 4) for i in range(len(w))]
 
         return power, phase
     
@@ -169,16 +162,13 @@ class Biquad:
         ax.set_title("Step Response")
         ax.grid(True)
 
-    def process(self, x: np.ndarray[np.float64]):
-        y: np.array = np.zeros(shape=(len(x)), dtype=float)
-        y[0] = self.single(x[0], x[1], x[2], 0, 0)
-        y[1] = self.single(x[0], x[1], x[2], y[0], 0)
-
-        y[2:len(x)] = [self.single(x[i], x[i-1], x[i-2], y[i-1], y[i-2]) for i in range(2, len(x))]
-        return y
+    def process(self, x: np.ndarray[np.float32]):
+        x = np.concat([np.zeros(shape=(2), dtype=np.float32), x])
+        y: np.array = np.zeros(shape=(len(x)), dtype=np.float32)
+        return np.array([self.single(x[i], x[i-1], x[i-2], y[i-1], y[i-2]) for i in range(2, len(x))], dtype=np.float32)
 
     def single(self, x0: float, x1: float, x2: float, y1: float, y2: float): 
-        return (self.b0 / self.a0) * x0 + (self.b1 / self.a0) * x1 + (self.b2 / self.a0) * x2 - (self.a1 / self.a0) * y1 - (self.a2 / self.a0) * y2
+        return np.float32(self.b0 / self.a0 * x0 + self.b1 / self.a0 * x1 + self.b2 / self.a0 * x2 - self.a1 / self.a0 * y1 - self.a2 / self.a0 * y2)
 
 class Lowpass(Biquad):
     def __init__(self, filter: FilterParameters):
@@ -298,16 +288,15 @@ class HighShelf(Biquad):
         )
 
 class FilterCollection:
-    def __init__(self, filters: list[Biquad]):
+    def __init__(self, filters: list[Biquad], fs: int):
         assert FilterCollection.checkFs(filters) == 0
         self.filters = filters
-        self.fs = self.filters[0].fs
+        print(self.filters)
+        self.fs = fs
 
 
     @staticmethod
     def checkFs(filters: list[Biquad]):
-        assert len(filters) > 0
-
         for i in range(1, len(filters)):
             if (filters[i-1].fs != filters[i].fs):
                 return -1
@@ -326,10 +315,11 @@ class FilterCollection:
 
         return phase
     
-    def process(self, x: np.ndarray[np.float64]):
+    def process(self, x: np.ndarray[np.float32]):
         y = x
-        for filter in self.filters:
-            y = filter.process(y)
+        if (len(self.filters) > 0):
+            for filter in self.filters:
+                y = filter.process(y)
         return y
 
 

@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Dec 17 00:27:47 2024
+# Process ID: 13904
+# Current directory: C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26784 C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.xpr
+# Log file: C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/vivado.log
+# Journal file: C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7' since last save.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/bd/system/system.bd'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/bd/system/system.bd' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/bd/system/hdl/system_wrapper.vhd'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/bd/system/hdl/system_wrapper.vhd' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS.v'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS_ap_rst_if.v'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS_ap_rst_if.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS_receive.v'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS_receive.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/drivers/advios_top_v1_0/src/xadvios.h'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/drivers/advios_top_v1_0/src/xadvios.h' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/drivers/advios_top_v1_0/src/xadvios_hw.h'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/drivers/advios_top_v1_0/src/xadvios_hw.h' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/advios_top.v'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/advios_top.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS_slv0_if.v'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/imports/LED_STUFF_hls_ADVIOS_1_0/hdl/verilog/ADVIOS_slv0_if.v' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.srcs/constrs_1/imports/a2_ex7/contraints.xdc'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/constrs_1/imports/a2_ex7/contraints.xdc' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+INFO: [filemgmt 56-1] IP Repository Path: Directory not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/a2_ex1_lab3b/led_ip_1.0'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex1_lab3b/led_ip_1.0' instead.
+INFO: [filemgmt 56-1] IP Repository Path: Directory not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/a2_ex5/matrix_ip_1.0'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex5/matrix_ip_1.0' instead.
+INFO: [filemgmt 56-1] IPUserFilesDir: Directory not found as 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.ip_user_files'; using path 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.ip_user_files' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex1_lab3b/led_ip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex5/matrix_ip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/advios_hls_ADVIOS_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.2/data/ip'.
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/bd/system/system.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_50M
+Adding cell -- advios:hls:ADVIOS:1.0 - advios
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <system> from BD file <C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/bd/system/system.bd>
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 17 00:28:46 2024...

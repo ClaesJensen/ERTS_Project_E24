@@ -1,0 +1,255 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 17 20:34:44 2024
+| Host         : Jeppe running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_ADVIOS_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_ADVIOS_0_1 (LED_STUFF:hls:ADVIOS:1.0) from (Rev. 2010171931) to (Rev. 2010172033)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 17 19:33:10 2024
+| Host         : Jeppe running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_ADVIOS_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_ADVIOS_0_1 (LED_STUFF:hls:ADVIOS:1.0) from (Rev. 2010171919) to (Rev. 2010171931)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 17 19:20:22 2024
+| Host         : Jeppe running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_ADVIOS_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_ADVIOS_0_1 (LED_STUFF:hls:ADVIOS:1.0) from (Rev. 2010142018) to (Rev. 2010171919)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Mon Oct 14 20:19:02 2024
+| Host         : Jeppe running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_ADVIOS_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_ADVIOS_0_1 (LED_STUFF:hls:ADVIOS:1.0) from (Rev. 2010142015) to (Rev. 2010142018)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'system_ADVIOS_0_1'.
+
+
+-Upgrade has removed interface 'S_AXI_SLV1'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_ADVIOS_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed port 's_axi_slv1_ARADDR'
+
+-Upgrade has removed port 's_axi_slv1_ARREADY'
+
+-Upgrade has removed port 's_axi_slv1_ARVALID'
+
+-Upgrade has removed port 's_axi_slv1_AWADDR'
+
+-Upgrade has removed port 's_axi_slv1_AWREADY'
+
+-Upgrade has removed port 's_axi_slv1_AWVALID'
+
+-Upgrade has removed port 's_axi_slv1_BREADY'
+
+-Upgrade has removed port 's_axi_slv1_BRESP'
+
+-Upgrade has removed port 's_axi_slv1_BVALID'
+
+-Upgrade has removed port 's_axi_slv1_RDATA'
+
+-Upgrade has removed port 's_axi_slv1_RREADY'
+
+-Upgrade has removed port 's_axi_slv1_RRESP'
+
+-Upgrade has removed port 's_axi_slv1_RVALID'
+
+-Upgrade has removed port 's_axi_slv1_WDATA'
+
+-Upgrade has removed port 's_axi_slv1_WREADY'
+
+-Upgrade has removed port 's_axi_slv1_WSTRB'
+
+-Upgrade has removed port 's_axi_slv1_WVALID'
+
+
+4. Customization warnings
+-------------------------
+
+Parameter 'C_S_AXI_SLV1_ADDR_WIDTH' is no longer present on the upgraded IP 'system_ADVIOS_0_1', and cannot be set to '5'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv LED_STUFF:hls:ADVIOS:1.0 -user_name system_ADVIOS_0_1
+set_property -dict "\
+  CONFIG.C_S_AXI_SLV0_ADDR_WIDTH {5} \
+  CONFIG.Component_Name {system_ADVIOS_0_1} \
+  CONFIG.S_AXI_SLV0.ADDR_WIDTH {5} \
+  CONFIG.S_AXI_SLV0.DATA_WIDTH {32} \
+  CONFIG.S_AXI_SLV0.PROTOCOL {AXI4LITE} \
+  CONFIG.S_AXI_SLV0.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.aclk.ASSOCIATED_BUSIF {S_AXI_SLV0:S_AXI_SLV1} \
+  CONFIG.aclk.ASSOCIATED_RESET {aresetn} \
+  CONFIG.aresetn.POLARITY {ACTIVE_LOW} " [get_ips system_ADVIOS_0_1]
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Mon Oct 14 20:16:23 2024
+| Host         : Jeppe running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_ADVIOS_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_ADVIOS_0_1 (LED_STUFF:hls:ADVIOS:1.0) from (Rev. 2010142011) to (Rev. 2010142015)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'system_ADVIOS_0_1'.
+
+
+-Upgrade has added interface 'S_AXI_SLV1' (xilinx.com:interface:aximm:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_ADVIOS_0_1'. These changes may impact your design.
+
+
+-Upgrade has removed port 'inReset'
+
+-Upgrade has added port 's_axi_slv1_ARADDR'
+
+-Upgrade has added port 's_axi_slv1_ARREADY'
+
+-Upgrade has added port 's_axi_slv1_ARVALID'
+
+-Upgrade has added port 's_axi_slv1_AWADDR'
+
+-Upgrade has added port 's_axi_slv1_AWREADY'
+
+-Upgrade has added port 's_axi_slv1_AWVALID'
+
+-Upgrade has added port 's_axi_slv1_BREADY'
+
+-Upgrade has added port 's_axi_slv1_BRESP'
+
+-Upgrade has added port 's_axi_slv1_BVALID'
+
+-Upgrade has added port 's_axi_slv1_RDATA'
+
+-Upgrade has added port 's_axi_slv1_RREADY'
+
+-Upgrade has added port 's_axi_slv1_RRESP'
+
+-Upgrade has added port 's_axi_slv1_RVALID'
+
+-Upgrade has added port 's_axi_slv1_WDATA'
+
+-Upgrade has added port 's_axi_slv1_WREADY'
+
+-Upgrade has added port 's_axi_slv1_WSTRB'
+
+-Upgrade has added port 's_axi_slv1_WVALID'
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Wed Oct 14 20:13:34 2020
+| Host         : Jeppe running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_ADVIOS_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of system_ADVIOS_0_1 (LED_STUFF:hls:ADVIOS:1.0) from (Rev. 2010121622) to (Rev. 2010142011)
+

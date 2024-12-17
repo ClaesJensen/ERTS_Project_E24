@@ -1,0 +1,592 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Dec 16 23:28:10 2024
+# Process ID: 35388
+# Current directory: C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.runs/synth_1
+# Command line: vivado.exe -log i2s_ctrl.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2s_ctrl.tcl
+# Log file: C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.runs/synth_1/i2s_ctrl.vds
+# Journal file: C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source i2s_ctrl.tcl -notrace
+Command: synth_design -top i2s_ctrl -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 37336 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 348.871 ; gain = 82.391
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'i2s_ctrl' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/i2s_ctrl.vhd:174]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 32'b00000000000000000000000111111111 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_BASEADDR bound to: 32'b11111111111111111111111111111111 
+	Parameter C_HIGHADDR bound to: 32'b00000000000000000000000000000000 
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+	Parameter C_NUM_REG bound to: 1 - type: integer 
+	Parameter C_NUM_MEM bound to: 1 - type: integer 
+	Parameter C_SLV_AWIDTH bound to: 32 - type: integer 
+	Parameter C_SLV_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* max_fanout = "10000" *) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/i2s_ctrl.vhd:140]
+INFO: [Synth 8-5534] Detected attribute (* max_fanout = "10000" *) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/i2s_ctrl.vhd:141]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/axi_lite_ipif.vhd:240]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000101 
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/slave_attachment.vhd:226]
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000101 
+	Parameter C_IPIF_ABUS_WIDTH bound to: 32 - type: integer 
+	Parameter C_IPIF_DBUS_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_USE_WSTRB bound to: 0 - type: integer 
+	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
+	Parameter C_FAMILY bound to: virtex6 - type: string 
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:176]
+	Parameter C_BUS_AWIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
+	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 128'b00000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_ARD_NUM_CE_ARRAY bound to: 32'b00000000000000000000000000000101 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+	Parameter C_AB bound to: 3 - type: integer 
+	Parameter C_AW bound to: 3 - type: integer 
+	Parameter C_BAR bound to: 3'b000 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (1#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+	Parameter C_AB bound to: 3 - type: integer 
+	Parameter C_AW bound to: 3 - type: integer 
+	Parameter C_BAR bound to: 3'b001 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (1#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+	Parameter C_AB bound to: 3 - type: integer 
+	Parameter C_AW bound to: 3 - type: integer 
+	Parameter C_BAR bound to: 3'b010 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (1#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+	Parameter C_AB bound to: 3 - type: integer 
+	Parameter C_AW bound to: 3 - type: integer 
+	Parameter C_BAR bound to: 3'b011 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (1#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+	Parameter C_AB bound to: 3 - type: integer 
+	Parameter C_AW bound to: 3 - type: integer 
+	Parameter C_BAR bound to: 3'b100 
+	Parameter C_FAMILY bound to: nofamily - type: string 
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (1#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/pselect_f.vhd:165]
+WARNING: [Synth 8-6014] Unused sequential element GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:477]
+WARNING: [Synth 8-6014] Unused sequential element GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:477]
+WARNING: [Synth 8-6014] Unused sequential element GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:477]
+WARNING: [Synth 8-6014] Unused sequential element GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:477]
+WARNING: [Synth 8-6014] Unused sequential element GEN_BKEND_CE_REGISTERS[4].ce_out_i_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:477]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (2#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:176]
+INFO: [Synth 8-226] default block is never used [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/slave_attachment.vhd:379]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (3#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/slave_attachment.vhd:226]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (4#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/axi_lite_ipif.vhd:240]
+INFO: [Synth 8-638] synthesizing module 'user_logic' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/user_logic.vhd:131]
+	Parameter C_NUM_REG bound to: 5 - type: integer 
+	Parameter C_SLV_DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'iis_deser' declared at 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:24' bound to instance 'Inst_iis_deser' of component 'iis_deser' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/user_logic.vhd:206]
+INFO: [Synth 8-638] synthesizing module 'iis_deser' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'iis_deser' (5#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:35]
+INFO: [Synth 8-3491] module 'iis_ser' declared at 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:24' bound to instance 'Inst_iis_ser' of component 'iis_ser' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/user_logic.vhd:227]
+INFO: [Synth 8-638] synthesizing module 'iis_ser' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'iis_ser' (6#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'user_logic' (7#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/user_logic.vhd:131]
+INFO: [Synth 8-256] done synthesizing module 'i2s_ctrl' (8#1) [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/i2s_ctrl.vhd:174]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[0]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[1]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[2]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[3]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[7]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Address_In_Erly[8]
+WARNING: [Synth 8-3331] design address_decoder has unconnected port Bus_RNW
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[31]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[30]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[29]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[28]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[27]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[26]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[25]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[24]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[23]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[22]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[21]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[20]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[19]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[18]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[17]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[16]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[15]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[14]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[13]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[12]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[11]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[10]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_AWADDR[9]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[31]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[30]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[29]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[28]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[27]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[26]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[25]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[24]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[23]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[22]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[21]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[20]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[19]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[18]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[17]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[16]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[15]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[14]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[13]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[12]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[11]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[10]
+WARNING: [Synth 8-3331] design slave_attachment has unconnected port S_AXI_ARADDR[9]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 417.004 ; gain = 150.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 417.004 ; gain = 150.523
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 417.004 ; gain = 150.523
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_axi_bresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_axi_bresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element INCLUDE_DPHASE_TIMER.dpto_cnt_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/slave_attachment.vhd:495]
+INFO: [Synth 8-802] inferred FSM for state register 'iis_state_reg' in module 'iis_deser'
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:77]
+INFO: [Synth 8-5544] ROM "ldata_reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element bit_cntr_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:97]
+INFO: [Synth 8-802] inferred FSM for state register 'iis_state_reg' in module 'iis_ser'
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:78]
+INFO: [Synth 8-5544] ROM "ldata_reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iis_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element bit_cntr_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element clk_cntr_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/user_logic.vhd:197]
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:77]
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:77]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset |                              000 |                              000
+               wait_left |                              001 |                              001
+               skip_left |                              010 |                              010
+               read_left |                              011 |                              011
+              wait_right |                              100 |                              100
+              skip_right |                              101 |                              101
+              read_right |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'iis_state_reg' using encoding 'sequential' in module 'iis_deser'
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:77]
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:78]
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:78]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   reset |                            00001 |                              000
+               wait_left |                            00010 |                              001
+              write_left |                            00100 |                              010
+              wait_right |                            01000 |                              011
+             write_right |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'iis_state_reg' using encoding 'one-hot' in module 'iis_ser'
+WARNING: [Synth 8-6014] Unused sequential element iis_state_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:78]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 417.004 ; gain = 150.523
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               24 Bit    Registers := 6     
+	               11 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+	   9 Input      5 Bit        Muxes := 1     
+	  13 Input      3 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 26    
+	   7 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module pselect_f 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module pselect_f__parameterized3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module address_decoder 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+Module slave_attachment 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+Module iis_deser 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	  13 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   7 Input      1 Bit        Muxes := 1     
+Module iis_ser 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 2     
+	   9 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   5 Input      1 Bit        Muxes := 1     
+Module user_logic 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               24 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'USER_LOGIC_I/Inst_iis_ser/lrclk_d1_reg' into 'USER_LOGIC_I/Inst_iis_deser/lrclk_d1_reg' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:63]
+INFO: [Synth 8-4471] merging register 'USER_LOGIC_I/Inst_iis_ser/sclk_d1_reg' into 'USER_LOGIC_I/Inst_iis_deser/sclk_d1_reg' [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:62]
+WARNING: [Synth 8-6014] Unused sequential element AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].cs_out_i_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/address_decoder.vhd:400]
+WARNING: [Synth 8-6014] Unused sequential element USER_LOGIC_I/Inst_iis_ser/lrclk_d1_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element USER_LOGIC_I/Inst_iis_ser/sclk_d1_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:62]
+INFO: [Synth 8-5544] ROM "USER_LOGIC_I/DataTx_L" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "USER_LOGIC_I/DataTx_R" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/INCLUDE_DPHASE_TIMER.dpto_cnt_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/slave_attachment.vhd:495]
+WARNING: [Synth 8-6014] Unused sequential element USER_LOGIC_I/Inst_iis_deser/bit_cntr_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_deser.vhd:97]
+WARNING: [Synth 8-6014] Unused sequential element USER_LOGIC_I/Inst_iis_ser/bit_cntr_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/iis_ser.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element USER_LOGIC_I/clk_cntr_reg was removed.  [C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.srcs/sources_1/imports/i2s_audio/user_logic.vhd:197]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[31]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[30]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[29]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[28]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[27]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[26]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[25]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[24]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[23]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[22]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[21]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[20]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[19]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[18]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[17]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[16]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[15]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[14]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[13]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[12]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[11]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[10]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[9]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[8]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[7]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[6]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_AWADDR[5]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[31]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[30]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[29]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[28]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[27]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[26]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[25]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[24]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[23]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[22]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[21]
+WARNING: [Synth 8-3331] design i2s_ctrl has unconnected port S_AXI_ARADDR[20]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[1]) is unused and will be removed from module i2s_ctrl.
+WARNING: [Synth 8-3332] Sequential element (AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[1]) is unused and will be removed from module i2s_ctrl.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0]) is unused and will be removed from module i2s_ctrl.
+WARNING: [Synth 8-3332] Sequential element (AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0]) is unused and will be removed from module i2s_ctrl.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     5|
+|3     |LUT2 |    13|
+|4     |LUT3 |    17|
+|5     |LUT4 |    14|
+|6     |LUT5 |    86|
+|7     |LUT6 |    59|
+|8     |FDRE |   288|
+|9     |IBUF |    46|
+|10    |OBUF |    45|
++------+-----+------+
+
+Report Instance Areas: 
++------+-----------------------+-----------------+------+
+|      |Instance               |Module           |Cells |
++------+-----------------------+-----------------+------+
+|1     |top                    |                 |   574|
+|2     |  AXI_LITE_IPIF_I      |axi_lite_ipif    |   140|
+|3     |    I_SLAVE_ATTACHMENT |slave_attachment |   140|
+|4     |      I_DECODER        |address_decoder  |    90|
+|5     |  USER_LOGIC_I         |user_logic       |   342|
+|6     |    Inst_iis_deser     |iis_deser        |    82|
+|7     |    Inst_iis_ser       |iis_ser          |   122|
++------+-----------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 143 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+Synthesis Optimization Complete : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 533.668 ; gain = 267.188
+INFO: [Project 1-571] Translating synthesized netlist
+WARNING: [Synth 37-28] Duplicate attribute 'max_fanout' found for instance 'S_AXI_ACLK_IBUF_inst' of module 'IBUF'.
+Resolution: Check your design sources near the definition of the module or any related 'include files, looking for duplicate definitions with different values.
+WARNING: [Synth 37-28] Duplicate attribute 'max_fanout' found for instance 'S_AXI_ARESETN_IBUF_inst' of module 'IBUF'.
+Resolution: Check your design sources near the definition of the module or any related 'include files, looking for duplicate definitions with different values.
+INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+66 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 607.227 ; gain = 348.512
+INFO: [Common 17-1381] The checkpoint 'C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex6/lab4/ip_repo/zybo_audio_codec/zybo_audio_codec.runs/synth_1/i2s_ctrl.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 607.227 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 16 23:28:22 2024...

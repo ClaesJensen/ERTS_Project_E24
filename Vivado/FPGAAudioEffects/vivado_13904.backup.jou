@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Dec 17 00:27:47 2024
+# Process ID: 13904
+# Current directory: C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26784 C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.xpr
+# Log file: C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/vivado.log
+# Journal file: C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/lions/Desktop/Github/ERTS-Assignments/a2/a2_ex7/a2_ex7.srcs/sources_1/bd/system/system.bd}
