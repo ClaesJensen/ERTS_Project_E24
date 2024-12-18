@@ -87,9 +87,7 @@ void LineinLineoutConfig() {
 
 	// software reset
 	AudioWriteToReg(R15_SOFTWARE_RESET, 0x000);
-	xil_printf("BOI\r\n");
-	sleep(1);
-	//TimerDelay(75000);
+	TimerDelay(75000);
 	// power mgmt: 0_00110010=>0,Power up, power up, OSC dn, out off, DAC up, ADC up, MIC off, LineIn up
 	AudioWriteToReg(R6_POWER_MANAGEMENT, 0x030);
 	// left ADC Input: 0_01010111=>0,mute disable, Line volume 0 dB
@@ -104,8 +102,7 @@ void LineinLineoutConfig() {
 	AudioWriteToReg(R5_DIGITAL_AUDIO_PATH, 0x000);
 	// digital audio interface: 0_00001110=>0, BCLK not inverted, slave mode, no l-r swap, normal LRC and PBRC, 24-bit, I2S mode
 	AudioWriteToReg(R7_DIGITAL_AUDIO_INTERFACE, 0x00A);
-	sleep(1);
-	//TimerDelay(75000);
+	TimerDelay(75000);
 	// Digital core:0_00000001=>0_0000000, activate core
 	AudioWriteToReg(R9_ACTIVE, 0x001);
 	// power mgmt: 0_00100010 0_Power up, power up, OSC dn, out ON, DAC up, ADC up, MIC off, LineIn up
@@ -119,11 +116,14 @@ void LineinLineoutConfig() {
 int main() {
 	xil_printf("Start...\r\n");
 
-	xil_printf("%i\r\n", IicConfig(XPAR_XIICPS_0_DEVICE_ID));
-	xil_printf("%i\r\n", TimerInitialize());
-	LineinLineoutConfig(); //Stuck here when writing i2c
+	IicConfig(XPAR_XIICPS_0_DEVICE_ID);
+	TimerInitialize();
+	LineinLineoutConfig();
 
 	xil_printf("Setup done...\r\n");
+
+	//Enable output
+	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, 0x00000001);
 
 	uint32_t temp = 0;
 
@@ -133,7 +133,6 @@ int main() {
 			//Wait...
 		} while(temp == 0);
 
-		xil_printf("HERE\r\n");
 
 		//Clear ready bit
 		Xil_Out32(I2S_STATUS_REG, 0x00000001);
@@ -142,9 +141,20 @@ int main() {
 		uint32_t dataL = Xil_In32(I2S_DATA_RX_L_REG);
 		uint32_t dataR = Xil_In32(I2S_DATA_RX_R_REG);
 
+		//dataL = (dataL & 0x00FFFFFF) >> 8;
+		//dataR = (dataR & 0x00FFFFFF) >> 8;
+
+		//dataL = dataL << 8;
+		//dataR = dataR << 8;
+
+		//xil_printf("%i | %i\r\n", I2S_DATA_RX_L_REG, I2S_DATA_TX_L_REG);
+		//xil_printf("0x%.8X | 0x%.8X\r\n", dataL, dataR);
+
 		//Write to output
 		Xil_Out32(I2S_DATA_TX_L_REG, dataL);
 		Xil_Out32(I2S_DATA_TX_R_REG, dataR);
+		dataL = Xil_In32(I2S_DATA_RX_L_REG);
+		dataR = Xil_In32(I2S_DATA_RX_R_REG);
 	}
 	return 0;
 }

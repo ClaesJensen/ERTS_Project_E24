@@ -51,7 +51,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports RECDAT]
 set_property PACKAGE_PIN M17 [get_ports PBDATA]
 set_property IOSTANDARD LVCMOS33 [get_ports PBDATA]
 
-#GPIO[0] output
+#GPIO[0] output (MUTE)
 set_property PACKAGE_PIN P18 [get_ports {gpio_tri_o[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {gpio_tri_o[0]}]
 
