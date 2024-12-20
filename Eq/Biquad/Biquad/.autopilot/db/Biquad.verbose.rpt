@@ -1,0 +1,636 @@
+
+
+================================================================
+== Vivado HLS Report for 'Biquad'
+================================================================
+* Date:           Thu Dec 19 15:08:36 2024
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        Biquad
+* Solution:       Biquad
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.91|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|   33|    1|   34|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------+----------------+-----+-----+-----+-----+---------+
+        |                          |                |  Latency  |  Interval | Pipeline|
+        |         Instance         |     Module     | min | max | min | max |   Type  |
+        +--------------------------+----------------+-----+-----+-----+-----+---------+
+        |grp_Biquad_process_fu_58  |Biquad_process  |   32|   32|   32|   32|   none  |
+        +--------------------------+----------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|DSP              |        -|      -|      -|      -|
+|Expression       |        -|      -|      -|      -|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        2|      4|    475|    275|
+|Memory           |        -|      -|      -|      -|
+|Multiplexer      |        -|      -|      -|      -|
+|Register         |        -|      -|     32|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        2|      4|    507|    275|
++-----------------+---------+-------+-------+-------+
+|Available        |      120|     80|  35200|  17600|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        1|      5|      1|      1|
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------+---------+-------+-----+-----+
+    |         Instance         |     Module     | BRAM_18K| DSP48E|  FF | LUT |
+    +--------------------------+----------------+---------+-------+-----+-----+
+    |grp_Biquad_process_fu_58  |Biquad_process  |        2|      4|  475|  275|
+    +--------------------------+----------------+---------+-------+-----+-----+
+    |Total                     |                |        2|      4|  475|  275|
+    +--------------------------+----------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +---------+----+----+-----+-----------+
+    |   Name  | FF | LUT| Bits| Const Bits|
+    +---------+----+----+-----+-----------+
+    |outData  |  32|   0|   32|          0|
+    +---------+----+----+-----+-----------+
+    |Total    |  32|   0|   32|          0|
+    +---------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------+-----+-----+------------+----------------+--------------+
+| RTL Ports| Dir | Bits|  Protocol  |  Source Object |    C Type    |
++----------+-----+-----+------------+----------------+--------------+
+|inClk     |  in |    1| ap_ctrl_hs | Biquad::Biquad | return value |
+|inReset   |  in |    1| ap_ctrl_hs | Biquad::Biquad | return value |
+|inData    |  in |   32|   ap_none  |     inData     |    pointer   |
+|outData   | out |   32|   ap_vld   |     outData    |    pointer   |
++----------+-----+-----+------------+----------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (Biquad_ssdm_threa)
+2 --> 
+* FSM state operations: 
+
+ <State 1>: 2.32ns
+ST_1: StgValue_3 (7)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecIFCore(i32* %outData, [1 x i8]* @p_str9, [10 x i8]* @p_str11, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [22 x i8]* @p_str12)
+
+ST_1: StgValue_4 (8)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecIFCore(i32* %inData, [1 x i8]* @p_str9, [10 x i8]* @p_str11, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [22 x i8]* @p_str12)
+
+ST_1: StgValue_5 (9)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inClk), !map !95
+
+ST_1: StgValue_6 (10)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inReset), !map !99
+
+ST_1: StgValue_7 (11)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i32* %inData), !map !103
+
+ST_1: StgValue_8 (12)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outData), !map !107
+
+ST_1: StgValue_9 (13)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:18
+:6  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @p_str, [7 x i8]* @p_str) nounwind
+
+ST_1: Biquad_ssdm_threa (14)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:7  %Biquad_ssdm_threa = load i1* @Biquad_ssdm_thread_M_process, align 1
+
+ST_1: StgValue_11 (15)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:8  br i1 %Biquad_ssdm_threa, label %1, label %2
+
+ST_1: StgValue_12 (17)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:0  call void (...)* @_ssdm_op_SpecProcessDecl([7 x i8]* @p_str, i32 2, [8 x i8]* @p_str7) nounwind
+
+ST_1: StgValue_13 (18)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:20
+:1  call void (...)* @_ssdm_op_SpecSensitive([8 x i8]* @p_str7, [6 x i8]* @p_str2, i1* %inClk, i32 1) nounwind
+
+ST_1: StgValue_14 (19)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:21
+:2  call void (...)* @_ssdm_op_SpecSensitive([8 x i8]* @p_str7, [8 x i8]* @p_str3, i1* %inReset, i32 3) nounwind
+
+ST_1: StgValue_15 (20)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:22
+:3  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [6 x i8]* @p_str2, i32 0, i32 0, i1* %inClk) nounwind
+
+ST_1: StgValue_16 (21)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:23
+:4  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [8 x i8]* @p_str3, i32 0, i32 0, i1* %inReset) nounwind
+
+ST_1: StgValue_17 (22)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:24
+:5  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [7 x i8]* @p_str5, i32 0, i32 0, i32* %inData) nounwind
+
+ST_1: StgValue_18 (23)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:25
+:6  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 1, [13 x i8]* @p_str4, [8 x i8]* @p_str6, i32 0, i32 0, i32* %outData) nounwind
+
+ST_1: StgValue_19 (24)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:39
+:7  ret void
+
+ST_1: StgValue_20 (26)  [2/2] 2.32ns  loc: SystemCImplementation/src/biquad.hpp:19
+:0  call void @"Biquad::process"(i1* %inClk, i1* %inReset, i32* %inData, i32* %outData)
+
+
+ <State 2>: 0.00ns
+ST_2: StgValue_21 (26)  [1/2] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:0  call void @"Biquad::process"(i1* %inClk, i1* %inReset, i32* %inData, i32* %outData)
+
+ST_2: StgValue_22 (27)  [1/1] 0.00ns
+:1  unreachable
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ inClk]:  wired=1; compound=0; hidden=0; nouse=1; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ inReset]:  wired=1; compound=0; hidden=0; nouse=1; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ inData]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ outData]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
+Port [ Biquad_ssdm_thread_M_process]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=0; extern=1; dir=0; type=0; pingpong=0; private_global=1; linkage=0; visibility=0; IO mode=ap_none:ce=0
+Port [ coeffs]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[1]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+StgValue_3        (specifcore     ) [ 000]
+StgValue_4        (specifcore     ) [ 000]
+StgValue_5        (specbitsmap    ) [ 000]
+StgValue_6        (specbitsmap    ) [ 000]
+StgValue_7        (specbitsmap    ) [ 000]
+StgValue_8        (specbitsmap    ) [ 000]
+StgValue_9        (spectopmodule  ) [ 000]
+Biquad_ssdm_threa (load           ) [ 010]
+StgValue_11       (br             ) [ 000]
+StgValue_12       (specprocessdecl) [ 000]
+StgValue_13       (specsensitive  ) [ 000]
+StgValue_14       (specsensitive  ) [ 000]
+StgValue_15       (specport       ) [ 000]
+StgValue_16       (specport       ) [ 000]
+StgValue_17       (specport       ) [ 000]
+StgValue_18       (specport       ) [ 000]
+StgValue_19       (ret            ) [ 000]
+StgValue_21       (call           ) [ 000]
+StgValue_22       (unreachable    ) [ 000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="inClk">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="inClk"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="inReset">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="inReset"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="inData">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="inData"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="outData">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="outData"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="Biquad_ssdm_thread_M_process">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Biquad_ssdm_thread_M_process"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="coeffs">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="coeffs"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecIFCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str9"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str11"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str12"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecProcessDecl"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecSensitive"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPort"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Biquad::process"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="grp_Biquad_process_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="0" slack="0"/>
+<pin id="60" dir="0" index="1" bw="1" slack="0"/>
+<pin id="61" dir="0" index="2" bw="1" slack="0"/>
+<pin id="62" dir="0" index="3" bw="32" slack="0"/>
+<pin id="63" dir="0" index="4" bw="32" slack="0"/>
+<pin id="64" dir="0" index="5" bw="25" slack="0"/>
+<pin id="65" dir="1" index="6" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_20/1 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="Biquad_ssdm_threa_load_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="1" slack="0"/>
+<pin id="74" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="Biquad_ssdm_threa/1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="66"><net_src comp="56" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="67"><net_src comp="0" pin="0"/><net_sink comp="58" pin=1"/></net>
+
+<net id="68"><net_src comp="2" pin="0"/><net_sink comp="58" pin=2"/></net>
+
+<net id="69"><net_src comp="4" pin="0"/><net_sink comp="58" pin=3"/></net>
+
+<net id="70"><net_src comp="6" pin="0"/><net_sink comp="58" pin=4"/></net>
+
+<net id="71"><net_src comp="10" pin="0"/><net_sink comp="58" pin=5"/></net>
+
+<net id="75"><net_src comp="8" pin="0"/><net_sink comp="72" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: outData | {1 2 }
+ - Input state : 
+	Port: Biquad::Biquad : inData | {1 2 }
+	Port: Biquad::Biquad : Biquad_ssdm_thread_M_process | {1 }
+	Port: Biquad::Biquad : coeffs | {1 2 }
+  - Chain level:
+	State 1
+		StgValue_11 : 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------|---------|---------|---------|---------|---------|
+| Operation|      Functional Unit     |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|--------------------------|---------|---------|---------|---------|---------|
+|   call   | grp_Biquad_process_fu_58 |    2    |    4    |  15.217 |   604   |   208   |
+|----------|--------------------------|---------|---------|---------|---------|---------|
+|   Total  |                          |    2    |    4    |  15.217 |   604   |   208   |
+|----------|--------------------------|---------|---------|---------|---------|---------|
+
+Memories:
++------+--------+--------+--------+
+|      |  BRAM  |   FF   |   LUT  |
++------+--------+--------+--------+
+|coeffs|    0   |   25   |    2   |
++------+--------+--------+--------+
+| Total|    0   |   25   |    2   |
++------+--------+--------+--------+
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |    2   |    4   |   15   |   604  |   208  |
+|   Memory  |    0   |    -   |    -   |   25   |    2   |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |    2   |    4   |   15   |   629  |   210  |
++-----------+--------+--------+--------+--------+--------+

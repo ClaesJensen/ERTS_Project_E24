@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${SYSTEMC}/include/**",
+                "${SYSTEMC}/lib-linux64/**",
+                "D:/Xilinx/Vivado_HLS/2017.2/include/**",
+                "D:/Xilinx/Vivado_HLS/2017.2/msys/include/**",
+                "D:/Xilinx/Vivado_HLS/2017.2/msys/lib/gcc/mingw32/4.6.2/include/**",
+                "D:/Xilinx/Vivado_HLS/2017.2/msys/lib/gcc/mingw32/4.6.2/include-fixed/**",
+                "D:/Xilinx/Vivado_HLS/2017.2/win64/tools/auto_cc/include**",
+                "D:/Xilinx/Vivado_HLS/2017.2/win64/tools/systemc/include**"
+
+            ],
+            "defines": [],
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

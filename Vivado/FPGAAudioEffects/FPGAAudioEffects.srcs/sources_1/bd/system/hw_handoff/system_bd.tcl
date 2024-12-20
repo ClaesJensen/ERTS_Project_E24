@@ -162,9 +162,6 @@ proc create_root_design { parentCell } {
   # Create ports
   set BCLK [ create_bd_port -dir O BCLK ]
   set FCLK_CLK1 [ create_bd_port -dir O -type clk FCLK_CLK1 ]
-  set_property -dict [ list \
-CONFIG.FREQ_HZ {12280701} \
- ] $FCLK_CLK1
   set PBDATA [ create_bd_port -dir O PBDATA ]
   set PBLRCLK [ create_bd_port -dir O PBLRCLK ]
   set RECDAT [ create_bd_port -dir I RECDAT ]
@@ -177,6 +174,22 @@ CONFIG.C_ALL_INPUTS {0} \
 CONFIG.C_ALL_OUTPUTS {1} \
 CONFIG.C_GPIO_WIDTH {1} \
  ] $axi_gpio_0
+
+  # Create instance: biquadv2_0, and set properties
+  set biquadv2_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2:1.0 biquadv2_0 ]
+
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /biquadv2_0/s_axi_biquadv2]
+
+  # Create instance: biquadv2_1, and set properties
+  set biquadv2_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2:1.0 biquadv2_1 ]
+
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /biquadv2_1/s_axi_biquadv2]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -233,6 +246,7 @@ CONFIG.PCW_I2C1_I2C1_IO {EMIO} \
 CONFIG.PCW_I2C1_PERIPHERAL_ENABLE {1} \
 CONFIG.PCW_I2C_RESET_ENABLE {0} \
 CONFIG.PCW_IOPLL_CTRL_FBDIV {28} \
+CONFIG.PCW_IRQ_F2P_INTR {1} \
 CONFIG.PCW_MIO_0_DIRECTION {<Select>} \
 CONFIG.PCW_MIO_0_IOTYPE {<Select>} \
 CONFIG.PCW_MIO_0_PULLUP {<Select>} \
@@ -449,8 +463,8 @@ CONFIG.PCW_MIO_9_DIRECTION {<Select>} \
 CONFIG.PCW_MIO_9_IOTYPE {<Select>} \
 CONFIG.PCW_MIO_9_PULLUP {<Select>} \
 CONFIG.PCW_MIO_9_SLEW {<Select>} \
-CONFIG.PCW_MIO_TREE_PERIPHERALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#I2C 1#I2C 1#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#UART 1#UART 1#unassigned#unassigned#unassigned#unassigned} \
-CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#scl#sda#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#tx#rx#unassigned#unassigned#unassigned#unassigned} \
+CONFIG.PCW_MIO_TREE_PERIPHERALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#UART 1#UART 1#unassigned#unassigned#unassigned#unassigned} \
+CONFIG.PCW_MIO_TREE_SIGNALS {unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#tx#rx#unassigned#unassigned#unassigned#unassigned} \
 CONFIG.PCW_PRESET_BANK1_VOLTAGE {LVCMOS 1.8V} \
 CONFIG.PCW_QSPI_GRP_FBCLK_ENABLE {0} \
 CONFIG.PCW_QSPI_GRP_SINGLE_SS_ENABLE {0} \
@@ -486,16 +500,20 @@ CONFIG.PCW_USB0_PERIPHERAL_ENABLE {0} \
 CONFIG.PCW_USB0_RESET_ENABLE {0} \
 CONFIG.PCW_USB0_RESET_IO {<Select>} \
 CONFIG.PCW_USB_RESET_ENABLE {0} \
+CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
  ] $processing_system7_0
 
   # Create instance: processing_system7_0_axi_periph, and set properties
   set processing_system7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 processing_system7_0_axi_periph ]
   set_property -dict [ list \
-CONFIG.NUM_MI {2} \
+CONFIG.NUM_MI {6} \
  ] $processing_system7_0_axi_periph
 
   # Create instance: rst_processing_system7_0_50M, and set properties
   set rst_processing_system7_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_processing_system7_0_50M ]
+
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
 
   # Create instance: zybo_audio_ctrl_0, and set properties
   set zybo_audio_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:xilinx:zybo_audio_ctrl:1.0 zybo_audio_ctrl_0 ]
@@ -508,14 +526,19 @@ CONFIG.NUM_MI {2} \
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins processing_system7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M00_AXI [get_bd_intf_pins processing_system7_0_axi_periph/M00_AXI] [get_bd_intf_pins zybo_audio_ctrl_0/S_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins processing_system7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M02_AXI [get_bd_intf_pins biquadv2_1/s_axi_biquadv2] [get_bd_intf_pins processing_system7_0_axi_periph/M02_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M03_AXI [get_bd_intf_pins biquadv2_0/s_axi_biquadv2] [get_bd_intf_pins processing_system7_0_axi_periph/M03_AXI]
 
   # Create port connections
   connect_bd_net -net RECDAT_1 [get_bd_ports RECDAT] [get_bd_pins zybo_audio_ctrl_0/RECDAT]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ACLK]
+  connect_bd_net -net biquadv2_0_interrupt [get_bd_pins biquadv2_0/interrupt] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net biquadv2_1_interrupt [get_bd_pins biquadv2_1/interrupt] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins biquadv2_0/ap_clk] [get_bd_pins biquadv2_1/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/M03_ACLK] [get_bd_pins processing_system7_0_axi_periph/M04_ACLK] [get_bd_pins processing_system7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ACLK]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_ports FCLK_CLK1] [get_bd_pins processing_system7_0/FCLK_CLK1]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
-  connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ARESETN]
+  connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins biquadv2_0/ap_rst_n] [get_bd_pins biquadv2_1/ap_rst_n] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M04_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M05_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ARESETN]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net zybo_audio_ctrl_0_BCLK [get_bd_ports BCLK] [get_bd_pins zybo_audio_ctrl_0/BCLK]
   connect_bd_net -net zybo_audio_ctrl_0_PBDATA [get_bd_ports PBDATA] [get_bd_pins zybo_audio_ctrl_0/PBDATA]
   connect_bd_net -net zybo_audio_ctrl_0_PBLRCLK [get_bd_ports PBLRCLK] [get_bd_pins zybo_audio_ctrl_0/PBLRCLK]
@@ -523,7 +546,9 @@ CONFIG.NUM_MI {2} \
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs zybo_audio_ctrl_0/S_AXI/reg0] SEG_zybo_audio_ctrl_0_reg0
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs biquadv2_0/s_axi_biquadv2/Reg] SEG_biquadv2_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs biquadv2_1/s_axi_biquadv2/Reg] SEG_biquadv2_1_Reg
+  create_bd_addr_seg -range 0x00080000 -offset 0x60000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs zybo_audio_ctrl_0/S_AXI/reg0] SEG_zybo_audio_ctrl_0_reg0
 
 
   # Restore current instance

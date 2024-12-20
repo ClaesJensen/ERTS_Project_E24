@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCA 200-202] Port 'outData' has no reset." projectName="Biquad" solutionName="Biquad" date="2024-12-19T15:08:35.778+0100" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] 'Loop-1' (SystemCImplementation/src/biquad.cpp:35:14) in function 'Biquad::process' is an infinite loop." projectName="Biquad" solutionName="Biquad" date="2024-12-19T15:08:35.768+0100" type="Warning"/>
+        <logs message="WARNING: [HLS 200-41] Resource core 'AXI4LiteS' on port '&amp;outData' is deprecated. Please use the interface directive to specify the AXI interface." projectName="Biquad" solutionName="Biquad" date="2024-12-19T15:08:34.827+0100" type="Warning"/>
+        <logs message="WARNING: [HLS 200-41] Resource core 'AXI4LiteS' on port '&amp;inData' is deprecated. Please use the interface directive to specify the AXI interface." projectName="Biquad" solutionName="Biquad" date="2024-12-19T15:08:22.573+0100" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

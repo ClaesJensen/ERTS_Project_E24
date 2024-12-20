@@ -5,11 +5,18 @@
 #include <xscutimer.h>
 #include "drivers/advios/xadvios_hw.h"
 #include "zybo_audio.h"
+#include "biquad_hw.h"
+#include <xscugic.h>
+#include <xbiquadv2.h>
 
 #define TIMER_FREQ_HZ (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ / 2)
 
 XIicPs Iic;
 XScuTimer TimerInstance;
+XScuGic ScuGic;
+XBiquadv2 biquad_left, biquad_right;
+
+uint8_t biquad_left_done, biquad_right_done;
 
 unsigned char IicConfig(unsigned int DeviceIdPS) {
 
@@ -110,6 +117,94 @@ void LineinLineoutConfig() {
 
 }
 
+void biquad_left_interrupt_callback(void* InstancePtr) {
+	XBiquadv2 *pBiquad = (XBiquadv2*) InstancePtr;
+
+	XBiquadv2_InterruptClear(pBiquad, 1);
+	biquad_left_done = 1;
+}
+
+void biquad_right_interrupt_callback(void* InstancePtr) {
+	XBiquadv2 *pBiquad = (XBiquadv2*) InstancePtr;
+
+	XBiquadv2_InterruptClear(pBiquad, 1);
+	biquad_right_done = 1;
+}
+
+int SetupInterrupt()
+{
+	   //This functions sets up the interrupt on the ARM
+	   int result;
+	   XScuGic_Config *pCfg = XScuGic_LookupConfig(XPAR_SCUGIC_0_DEVICE_ID);
+	   if (pCfg == NULL){
+	      print("Interrupt Configuration Lookup Failed\n\r");
+	      return XST_FAILURE;
+	   }
+
+	   result = XScuGic_CfgInitialize(&ScuGic,pCfg,pCfg->CpuBaseAddress);
+	   if(result != XST_SUCCESS){
+	      return result;
+	   }
+	   // self test
+	   result = XScuGic_SelfTest(&ScuGic);
+	   if(result != XST_SUCCESS){
+	      return result;
+	   }
+	   // Initialize the exception handler
+	   Xil_ExceptionInit();
+	   // Register the exception handler
+	   Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,(Xil_ExceptionHandler)XScuGic_InterruptHandler,&ScuGic);
+	   //Enable the exception handler
+	   Xil_ExceptionEnable();
+	   // Connect the Left FIR ISR to the exception table
+	   result = XScuGic_Connect(&ScuGic,XPAR_FABRIC_BIQUADV2_0_INTERRUPT_INTR,(Xil_InterruptHandler)biquad_left_interrupt_callback,&biquad_left);
+	   if(result != XST_SUCCESS){
+	      return result;
+	   }
+	   // Connect the Right FIR ISR to the exception table
+	   result = XScuGic_Connect(&ScuGic,XPAR_FABRIC_BIQUADV2_1_INTERRUPT_INTR,(Xil_InterruptHandler)biquad_right_interrupt_callback,&biquad_right);
+	   if(result != XST_SUCCESS){
+	      return result;
+	   }
+	   // Enable the Left FIR ISR
+	   XScuGic_Enable(&ScuGic,XPAR_FABRIC_BIQUADV2_0_INTERRUPT_INTR);
+	   // Enable the Right FIR ISR
+	   XScuGic_Enable(&ScuGic,XPAR_FABRIC_BIQUADV2_1_INTERRUPT_INTR);
+	   return XST_SUCCESS;
+}
+
+int BiquadInit(XBiquadv2* left, XBiquadv2* right) {
+	XBiquadv2_Config *cfgLeftPtr, *cfgRightPtr;
+	int status;
+
+	//LEFT INIT
+	cfgLeftPtr = XBiquadv2_LookupConfig(XPAR_XBIQUADV2_0_DEVICE_ID);
+	if (!cfgLeftPtr) {
+		xil_printf("ERROR: Biquad left config failed!\n");
+		return XST_FAILURE;
+	}
+	status = XBiquadv2_CfgInitialize(left, cfgLeftPtr);
+	if (status != XST_SUCCESS) {
+		xil_printf("ERROR: Biquad left init failed!\n");
+		return XST_FAILURE;
+	}
+
+	//RIGHT INIT
+	cfgRightPtr = XBiquadv2_LookupConfig(XPAR_XBIQUADV2_1_DEVICE_ID);
+	if (!cfgRightPtr) {
+		xil_printf("ERROR: Biquad right config failed!\n");
+		return XST_FAILURE;
+	}
+	status = XBiquadv2_CfgInitialize(right, cfgRightPtr);
+	if (status != XST_SUCCESS) {
+		xil_printf("ERROR: Biquad right init failed!\n");
+		return XST_FAILURE;
+	}
+
+	return status;
+}
+
+
 
 
 
@@ -120,13 +215,32 @@ int main() {
 	TimerInitialize();
 	LineinLineoutConfig();
 
+	if (BiquadInit(&biquad_left, &biquad_right) != XST_SUCCESS) {
+		xil_printf("BIQUAD Setup failed!\n");
+		return -1;
+	}
+
+	if (SetupInterrupt() != XST_SUCCESS) {
+		xil_printf("Interrupt setup failed!\n");
+		return -1;
+	}
+
+	//Enable interrupts
+	XBiquadv2_InterruptEnable(&biquad_left, 1);
+	XBiquadv2_InterruptGlobalEnable(&biquad_left);
+	XBiquadv2_InterruptEnable(&biquad_right, 1);
+	XBiquadv2_InterruptGlobalEnable(&biquad_right);
+
+	biquad_left_done = 0;
+	biquad_right_done = 0;
+
 	xil_printf("Setup done...\r\n");
 
 	//Enable output
 	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, 0x00000001);
 
-	uint32_t temp = 0;
 
+	uint32_t temp = 0;
 	while(1) {
 		do {
 			temp = Xil_In32(I2S_STATUS_REG);
@@ -141,11 +255,25 @@ int main() {
 		uint32_t dataL = Xil_In32(I2S_DATA_RX_L_REG);
 		uint32_t dataR = Xil_In32(I2S_DATA_RX_R_REG);
 
-		//dataL = (dataL & 0x00FFFFFF) >> 8;
-		//dataR = (dataR & 0x00FFFFFF) >> 8;
+		//Give to BIQUAD
+		XBiquadv2_Set_inData_V(&biquad_left, dataL);
+		XBiquadv2_Set_inData_V(&biquad_right, dataR);
 
-		//dataL = dataL << 8;
-		//dataR = dataR << 8;
+		//Clear BIQUAD done flags
+		biquad_left_done = 0;
+		biquad_right_done = 0;
+
+		//Start BIQUAD
+		XBiquadv2_Start(&biquad_left);
+		XBiquadv2_Start(&biquad_right);
+
+		//xil_printf("HERE\n");
+
+		//Get from BIQUAD
+		while(!biquad_left_done);
+		dataL = XBiquadv2_Get_outData_V(&biquad_left);
+		while(!biquad_right_done);
+		dataR = XBiquadv2_Get_outData_V(&biquad_right);
 
 		//xil_printf("%i | %i\r\n", I2S_DATA_RX_L_REG, I2S_DATA_TX_L_REG);
 		//xil_printf("0x%.8X | 0x%.8X\r\n", dataL, dataR);

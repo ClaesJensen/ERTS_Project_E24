@@ -2278,3 +2278,864 @@ com.xilinx.sdk.targetmanager.TMException:
 22:45:16 INFO  : ps7_init is completed.
 22:45:16 INFO  : ps7_post_config is completed.
 02:02:05 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+09:59:48 INFO  : Registering command handlers for SDK TCF services
+09:59:48 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+09:59:50 INFO  : XSCT server has started successfully.
+09:59:50 INFO  : Successfully done setting XSCT server connection channel  
+09:59:52 INFO  : Successfully done setting SDK workspace  
+09:59:52 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+09:59:52 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+16:05:36 INFO  : Registering command handlers for SDK TCF services
+16:05:36 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+16:05:39 INFO  : XSCT server has started successfully.
+16:05:41 INFO  : Successfully done setting XSCT server connection channel  
+16:05:41 INFO  : Successfully done setting SDK workspace  
+16:05:41 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:05:41 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+16:05:43 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734534301356,  Project:1734471677266
+16:05:43 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:05:43 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+16:05:44 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:05:44 ERROR : Error updating BSP project MSS files.
+16:05:44 ERROR : Error updating hardware inferred compiler settings.
+16:05:44 INFO  : Clearing existing target manager status.
+16:06:05 INFO  : Refreshed build settings on project lab7
+16:29:56 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:33:55 INFO  : Registering command handlers for SDK TCF services
+16:33:55 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+16:33:56 INFO  : XSCT server has started successfully.
+16:33:56 INFO  : Successfully done setting XSCT server connection channel  
+16:33:57 INFO  : Successfully done setting SDK workspace  
+16:33:57 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:33:57 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+16:33:57 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734535909814,  Project:1734534301356
+16:33:57 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:33:57 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+16:33:59 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:34:02 INFO  : 
+16:34:02 INFO  : Updating hardware inferred compiler options for lab7.
+16:34:02 INFO  : Clearing existing target manager status.
+16:34:31 INFO  : Refreshed build settings on project lab7
+16:50:54 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:51:07 INFO  : Registering command handlers for SDK TCF services
+16:51:07 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+16:51:08 INFO  : XSCT server has started successfully.
+16:51:08 INFO  : Successfully done setting XSCT server connection channel  
+16:51:09 INFO  : Successfully done setting SDK workspace  
+16:51:09 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:51:09 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+16:51:10 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734537040059,  Project:1734535909814
+16:51:10 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:51:10 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+16:51:11 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:51:13 INFO  : 
+16:51:14 INFO  : Updating hardware inferred compiler options for lab7.
+16:51:14 INFO  : Clearing existing target manager status.
+16:52:05 INFO  : Refreshed build settings on project lab7
+21:24:50 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+21:25:36 INFO  : Registering command handlers for SDK TCF services
+21:25:36 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+21:25:37 INFO  : XSCT server has started successfully.
+21:25:37 INFO  : Successfully done setting XSCT server connection channel  
+21:25:37 INFO  : Successfully done setting SDK workspace  
+21:25:37 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+21:25:38 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+21:25:38 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734553503233,  Project:1734537040059
+21:25:38 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+21:25:38 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+21:25:40 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+21:25:42 INFO  : 
+21:25:43 INFO  : Updating hardware inferred compiler options for lab7.
+21:25:43 INFO  : Clearing existing target manager status.
+22:10:48 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+22:17:15 INFO  : Registering command handlers for SDK TCF services
+22:17:15 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+22:17:16 INFO  : XSCT server has started successfully.
+22:17:16 INFO  : Successfully done setting XSCT server connection channel  
+22:17:16 INFO  : Successfully done setting SDK workspace  
+22:17:16 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+22:17:16 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+22:17:17 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734556522428,  Project:1734553503233
+22:17:17 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+22:17:17 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+22:17:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+22:17:29 INFO  : 
+22:17:30 INFO  : Updating hardware inferred compiler options for lab7.
+22:17:30 INFO  : Clearing existing target manager status.
+23:35:38 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+23:35:53 INFO  : Registering command handlers for SDK TCF services
+23:35:53 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+23:35:54 INFO  : XSCT server has started successfully.
+23:35:55 INFO  : Successfully done setting XSCT server connection channel  
+23:35:55 INFO  : Successfully done setting SDK workspace  
+23:35:55 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+23:35:55 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+23:35:55 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734561194529,  Project:1734556522428
+23:35:55 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+23:35:55 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+23:36:06 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+23:36:09 INFO  : 
+23:36:09 INFO  : Updating hardware inferred compiler options for lab7.
+23:36:09 INFO  : Clearing existing target manager status.
+23:39:37 INFO  : System reset is completed.
+23:39:38 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:39:39 INFO  : ps7_init is completed.
+23:39:39 INFO  : ps7_post_config is completed.
+23:39:39 ERROR : Port COM12 is already in use.
+23:40:42 INFO  : System reset is completed.
+23:40:44 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:40:46 INFO  : ps7_init is completed.
+23:40:46 INFO  : ps7_post_config is completed.
+23:41:21 INFO  : Refreshed build settings on project lab7
+23:41:39 INFO  : System reset is completed.
+23:41:40 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:41:43 INFO  : ps7_init is completed.
+23:41:43 INFO  : ps7_post_config is completed.
+23:41:43 ERROR : Port COM12 is already in use.
+23:42:12 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: 
+    Unknown Error Occured
+    Cable is not connected to the host
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(TM.java:484)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:464)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+23:42:36 INFO  : System reset is completed.
+23:42:37 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:42:38 INFO  : ps7_init is completed.
+23:42:38 INFO  : ps7_post_config is completed.
+23:50:33 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+23:51:08 INFO  : Registering command handlers for SDK TCF services
+23:51:09 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+23:51:10 INFO  : XSCT server has started successfully.
+23:51:10 INFO  : Successfully done setting XSCT server connection channel  
+23:51:10 INFO  : Successfully done setting SDK workspace  
+23:51:10 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+23:51:10 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+23:51:11 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734562004834,  Project:1734561194529
+23:51:11 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+23:51:11 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+23:51:13 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+23:51:15 INFO  : 
+23:51:16 INFO  : Updating hardware inferred compiler options for lab7.
+23:51:16 INFO  : Clearing existing target manager status.
+23:52:08 INFO  : Refreshed build settings on project lab7
+23:52:32 INFO  : System reset is completed.
+23:52:34 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:52:36 INFO  : ps7_init is completed.
+23:52:36 INFO  : ps7_post_config is completed.
+23:52:36 ERROR : Port COM12 is already in use.
+23:53:25 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+23:53:26 INFO  : System reset is completed.
+23:53:28 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:53:28 INFO  : ps7_init is completed.
+23:53:28 INFO  : ps7_post_config is completed.
+23:53:51 INFO  : System reset is completed.
+23:53:52 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:53:55 INFO  : ps7_init is completed.
+23:53:55 INFO  : ps7_post_config is completed.
+23:54:10 INFO  : System reset is completed.
+23:54:11 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+23:54:12 INFO  : ps7_init is completed.
+23:54:12 INFO  : ps7_post_config is completed.
+00:35:16 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+00:37:26 INFO  : Registering command handlers for SDK TCF services
+00:37:26 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+00:37:27 INFO  : XSCT server has started successfully.
+00:37:27 INFO  : Successfully done setting XSCT server connection channel  
+00:37:27 INFO  : Successfully done setting SDK workspace  
+00:37:27 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+00:37:27 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+00:37:28 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734565028530,  Project:1734562004834
+00:37:28 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+00:37:28 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+00:37:30 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+00:37:32 INFO  : 
+00:37:33 INFO  : Updating hardware inferred compiler options for lab7.
+00:37:33 INFO  : Clearing existing target manager status.
+00:37:54 INFO  : Refreshed build settings on project lab7
+00:38:45 INFO  : System reset is completed.
+00:38:46 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+00:38:48 INFO  : ps7_init is completed.
+00:38:48 INFO  : ps7_post_config is completed.
+00:39:31 INFO  : System reset is completed.
+00:39:33 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+00:39:35 INFO  : ps7_init is completed.
+00:39:35 INFO  : ps7_post_config is completed.
+00:39:35 ERROR : Port COM12 is already in use.
+00:39:45 INFO  : System reset is completed.
+00:39:47 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+00:39:47 INFO  : ps7_init is completed.
+00:39:47 INFO  : ps7_post_config is completed.
+00:40:10 INFO  : System reset is completed.
+00:40:11 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+00:40:12 INFO  : ps7_init is completed.
+00:40:12 INFO  : ps7_post_config is completed.
+00:40:32 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+00:40:37 INFO  : System reset is completed.
+00:40:38 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+00:40:39 INFO  : ps7_init is completed.
+00:40:39 INFO  : ps7_post_config is completed.
+01:08:41 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+01:11:36 INFO  : Registering command handlers for SDK TCF services
+01:11:36 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+01:11:37 INFO  : XSCT server has started successfully.
+01:11:37 INFO  : Successfully done setting XSCT server connection channel  
+01:11:37 INFO  : Successfully done setting SDK workspace  
+01:11:37 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+01:11:38 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+01:11:38 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734566981087,  Project:1734565028530
+01:11:38 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+01:11:38 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+01:11:40 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+01:11:42 INFO  : 
+01:11:43 INFO  : Updating hardware inferred compiler options for lab7.
+01:11:43 INFO  : Clearing existing target manager status.
+01:12:15 INFO  : Refreshed build settings on project lab7
+01:12:36 INFO  : System reset is completed.
+01:12:37 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:12:40 INFO  : ps7_init is completed.
+01:12:40 INFO  : ps7_post_config is completed.
+01:13:04 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+01:13:06 INFO  : System reset is completed.
+01:13:08 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:13:08 INFO  : ps7_init is completed.
+01:13:08 INFO  : ps7_post_config is completed.
+01:13:51 INFO  : System reset is completed.
+01:13:52 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:13:53 INFO  : ps7_init is completed.
+01:13:53 INFO  : ps7_post_config is completed.
+01:16:04 INFO  : System reset is completed.
+01:16:06 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:16:08 INFO  : ps7_init is completed.
+01:16:08 INFO  : ps7_post_config is completed.
+01:18:48 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+01:21:32 INFO  : Registering command handlers for SDK TCF services
+01:21:32 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+01:21:33 INFO  : XSCT server has started successfully.
+01:21:34 INFO  : Successfully done setting XSCT server connection channel  
+01:21:34 INFO  : Successfully done setting SDK workspace  
+01:21:34 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+01:21:34 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+01:21:35 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734567670058,  Project:1734566981087
+01:21:35 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+01:21:35 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+01:21:36 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+01:21:38 INFO  : 
+01:21:39 INFO  : Updating hardware inferred compiler options for lab7.
+01:21:39 INFO  : Clearing existing target manager status.
+01:21:57 INFO  : Refreshed build settings on project lab7
+01:22:37 INFO  : System reset is completed.
+01:22:39 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:22:41 INFO  : ps7_init is completed.
+01:22:41 INFO  : ps7_post_config is completed.
+01:22:41 ERROR : Port COM12 is already in use.
+01:23:15 INFO  : System reset is completed.
+01:23:16 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:23:17 INFO  : ps7_init is completed.
+01:23:17 INFO  : ps7_post_config is completed.
+01:24:14 INFO  : System reset is completed.
+01:24:15 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:24:18 INFO  : ps7_init is completed.
+01:24:18 INFO  : ps7_post_config is completed.
+01:24:50 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+01:24:51 INFO  : System reset is completed.
+01:24:53 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:24:53 INFO  : ps7_init is completed.
+01:24:53 INFO  : ps7_post_config is completed.
+01:25:30 INFO  : System reset is completed.
+01:25:32 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:25:32 INFO  : ps7_init is completed.
+01:25:33 INFO  : ps7_post_config is completed.
+01:26:36 INFO  : System reset is completed.
+01:26:38 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:26:40 INFO  : ps7_init is completed.
+01:26:40 INFO  : ps7_post_config is completed.
+01:27:10 INFO  : System reset is completed.
+01:27:11 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+01:27:12 INFO  : ps7_init is completed.
+01:27:12 INFO  : ps7_post_config is completed.
+01:28:55 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+09:52:20 INFO  : Registering command handlers for SDK TCF services
+09:52:20 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+09:52:22 INFO  : XSCT server has started successfully.
+09:52:22 INFO  : Successfully done setting XSCT server connection channel  
+09:52:23 INFO  : Successfully done setting SDK workspace  
+09:52:23 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+09:52:23 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+12:27:11 INFO  : Registering command handlers for SDK TCF services
+12:27:11 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+12:27:13 INFO  : XSCT server has started successfully.
+12:27:13 INFO  : Successfully done setting XSCT server connection channel  
+12:27:15 INFO  : Successfully done setting SDK workspace  
+12:27:15 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:27:15 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+12:27:16 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734607595867,  Project:1734567670058
+12:27:16 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:27:16 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+12:27:29 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:27:32 INFO  : 
+12:27:33 INFO  : Updating hardware inferred compiler options for lab7.
+12:27:33 INFO  : Clearing existing target manager status.
+12:27:50 INFO  : Refreshed build settings on project lab7
+12:28:51 INFO  : System reset is completed.
+12:28:52 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:28:55 INFO  : ps7_init is completed.
+12:28:55 INFO  : ps7_post_config is completed.
+12:28:55 ERROR : Port COM12 is already in use.
+12:30:20 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:30:21 INFO  : System reset is completed.
+12:30:22 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:30:23 INFO  : ps7_init is completed.
+12:30:23 INFO  : ps7_post_config is completed.
+12:30:49 INFO  : System reset is completed.
+12:30:50 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:30:51 INFO  : ps7_init is completed.
+12:30:51 INFO  : ps7_post_config is completed.
+12:39:42 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+12:41:46 INFO  : Registering command handlers for SDK TCF services
+12:41:46 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+12:41:47 INFO  : XSCT server has started successfully.
+12:41:47 INFO  : Successfully done setting XSCT server connection channel  
+12:41:47 INFO  : Successfully done setting SDK workspace  
+12:41:47 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:41:47 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+12:41:48 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734608485118,  Project:1734607595867
+12:41:48 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:41:48 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+12:41:50 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:41:52 INFO  : 
+12:41:53 INFO  : Updating hardware inferred compiler options for lab7.
+12:41:53 INFO  : Clearing existing target manager status.
+12:42:09 INFO  : Refreshed build settings on project lab7
+12:42:28 INFO  : System reset is completed.
+12:42:30 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:42:32 INFO  : ps7_init is completed.
+12:42:32 INFO  : ps7_post_config is completed.
+12:42:32 ERROR : Port COM12 is already in use.
+12:42:51 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+12:42:58 INFO  : System reset is completed.
+12:43:00 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:43:00 INFO  : ps7_init is completed.
+12:43:00 INFO  : ps7_post_config is completed.
+12:46:09 INFO  : System reset is completed.
+12:46:10 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:46:13 INFO  : ps7_init is completed.
+12:46:13 INFO  : ps7_post_config is completed.
+12:46:13 ERROR : Port COM12 is already in use.
+12:53:20 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+12:53:37 INFO  : Registering command handlers for SDK TCF services
+12:53:37 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+12:53:38 INFO  : XSCT server has started successfully.
+12:53:38 INFO  : Successfully done setting XSCT server connection channel  
+12:53:39 INFO  : Successfully done setting SDK workspace  
+12:53:39 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:53:39 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+12:53:40 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734609189325,  Project:1734608485118
+12:53:40 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:53:40 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+12:53:41 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:53:43 INFO  : 
+12:53:44 INFO  : Updating hardware inferred compiler options for lab7.
+12:53:44 INFO  : Clearing existing target manager status.
+12:54:03 INFO  : Refreshed build settings on project lab7
+12:54:22 INFO  : System reset is completed.
+12:54:23 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:54:26 INFO  : ps7_init is completed.
+12:54:26 INFO  : ps7_post_config is completed.
+12:54:26 ERROR : Port COM12 is already in use.
+12:54:55 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:54:56 INFO  : System reset is completed.
+12:54:58 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:54:58 INFO  : ps7_init is completed.
+12:54:58 INFO  : ps7_post_config is completed.
+12:55:19 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:55:20 INFO  : System reset is completed.
+12:55:22 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:55:23 INFO  : ps7_init is completed.
+12:55:23 INFO  : ps7_post_config is completed.
+12:55:44 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:55:45 INFO  : System reset is completed.
+12:55:47 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:55:47 INFO  : ps7_init is completed.
+12:55:47 INFO  : ps7_post_config is completed.
+12:56:11 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:56:12 INFO  : System reset is completed.
+12:56:14 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:56:14 INFO  : ps7_init is completed.
+12:56:14 INFO  : ps7_post_config is completed.
+12:57:09 INFO  : System reset is completed.
+12:57:10 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:57:11 INFO  : ps7_init is completed.
+12:57:11 INFO  : ps7_post_config is completed.
+12:58:39 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:58:41 INFO  : System reset is completed.
+12:58:42 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:58:43 INFO  : ps7_init is completed.
+12:58:43 INFO  : ps7_post_config is completed.
+12:59:06 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:59:07 INFO  : System reset is completed.
+12:59:09 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:59:10 INFO  : ps7_init is completed.
+12:59:10 INFO  : ps7_post_config is completed.
+12:59:43 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:59:45 INFO  : System reset is completed.
+12:59:46 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:59:47 INFO  : ps7_init is completed.
+12:59:47 INFO  : ps7_post_config is completed.
+13:13:18 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:13:34 INFO  : Registering command handlers for SDK TCF services
+13:13:34 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+13:13:35 INFO  : XSCT server has started successfully.
+13:13:35 INFO  : Successfully done setting XSCT server connection channel  
+13:13:35 INFO  : Successfully done setting SDK workspace  
+13:13:35 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+13:13:35 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+13:13:36 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734610386225,  Project:1734609189325
+13:13:36 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+13:13:36 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+13:13:38 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:13:40 INFO  : 
+13:13:41 INFO  : Updating hardware inferred compiler options for lab7.
+13:13:41 INFO  : Clearing existing target manager status.
+13:14:00 INFO  : Refreshed build settings on project lab7
+13:14:19 INFO  : System reset is completed.
+13:14:20 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:14:23 INFO  : ps7_init is completed.
+13:14:23 INFO  : ps7_post_config is completed.
+13:14:23 ERROR : Port COM12 is already in use.
+13:14:38 INFO  : System reset is completed.
+13:14:39 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:14:40 INFO  : ps7_init is completed.
+13:14:40 INFO  : ps7_post_config is completed.
+13:15:08 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+13:15:13 INFO  : System reset is completed.
+13:15:15 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:15:16 INFO  : ps7_init is completed.
+13:15:16 INFO  : ps7_post_config is completed.
+13:16:02 INFO  : System reset is completed.
+13:16:03 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:16:06 INFO  : ps7_init is completed.
+13:16:06 INFO  : ps7_post_config is completed.
+13:16:06 ERROR : Port COM12 is already in use.
+13:16:29 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+13:16:30 INFO  : System reset is completed.
+13:16:32 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:16:33 INFO  : ps7_init is completed.
+13:16:33 INFO  : ps7_post_config is completed.
+13:16:52 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+13:16:55 INFO  : System reset is completed.
+13:16:57 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:16:57 INFO  : ps7_init is completed.
+13:16:57 INFO  : ps7_post_config is completed.
+13:18:56 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:15:28 INFO  : Registering command handlers for SDK TCF services
+14:15:28 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+14:15:30 INFO  : XSCT server has started successfully.
+14:15:32 INFO  : Successfully done setting XSCT server connection channel  
+14:15:32 INFO  : Successfully done setting SDK workspace  
+14:15:32 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:15:32 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+14:15:33 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734614091471,  Project:1734610386225
+14:15:33 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:15:33 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+14:15:35 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:15:37 INFO  : 
+14:15:38 INFO  : Updating hardware inferred compiler options for lab7.
+14:15:38 INFO  : Clearing existing target manager status.
+14:16:56 INFO  : Refreshed build settings on project lab7
+14:17:16 INFO  : System reset is completed.
+14:17:18 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:17:20 INFO  : ps7_init is completed.
+14:17:20 INFO  : ps7_post_config is completed.
+14:17:20 ERROR : Port COM12 is already in use.
+14:18:15 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:18:17 INFO  : System reset is completed.
+14:18:18 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:18:19 INFO  : ps7_init is completed.
+14:18:19 INFO  : ps7_post_config is completed.
+14:25:32 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:29:37 INFO  : Registering command handlers for SDK TCF services
+14:29:37 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+14:29:38 INFO  : XSCT server has started successfully.
+14:29:38 INFO  : Successfully done setting XSCT server connection channel  
+14:29:38 INFO  : Successfully done setting SDK workspace  
+14:29:38 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:29:38 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+14:29:39 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734614950337,  Project:1734614091471
+14:29:39 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:29:39 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+14:29:40 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:29:43 INFO  : 
+14:29:43 INFO  : Updating hardware inferred compiler options for lab7.
+14:29:43 INFO  : Clearing existing target manager status.
+14:30:01 INFO  : Refreshed build settings on project lab7
+14:30:39 INFO  : System reset is completed.
+14:30:41 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:30:43 INFO  : ps7_init is completed.
+14:30:43 INFO  : ps7_post_config is completed.
+14:30:43 ERROR : Port COM12 is already in use.
+14:31:33 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:31:34 INFO  : System reset is completed.
+14:31:36 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:31:36 INFO  : ps7_init is completed.
+14:31:36 INFO  : ps7_post_config is completed.
+14:31:49 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:31:50 INFO  : System reset is completed.
+14:31:52 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:31:52 INFO  : ps7_init is completed.
+14:31:52 INFO  : ps7_post_config is completed.
+14:34:10 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:34:11 INFO  : System reset is completed.
+14:34:13 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:34:13 INFO  : ps7_init is completed.
+14:34:13 INFO  : ps7_post_config is completed.
+14:46:20 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:51:17 INFO  : Registering command handlers for SDK TCF services
+14:51:17 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+14:51:18 INFO  : XSCT server has started successfully.
+14:51:18 INFO  : Successfully done setting XSCT server connection channel  
+14:51:18 INFO  : Successfully done setting SDK workspace  
+14:51:18 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:51:18 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+14:51:19 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734616087886,  Project:1734614950337
+14:51:19 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:51:19 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+14:51:21 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:51:23 INFO  : 
+14:51:24 INFO  : Updating hardware inferred compiler options for lab7.
+14:51:24 INFO  : Clearing existing target manager status.
+14:51:40 INFO  : Refreshed build settings on project lab7
+14:52:06 INFO  : System reset is completed.
+14:52:07 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:52:10 INFO  : ps7_init is completed.
+14:52:10 INFO  : ps7_post_config is completed.
+14:55:42 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:58:12 INFO  : Registering command handlers for SDK TCF services
+14:58:12 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+14:58:13 INFO  : XSCT server has started successfully.
+14:58:13 INFO  : Successfully done setting XSCT server connection channel  
+14:58:13 INFO  : Successfully done setting SDK workspace  
+14:58:13 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:58:13 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+14:58:14 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734616670021,  Project:1734616087886
+14:58:14 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+14:58:14 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+14:58:16 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:58:18 INFO  : 
+14:58:19 INFO  : Updating hardware inferred compiler options for lab7.
+14:58:19 INFO  : Clearing existing target manager status.
+14:58:20 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+14:58:21 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+14:59:08 INFO  : Refreshed build settings on project lab7
+14:59:28 INFO  : System reset is completed.
+14:59:29 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:59:32 INFO  : ps7_init is completed.
+14:59:32 INFO  : ps7_post_config is completed.
+14:59:32 ERROR : Port COM12 is already in use.
+14:59:38 INFO  : System reset is completed.
+14:59:40 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+14:59:40 INFO  : ps7_init is completed.
+14:59:40 INFO  : ps7_post_config is completed.
+15:04:12 INFO  : System reset is completed.
+15:04:13 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:04:21 INFO  : ps7_init is completed.
+15:04:21 INFO  : ps7_post_config is completed.
+15:08:21 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:12:07 INFO  : Registering command handlers for SDK TCF services
+15:12:07 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+15:12:08 INFO  : XSCT server has started successfully.
+15:12:08 INFO  : Successfully done setting XSCT server connection channel  
+15:12:08 INFO  : Successfully done setting SDK workspace  
+15:12:08 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+15:12:08 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+15:12:09 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734617482708,  Project:1734616670021
+15:12:09 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+15:12:09 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+15:12:10 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:12:13 INFO  : 
+15:12:13 INFO  : Updating hardware inferred compiler options for lab7.
+15:12:13 INFO  : Clearing existing target manager status.
+15:12:53 INFO  : Refreshed build settings on project lab7
+15:14:41 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: 
+    Unknown Error Occured
+    Cable is not powered-on
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(TM.java:484)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:464)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+15:14:59 INFO  : System reset is completed.
+15:15:01 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:15:03 INFO  : ps7_init is completed.
+15:15:03 INFO  : ps7_post_config is completed.
+15:15:03 ERROR : Port COM12 is already in use.
+15:25:46 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:25:48 INFO  : System reset is completed.
+15:25:49 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:25:50 INFO  : ps7_init is completed.
+15:25:50 INFO  : ps7_post_config is completed.
+15:28:34 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:28:36 INFO  : System reset is completed.
+15:28:37 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:28:38 INFO  : ps7_init is completed.
+15:28:38 INFO  : ps7_post_config is completed.
+15:29:14 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:29:15 INFO  : System reset is completed.
+15:29:17 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:29:17 INFO  : ps7_init is completed.
+15:29:17 INFO  : ps7_post_config is completed.
+15:29:29 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:29:30 INFO  : System reset is completed.
+15:29:32 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:29:32 INFO  : ps7_init is completed.
+15:29:32 INFO  : ps7_post_config is completed.
+15:29:40 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:29:41 INFO  : System reset is completed.
+15:29:43 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:29:43 INFO  : ps7_init is completed.
+15:29:43 INFO  : ps7_post_config is completed.
+15:29:52 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:29:54 INFO  : System reset is completed.
+15:29:55 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+15:29:56 INFO  : ps7_init is completed.
+15:29:56 INFO  : ps7_post_config is completed.
+15:49:07 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+21:30:22 INFO  : Registering command handlers for SDK TCF services
+21:30:22 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+21:30:24 INFO  : XSCT server has started successfully.
+21:30:24 INFO  : Successfully done setting XSCT server connection channel  
+21:30:24 INFO  : Successfully done setting SDK workspace  
+21:30:24 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+21:30:24 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+21:30:25 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734640123891,  Project:1734617482708
+21:30:25 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+21:30:25 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+21:30:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+21:30:29 INFO  : 
+21:30:30 INFO  : Updating hardware inferred compiler options for lab7.
+21:30:30 INFO  : Clearing existing target manager status.
+21:30:56 INFO  : Refreshed build settings on project lab7
+21:51:28 INFO  : System reset is completed.
+21:51:30 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+21:51:32 INFO  : ps7_init is completed.
+21:51:32 INFO  : ps7_post_config is completed.
+00:37:00 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:46:20 INFO  : Registering command handlers for SDK TCF services
+11:46:20 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+11:46:22 INFO  : XSCT server has started successfully.
+11:46:24 INFO  : Successfully done setting XSCT server connection channel  
+11:46:24 INFO  : Successfully done setting SDK workspace  
+11:46:24 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+11:46:24 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+11:46:25 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734691516594,  Project:1734640123891
+11:46:25 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+11:46:25 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+11:46:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+11:46:30 INFO  : 
+11:46:31 INFO  : Updating hardware inferred compiler options for lab7.
+11:46:31 INFO  : Clearing existing target manager status.
+11:46:45 INFO  : Refreshed build settings on project lab7
+11:47:44 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: The program file specified in the launch configuration does not exist
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:580)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+11:48:48 INFO  : System reset is completed.
+11:48:49 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+11:48:52 INFO  : ps7_init is completed.
+11:48:52 INFO  : ps7_post_config is completed.
+11:49:56 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:49:58 INFO  : System reset is completed.
+11:50:00 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+11:50:00 INFO  : ps7_init is completed.
+11:50:00 INFO  : ps7_post_config is completed.
+11:51:39 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:51:41 INFO  : System reset is completed.
+11:51:42 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+11:51:43 INFO  : ps7_init is completed.
+11:51:43 INFO  : ps7_post_config is completed.
+11:52:20 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:52:35 INFO  : Registering command handlers for SDK TCF services
+11:52:35 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+11:52:36 INFO  : XSCT server has started successfully.
+11:52:36 INFO  : Successfully done setting XSCT server connection channel  
+11:52:36 INFO  : Successfully done setting SDK workspace  
+11:52:36 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+11:52:36 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+11:52:47 INFO  : Refreshed build settings on project lab7
+11:53:25 INFO  : System reset is completed.
+11:53:26 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+11:53:29 INFO  : ps7_init is completed.
+11:53:29 INFO  : ps7_post_config is completed.
+11:53:29 ERROR : Port COM12 is already in use.
+11:53:35 INFO  : System reset is completed.
+11:53:37 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+11:53:37 INFO  : ps7_init is completed.
+11:53:37 INFO  : ps7_post_config is completed.
+11:53:59 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:54:00 INFO  : System reset is completed.
+11:54:01 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+11:54:02 INFO  : ps7_init is completed.
+11:54:02 INFO  : ps7_post_config is completed.
+12:07:56 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+12:10:26 INFO  : Registering command handlers for SDK TCF services
+12:10:26 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+12:10:27 INFO  : XSCT server has started successfully.
+12:10:27 INFO  : Successfully done setting XSCT server connection channel  
+12:10:27 INFO  : Successfully done setting SDK workspace  
+12:10:27 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:10:27 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+12:10:28 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734692993750,  Project:1734691516594
+12:10:28 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:10:28 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+12:10:29 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:10:32 INFO  : 
+12:10:33 INFO  : Updating hardware inferred compiler options for lab7.
+12:10:33 INFO  : Clearing existing target manager status.
+12:10:51 INFO  : Refreshed build settings on project lab7
+12:11:31 INFO  : System reset is completed.
+12:11:33 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:11:35 INFO  : ps7_init is completed.
+12:11:35 INFO  : ps7_post_config is completed.
+12:11:35 ERROR : Port COM12 is already in use.
+12:11:42 INFO  : System reset is completed.
+12:11:43 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:11:44 INFO  : ps7_init is completed.
+12:11:44 INFO  : ps7_post_config is completed.
+12:15:05 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:15:06 INFO  : System reset is completed.
+12:15:08 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:15:08 INFO  : ps7_init is completed.
+12:15:08 INFO  : ps7_post_config is completed.
+12:52:40 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+12:53:11 INFO  : Registering command handlers for SDK TCF services
+12:53:11 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+12:53:13 INFO  : XSCT server has started successfully.
+12:53:13 INFO  : Successfully done setting XSCT server connection channel  
+12:53:14 INFO  : Successfully done setting SDK workspace  
+12:53:14 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:53:15 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+12:53:15 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734695542389,  Project:1734692993750
+12:53:15 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+12:53:16 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+12:53:17 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:53:20 INFO  : 
+12:53:21 INFO  : Updating hardware inferred compiler options for lab7.
+12:53:31 INFO  : Clearing existing target manager status.
+12:53:58 INFO  : Refreshed build settings on project lab7
+12:54:18 INFO  : System reset is completed.
+12:54:20 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:54:22 INFO  : ps7_init is completed.
+12:54:22 INFO  : ps7_post_config is completed.
+12:54:56 INFO  : System reset is completed.
+12:54:57 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+12:55:00 INFO  : ps7_init is completed.
+12:55:00 INFO  : ps7_post_config is completed.
+12:55:00 ERROR : Port COM12 is already in use.
+13:28:56 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:29:14 INFO  : Registering command handlers for SDK TCF services
+13:29:14 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+13:29:15 INFO  : XSCT server has started successfully.
+13:29:16 INFO  : Successfully done setting XSCT server connection channel  
+13:29:16 INFO  : Successfully done setting SDK workspace  
+13:29:16 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+13:29:16 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+13:29:17 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734697725191,  Project:1734695542389
+13:29:17 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+13:29:17 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+13:29:18 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:29:21 INFO  : 
+13:29:21 INFO  : Updating hardware inferred compiler options for lab7.
+13:29:21 INFO  : Clearing existing target manager status.
+13:29:49 INFO  : Refreshed build settings on project lab7
+13:30:13 INFO  : System reset is completed.
+13:30:15 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:30:17 INFO  : ps7_init is completed.
+13:30:17 INFO  : ps7_post_config is completed.
+13:30:17 ERROR : Port COM12 is already in use.
+13:47:36 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:52:25 INFO  : Registering command handlers for SDK TCF services
+13:52:25 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+13:52:26 INFO  : XSCT server has started successfully.
+13:52:26 INFO  : Successfully done setting XSCT server connection channel  
+13:52:26 INFO  : Successfully done setting SDK workspace  
+13:52:26 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+13:52:26 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+13:52:27 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1734699012059,  Project:1734697725191
+13:52:27 INFO  : The hardware specification for project 'system_wrapper_hw_platform_0' is different from C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+13:52:27 INFO  : Copied contents of C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf into \system_wrapper_hw_platform_0\system.hdf.
+13:52:29 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:52:31 INFO  : 
+13:52:32 INFO  : Updating hardware inferred compiler options for lab7.
+13:52:32 INFO  : Clearing existing target manager status.
+13:53:14 INFO  : Refreshed build settings on project lab7
+13:53:33 INFO  : System reset is completed.
+13:53:35 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+13:53:37 INFO  : ps7_init is completed.
+13:53:37 INFO  : ps7_post_config is completed.
+14:27:19 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

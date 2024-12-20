@@ -1,0 +1,25 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="outData"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="inData"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

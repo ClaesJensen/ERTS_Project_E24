@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
---Date        : Tue Dec 17 22:39:34 2024
+--Date        : Fri Dec 20 13:48:21 2024
 --Host        : Jeppe running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -70,19 +70,19 @@ architecture STRUCTURE of system_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    BCLK : out STD_LOGIC;
-    PBLRCLK : out STD_LOGIC;
-    RECLRCLK : out STD_LOGIC;
-    PBDATA : out STD_LOGIC;
-    RECDAT : in STD_LOGIC;
     IIC_1_sda_i : in STD_LOGIC;
     IIC_1_sda_o : out STD_LOGIC;
     IIC_1_sda_t : out STD_LOGIC;
     IIC_1_scl_i : in STD_LOGIC;
     IIC_1_scl_o : out STD_LOGIC;
     IIC_1_scl_t : out STD_LOGIC;
-    FCLK_CLK1 : out STD_LOGIC;
-    GPIO_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 )
+    GPIO_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    BCLK : out STD_LOGIC;
+    PBLRCLK : out STD_LOGIC;
+    RECLRCLK : out STD_LOGIC;
+    PBDATA : out STD_LOGIC;
+    RECDAT : in STD_LOGIC;
+    FCLK_CLK1 : out STD_LOGIC
   );
   end component system;
   component IOBUF is
