@@ -1,6 +1,9 @@
 #include "lpmk3.hpp"
+#include "control.hpp"
 
 static volatile bool isRunning = true;
+
+Control *c = NULL;
 
 bool signalInterruptHandler(int signal) {
     isRunning = false;
@@ -8,6 +11,10 @@ bool signalInterruptHandler(int signal) {
 }
 
 void CALLBACK midiInCallback(HMIDIIN hMidiIn, UINT wMsg, DWORD dwInstance, DWORD dwParam1, DWORD dwParam2) {
+    if (c == NULL) {
+        return;
+    }
+
     if (wMsg == MIM_DATA) {
         DWORD midiMessage = dwParam1;
         BYTE statusByte = (BYTE)(midiMessage & 0xFF);
@@ -15,11 +22,10 @@ void CALLBACK midiInCallback(HMIDIIN hMidiIn, UINT wMsg, DWORD dwInstance, DWORD
         BYTE dataByte2 = (BYTE)((midiMessage >> 16) & 0xFF);
 
         printf("Msg: 0x%02X 0x%02X 0x%02X\n", statusByte, dataByte1, dataByte2);
+
+        c->Input(dataByte1, dataByte2 & 0x7F);
     }
 }
-
-
-
 
 int main() {
     //Assign handler for ctrl+c.
@@ -27,8 +33,8 @@ int main() {
 
     //Create Launchpad instance.
     LPMK3 lp = LPMK3(1, 1, midiInCallback);
-    uint64_t leds[8] = {0x030B70000F, 0x030C007F00, 0x030D7F0000, 0x030E007F7F, 0x030F7F7F00, 0x03107F007F, 0x03117F7F7F, 0x03127F7F7F};
-    lp.WriteLED(leds, 8);
+    UART uart = UART("\\\\.\\COM12", 115200);
+    c = new Control(&lp, &uart);
 
     while(isRunning) {
         Sleep(8);

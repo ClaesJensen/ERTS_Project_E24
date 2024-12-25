@@ -1,0 +1,4 @@
+# ninja log v5
+4	294	7567932205329252	CMakeFiles/main.dir/src/main.cpp.obj	5da0f0b2780ad1
+1	296	7567932205329252	CMakeFiles/srcs.dir/src/lpmk3.cpp.obj	2d0e9c22e2f3d944
+296	336	7567932205732840	srcs.lib	6192639d76bb44b0

@@ -1,0 +1,4 @@
+C:/Users/lions/Desktop/Github/ERTS_Project_E24/Control/out/build/x64-Debug/CMakeFiles/srcs.dir
+C:/Users/lions/Desktop/Github/ERTS_Project_E24/Control/out/build/x64-Debug/CMakeFiles/main.dir
+C:/Users/lions/Desktop/Github/ERTS_Project_E24/Control/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/lions/Desktop/Github/ERTS_Project_E24/Control/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

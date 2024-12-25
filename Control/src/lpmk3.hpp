@@ -11,13 +11,6 @@
 #define LP_LED_TOTAL_BTNS 81
 #define LP_LED_BYTES_PER_LED 5
 
-typedef struct {
-    uint8_t btnNumber;
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-} LP_LED __attribute__((packed));
-
 class LPMK3 {
 public:
     LPMK3(uint8_t inDeviceID, uint8_t outDeviceID, void(*inputCallback)(HMIDIIN, UINT, DWORD, DWORD, DWORD));

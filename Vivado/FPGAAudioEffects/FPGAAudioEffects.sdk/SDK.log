@@ -4081,3 +4081,19 @@ com.xilinx.sdk.targetmanager.TMException:
 12:38:57 INFO  : ps7_init is completed.
 12:38:57 INFO  : ps7_post_config is completed.
 01:01:44 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+17:24:08 INFO  : Registering command handlers for SDK TCF services
+17:24:08 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+17:24:10 INFO  : XSCT server has started successfully.
+17:24:12 INFO  : Successfully done setting XSCT server connection channel  
+17:24:12 INFO  : Successfully done setting SDK workspace  
+17:24:12 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+17:24:12 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+17:24:49 INFO  : System reset is completed.
+17:24:50 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+17:24:52 INFO  : ps7_init is completed.
+17:24:53 INFO  : ps7_post_config is completed.
+19:09:48 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+19:09:49 INFO  : XSCT server has started successfully.
+19:10:19 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+19:10:20 INFO  : XSCT server has started successfully.
+20:01:28 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
