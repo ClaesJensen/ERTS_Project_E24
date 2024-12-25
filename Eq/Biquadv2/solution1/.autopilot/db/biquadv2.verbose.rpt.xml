@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'biquadv2'" level="0">
-<item name = "Date">Fri Dec 20 13:46:55 2024
+<item name = "Date">Sun Dec 22 21:59:44 2024
 </item>
 <item name = "Version">2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)</item>
 <item name = "Project">Biquadv2</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.28, 1.25</column>
+<column name="ap_clk">10.00, 8.42, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">38, 38, 39, 39, none</column>
+<column name="">40, 40, 41, 41, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -48,22 +48,22 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 246, 205</column>
+<column name="Expression">-, -, 249, 207</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">0, 3, 239, 227</column>
-<column name="Memory">2, -, 26, 3</column>
-<column name="Multiplexer">-, -, -, 171</column>
-<column name="Register">-, -, 248, -</column>
+<column name="Instance">0, 3, 426, 586</column>
+<column name="Memory">4, -, 0, 0</column>
+<column name="Multiplexer">-, -, -, 248</column>
+<column name="Register">-, -, 336, -</column>
 <specialColumn name="Available">120, 80, 35200, 17600</specialColumn>
-<specialColumn name="Utilization (%)">1, 3, 2, 3</specialColumn>
+<specialColumn name="Utilization (%)">3, 3, 2, 5</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="biquadv2_biquadv2_s_axi_U">biquadv2_biquadv2_s_axi, 0, 0, 96, 136</column>
-<column name="biquadv2_mul_24s_bkb_U0">biquadv2_mul_24s_bkb, 0, 3, 143, 91</column>
+<column name="biquadv2_biquadv2_s_axi_U">biquadv2_biquadv2_s_axi, 0, 0, 261, 406</column>
+<column name="biquadv2_mul_27s_bkb_U0">biquadv2_mul_27s_bkb, 0, 3, 165, 180</column>
 </table>
 </item>
 <item name = "DSP48"><table name="" hasTotal="0">
@@ -72,7 +72,7 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="coeffs_U">biquadv2_coeffs, 0, 26, 3, 5, 26, 1, 130</column>
+<column name="coeffs_V_U">biquadv2_coeffs_V, 2, 0, 0, 5, 27, 1, 135</column>
 <column name="samples_V_U">biquadv2_samples_V, 2, 0, 0, 5, 24, 1, 120</column>
 </table>
 </item>
@@ -82,69 +82,79 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_V_fu_167_p2">+, 0, 14, 9, 3, 1</column>
-<column name="p_Val2_2_fu_215_p2">+, 0, 155, 55, 50, 50</column>
-<column name="p_Val2_4_fu_250_p2">+, 0, 77, 29, 24, 24</column>
-<column name="brmerge40_demorgan_i_fu_355_p2">and, 0, 0, 2, 1, 1</column>
-<column name="carry_fu_270_p2">and, 0, 0, 2, 1, 1</column>
-<column name="overflow_fu_349_p2">and, 0, 0, 2, 1, 1</column>
-<column name="p_38_i_i_fu_328_p2">and, 0, 0, 2, 1, 1</column>
-<column name="p_41_i_i_fu_316_p2">and, 0, 0, 2, 1, 1</column>
-<column name="underflow_fu_372_p2">and, 0, 0, 2, 1, 1</column>
-<column name="Range1_all_ones_fu_293_p2">icmp, 0, 0, 1, 2, 2</column>
-<column name="Range1_all_zeros_fu_298_p2">icmp, 0, 0, 1, 2, 1</column>
-<column name="tmp_5_fu_161_p2">icmp, 0, 0, 1, 3, 3</column>
-<column name="brmerge_i_i_fu_339_p2">or, 0, 0, 2, 1, 1</column>
-<column name="brmerge_i_i_i_fu_377_p2">or, 0, 0, 2, 1, 1</column>
-<column name="tmp1_fu_383_p2">or, 0, 0, 2, 1, 1</column>
-<column name="tmp_demorgan_fu_360_p2">or, 0, 0, 2, 1, 1</column>
-<column name="underflow_not_fu_387_p2">or, 0, 0, 2, 1, 1</column>
-<column name="deleted_ones_fu_321_p3">select, 0, 0, 2, 1, 1</column>
-<column name="deleted_zeros_fu_303_p3">select, 0, 0, 2, 1, 1</column>
-<column name="p_Val2_4_4_fu_398_p3">select, 0, 0, 25, 1, 25</column>
-<column name="p_Val2_4_mux_fu_392_p3">select, 0, 0, 24, 1, 23</column>
-<column name="result_V_fu_404_p3">select, 0, 0, 24, 1, 24</column>
-<column name="p_not_i_i_fu_333_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="tmp_3_fu_264_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="tmp_4_fu_310_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="tmp_fu_366_p2">xor, 0, 0, 2, 1, 2</column>
-<column name="tmp_s_fu_344_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="i_V_fu_230_p2">+, 0, 14, 9, 3, 1</column>
+<column name="p_Val2_2_fu_275_p2">+, 0, 158, 56, 51, 51</column>
+<column name="p_Val2_4_fu_309_p2">+, 0, 77, 29, 24, 24</column>
+<column name="brmerge40_demorgan_i_fu_428_p2">and, 0, 0, 2, 1, 1</column>
+<column name="carry_fu_329_p2">and, 0, 0, 2, 1, 1</column>
+<column name="overflow_fu_422_p2">and, 0, 0, 2, 1, 1</column>
+<column name="p_38_i_i_fu_402_p2">and, 0, 0, 2, 1, 1</column>
+<column name="p_41_i_i_fu_391_p2">and, 0, 0, 2, 1, 1</column>
+<column name="underflow_fu_445_p2">and, 0, 0, 2, 1, 1</column>
+<column name="Range1_all_ones_fu_361_p2">icmp, 0, 0, 1, 3, 2</column>
+<column name="Range1_all_zeros_fu_367_p2">icmp, 0, 0, 1, 3, 1</column>
+<column name="Range2_all_ones_fu_345_p2">icmp, 0, 0, 1, 2, 2</column>
+<column name="tmp_1_fu_224_p2">icmp, 0, 0, 1, 3, 3</column>
+<column name="brmerge_i_i_fu_412_p2">or, 0, 0, 2, 1, 1</column>
+<column name="brmerge_i_i_i_fu_450_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp1_fu_456_p2">or, 0, 0, 2, 1, 1</column>
+<column name="tmp_demorgan_fu_433_p2">or, 0, 0, 2, 1, 1</column>
+<column name="underflow_not_fu_460_p2">or, 0, 0, 2, 1, 1</column>
+<column name="deleted_ones_fu_396_p3">select, 0, 0, 2, 1, 1</column>
+<column name="deleted_zeros_fu_380_p3">select, 0, 0, 2, 1, 1</column>
+<column name="p_Val2_4_4_fu_471_p3">select, 0, 0, 25, 1, 25</column>
+<column name="p_Val2_4_mux_fu_465_p3">select, 0, 0, 24, 1, 23</column>
+<column name="result_V_fu_477_p3">select, 0, 0, 24, 1, 24</column>
+<column name="p_not_i_i_fu_406_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="tmp_5_fu_385_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="tmp_9_fu_417_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="tmp_fu_439_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="tmp_s_fu_323_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">60, 11, 1, 11</column>
-<column name="p_0_reg_144">9, 2, 3, 6</column>
-<column name="p_Val2_s_reg_130">9, 2, 24, 48</column>
-<column name="reg_155">9, 2, 24, 48</column>
+<column name="ap_NS_fsm">65, 13, 1, 13</column>
+<column name="coeffs_V_address0">21, 4, 3, 12</column>
+<column name="coeffs_V_address1">21, 4, 3, 12</column>
+<column name="coeffs_V_d0">21, 4, 27, 108</column>
+<column name="coeffs_V_d1">15, 3, 27, 81</column>
+<column name="p_Val2_s_reg_193">9, 2, 24, 48</column>
+<column name="p_s_reg_207">9, 2, 3, 6</column>
+<column name="reg_218">9, 2, 24, 48</column>
 <column name="samples_V_address0">27, 5, 3, 15</column>
 <column name="samples_V_address1">21, 4, 3, 12</column>
-<column name="samples_V_d0">21, 4, 24, 96</column>
+<column name="samples_V_d0">15, 3, 24, 72</column>
 <column name="samples_V_d1">15, 3, 24, 72</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">10, 0, 10, 0</column>
-<column name="brmerge40_demorgan_i_reg_507">1, 0, 1, 0</column>
-<column name="brmerge_i_i_i_reg_517">1, 0, 1, 0</column>
-<column name="carry_reg_484">1, 0, 1, 0</column>
-<column name="coeffs_load_reg_435">26, 0, 26, 0</column>
-<column name="i_V_reg_420">3, 0, 3, 0</column>
-<column name="inData_V_read_reg_412">24, 0, 24, 0</column>
-<column name="newsignbit_reg_478">1, 0, 1, 0</column>
-<column name="p_0_reg_144">3, 0, 3, 0</column>
-<column name="p_38_i_i_reg_497">1, 0, 1, 0</column>
-<column name="p_Val2_1_reg_450">49, 0, 49, 0</column>
-<column name="p_Val2_2_reg_460">50, 0, 50, 0</column>
-<column name="p_Val2_4_reg_472">24, 0, 24, 0</column>
-<column name="p_Val2_s_reg_130">24, 0, 24, 0</column>
-<column name="reg_155">24, 0, 24, 0</column>
-<column name="signbit_reg_465">1, 0, 1, 0</column>
-<column name="tmp_8_reg_455">1, 0, 1, 0</column>
-<column name="tmp_9_reg_491">2, 0, 2, 0</column>
-<column name="tmp_s_reg_502">1, 0, 1, 0</column>
-<column name="underflow_reg_512">1, 0, 1, 0</column>
+<column name="Range1_all_ones_reg_583">1, 0, 1, 0</column>
+<column name="Range1_all_zeros_reg_590">1, 0, 1, 0</column>
+<column name="Range2_all_ones_reg_578">1, 0, 1, 0</column>
+<column name="a1_a0_V_read_reg_495">27, 0, 27, 0</column>
+<column name="a2_a0_V_read_reg_490">27, 0, 27, 0</column>
+<column name="ap_CS_fsm">12, 0, 12, 0</column>
+<column name="b2_a0_V_read_reg_500">27, 0, 27, 0</column>
+<column name="brmerge40_demorgan_i_reg_605">1, 0, 1, 0</column>
+<column name="brmerge_i_i_i_reg_615">1, 0, 1, 0</column>
+<column name="carry_reg_571">1, 0, 1, 0</column>
+<column name="coeffs_V_load_reg_523">27, 0, 27, 0</column>
+<column name="i_V_reg_508">3, 0, 3, 0</column>
+<column name="inData_V_read_reg_485">24, 0, 24, 0</column>
+<column name="newsignbit_reg_565">1, 0, 1, 0</column>
+<column name="p_38_i_i_reg_595">1, 0, 1, 0</column>
+<column name="p_Val2_1_reg_538">51, 0, 51, 0</column>
+<column name="p_Val2_2_reg_548">51, 0, 51, 0</column>
+<column name="p_Val2_4_reg_559">24, 0, 24, 0</column>
+<column name="p_Val2_s_reg_193">24, 0, 24, 0</column>
+<column name="p_s_reg_207">3, 0, 3, 0</column>
+<column name="reg_218">24, 0, 24, 0</column>
+<column name="signbit_reg_553">1, 0, 1, 0</column>
+<column name="tmp_10_reg_543">1, 0, 1, 0</column>
+<column name="tmp_9_reg_600">1, 0, 1, 0</column>
+<column name="underflow_reg_610">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -156,14 +166,14 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="s_axi_biquadv2_AWVALID">in, 1, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_AWREADY">out, 1, s_axi, biquadv2, pointer</column>
-<column name="s_axi_biquadv2_AWADDR">in, 5, s_axi, biquadv2, pointer</column>
+<column name="s_axi_biquadv2_AWADDR">in, 7, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_WVALID">in, 1, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_WREADY">out, 1, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_WDATA">in, 32, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_WSTRB">in, 4, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_ARVALID">in, 1, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_ARREADY">out, 1, s_axi, biquadv2, pointer</column>
-<column name="s_axi_biquadv2_ARADDR">in, 5, s_axi, biquadv2, pointer</column>
+<column name="s_axi_biquadv2_ARADDR">in, 7, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_RVALID">out, 1, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_RREADY">in, 1, s_axi, biquadv2, pointer</column>
 <column name="s_axi_biquadv2_RDATA">out, 32, s_axi, biquadv2, pointer</column>

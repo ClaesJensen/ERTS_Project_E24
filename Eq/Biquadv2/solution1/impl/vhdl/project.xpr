@@ -6,7 +6,7 @@
 <Project Version="7" Minor="20" Path="C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2/solution1/impl/vhdl/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="8a975e01d44b401587b3844a18d525cd"/>
+    <Option Name="Id" Val="840258d96e78488586f3e38a5d0394d8"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -63,13 +63,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/biquadv2_coeffs.vhd">
+      <File Path="$PPRDIR/biquadv2_coeffs_V.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/biquadv2_mul_24s_bkb.vhd">
+      <File Path="$PPRDIR/biquadv2_mul_27s_bkb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

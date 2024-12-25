@@ -33141,22 +33141,39 @@ typedef ap_fixed<24, 1, SC_RND, SC_SAT> outData_t;
 typedef ap_fixed<27, 3, SC_RND, SC_SAT> coeff_t;
 typedef ap_fixed<24, 1, SC_RND, SC_SAT> sample_t;
 typedef ap_fixed<24, 1, SC_RND, SC_SAT> result_t;
+#pragma empty_line
+/*static coeff_t coeffs[5] = {
+	0.006437504285881,//8314060,
+	0,//-16558260,
+	-0.006437504285881,//8245108,
+	-(-1.987097752410524),//-(-16558260),
+	-(0.987124991428238)//-(8170561)
+};*/
 #pragma line 2 "Biquadv2/biquadv2.cpp" 2
 #pragma empty_line
-void biquadv2(inData_t inData, outData_t* outData) {
+void biquadv2(coeff_t b0_a0, coeff_t b1_a0, coeff_t b2_a0, coeff_t a1_a0, coeff_t a2_a0, inData_t inData, outData_t* outData) {
+#pragma empty_line
 #pragma HLS INTERFACE s_axilite port=outData bundle=biquadv2
 #pragma HLS INTERFACE s_axilite port=&inData bundle=biquadv2
+#pragma HLS INTERFACE s_axilite port=&b0_a0 bundle=biquadv2
+#pragma HLS INTERFACE s_axilite port=&b1_a0 bundle=biquadv2
+#pragma HLS INTERFACE s_axilite port=&b2_a0 bundle=biquadv2
+#pragma HLS INTERFACE s_axilite port=&a1_a0 bundle=biquadv2
+#pragma HLS INTERFACE s_axilite port=&a2_a0 bundle=biquadv2
 #pragma HLS INTERFACE s_axilite port=return bundle=biquadv2
- const coeff_t coeffs[5] = {
-  0.006437504285881,//8314060,
-  0,//-16558260,
-  -0.006437504285881,//8245108,
-  -(-1.987097752410524),//-(-16558260),
-  -(0.987124991428238)//-(8170561)
-    };
-_ssdm_SpecConstant(coeffs);
-#pragma line 13 "Biquadv2/biquadv2.cpp"
-
+ static coeff_t coeffs[5];
+ //Set parameters
+ coeffs[0] = b0_a0;
+ coeffs[1] = b1_a0;
+ coeffs[2] = b2_a0;
+ coeffs[3] = a1_a0;
+ coeffs[4] = a2_a0;
+#pragma empty_line
+ //coeffs[0] = 0.006437504285881;//8314060,
+ //coeffs[1] = 0;//-16558260,
+ //coeffs[2] = -0.006437504285881;//8245108,
+ //coeffs[3] = -(-1.987097752410524);//-(-16558260),
+ //coeffs[4] = -(0.987124991428238);//-(8170561)
 #pragma empty_line
  static sample_t samples[5]; //STATIC is very important since this array should be persistant across runs!
     samples[0] = inData; //x0

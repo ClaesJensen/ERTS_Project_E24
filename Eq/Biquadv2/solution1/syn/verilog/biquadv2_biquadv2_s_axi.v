@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module biquadv2_biquadv2_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 5,
+    C_S_AXI_ADDR_WIDTH = 7,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -38,6 +38,11 @@ module biquadv2_biquadv2_s_axi
     input  wire                          ap_done,
     input  wire                          ap_ready,
     input  wire                          ap_idle,
+    output wire [26:0]                   b0_a0_V,
+    output wire [26:0]                   b1_a0_V,
+    output wire [26:0]                   b2_a0_V,
+    output wire [26:0]                   a1_a0_V,
+    output wire [26:0]                   a2_a0_V,
     output wire [23:0]                   inData_V,
     input  wire [23:0]                   outData_V,
     input  wire                          outData_V_ap_vld
@@ -61,28 +66,58 @@ module biquadv2_biquadv2_s_axi
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of inData_V
-//        bit 23~0 - inData_V[23:0] (Read/Write)
+// 0x10 : Data signal of b0_a0_V
+//        bit 26~0 - b0_a0_V[26:0] (Read/Write)
 //        others   - reserved
 // 0x14 : reserved
-// 0x18 : Data signal of outData_V
+// 0x18 : Data signal of b1_a0_V
+//        bit 26~0 - b1_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x1c : reserved
+// 0x20 : Data signal of b2_a0_V
+//        bit 26~0 - b2_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x24 : reserved
+// 0x28 : Data signal of a1_a0_V
+//        bit 26~0 - a1_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x2c : reserved
+// 0x30 : Data signal of a2_a0_V
+//        bit 26~0 - a2_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x34 : reserved
+// 0x38 : Data signal of inData_V
+//        bit 23~0 - inData_V[23:0] (Read/Write)
+//        others   - reserved
+// 0x3c : reserved
+// 0x40 : Data signal of outData_V
 //        bit 23~0 - outData_V[23:0] (Read)
 //        others   - reserved
-// 0x1c : Control signal of outData_V
+// 0x44 : Control signal of outData_V
 //        bit 0  - outData_V_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL          = 5'h00,
-    ADDR_GIE              = 5'h04,
-    ADDR_IER              = 5'h08,
-    ADDR_ISR              = 5'h0c,
-    ADDR_INDATA_V_DATA_0  = 5'h10,
-    ADDR_INDATA_V_CTRL    = 5'h14,
-    ADDR_OUTDATA_V_DATA_0 = 5'h18,
-    ADDR_OUTDATA_V_CTRL   = 5'h1c,
+    ADDR_AP_CTRL          = 7'h00,
+    ADDR_GIE              = 7'h04,
+    ADDR_IER              = 7'h08,
+    ADDR_ISR              = 7'h0c,
+    ADDR_B0_A0_V_DATA_0   = 7'h10,
+    ADDR_B0_A0_V_CTRL     = 7'h14,
+    ADDR_B1_A0_V_DATA_0   = 7'h18,
+    ADDR_B1_A0_V_CTRL     = 7'h1c,
+    ADDR_B2_A0_V_DATA_0   = 7'h20,
+    ADDR_B2_A0_V_CTRL     = 7'h24,
+    ADDR_A1_A0_V_DATA_0   = 7'h28,
+    ADDR_A1_A0_V_CTRL     = 7'h2c,
+    ADDR_A2_A0_V_DATA_0   = 7'h30,
+    ADDR_A2_A0_V_CTRL     = 7'h34,
+    ADDR_INDATA_V_DATA_0  = 7'h38,
+    ADDR_INDATA_V_CTRL    = 7'h3c,
+    ADDR_OUTDATA_V_DATA_0 = 7'h40,
+    ADDR_OUTDATA_V_CTRL   = 7'h44,
     WRIDLE                = 2'd0,
     WRDATA                = 2'd1,
     WRRESP                = 2'd2,
@@ -90,7 +125,7 @@ localparam
     RDIDLE                = 2'd0,
     RDDATA                = 2'd1,
     RDRESET               = 2'd2,
-    ADDR_BITS         = 5;
+    ADDR_BITS         = 7;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -113,6 +148,11 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
+    reg  [26:0]                   int_b0_a0_V = 'b0;
+    reg  [26:0]                   int_b1_a0_V = 'b0;
+    reg  [26:0]                   int_b2_a0_V = 'b0;
+    reg  [26:0]                   int_a1_a0_V = 'b0;
+    reg  [26:0]                   int_a2_a0_V = 'b0;
     reg  [23:0]                   int_inData_V = 'b0;
     reg  [23:0]                   int_outData_V = 'b0;
     reg                           int_outData_V_ap_vld;
@@ -223,6 +263,21 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
+                ADDR_B0_A0_V_DATA_0: begin
+                    rdata <= int_b0_a0_V[26:0];
+                end
+                ADDR_B1_A0_V_DATA_0: begin
+                    rdata <= int_b1_a0_V[26:0];
+                end
+                ADDR_B2_A0_V_DATA_0: begin
+                    rdata <= int_b2_a0_V[26:0];
+                end
+                ADDR_A1_A0_V_DATA_0: begin
+                    rdata <= int_a1_a0_V[26:0];
+                end
+                ADDR_A2_A0_V_DATA_0: begin
+                    rdata <= int_a2_a0_V[26:0];
+                end
                 ADDR_INDATA_V_DATA_0: begin
                     rdata <= int_inData_V[23:0];
                 end
@@ -243,6 +298,11 @@ assign interrupt    = int_gie & (|int_isr);
 assign ap_start     = int_ap_start;
 assign int_ap_idle  = ap_idle;
 assign int_ap_ready = ap_ready;
+assign b0_a0_V      = int_b0_a0_V;
+assign b1_a0_V      = int_b1_a0_V;
+assign b2_a0_V      = int_b2_a0_V;
+assign a1_a0_V      = int_a1_a0_V;
+assign a2_a0_V      = int_a2_a0_V;
 assign inData_V     = int_inData_V;
 // int_ap_start
 always @(posedge ACLK) begin
@@ -319,6 +379,56 @@ always @(posedge ACLK) begin
             int_isr[1] <= 1'b1;
         else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
             int_isr[1] <= int_isr[1] ^ WDATA[1]; // toggle on write
+    end
+end
+
+// int_b0_a0_V[26:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_b0_a0_V[26:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_B0_A0_V_DATA_0)
+            int_b0_a0_V[26:0] <= (WDATA[31:0] & wmask) | (int_b0_a0_V[26:0] & ~wmask);
+    end
+end
+
+// int_b1_a0_V[26:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_b1_a0_V[26:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_B1_A0_V_DATA_0)
+            int_b1_a0_V[26:0] <= (WDATA[31:0] & wmask) | (int_b1_a0_V[26:0] & ~wmask);
+    end
+end
+
+// int_b2_a0_V[26:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_b2_a0_V[26:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_B2_A0_V_DATA_0)
+            int_b2_a0_V[26:0] <= (WDATA[31:0] & wmask) | (int_b2_a0_V[26:0] & ~wmask);
+    end
+end
+
+// int_a1_a0_V[26:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_a1_a0_V[26:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_A1_A0_V_DATA_0)
+            int_a1_a0_V[26:0] <= (WDATA[31:0] & wmask) | (int_a1_a0_V[26:0] & ~wmask);
+    end
+end
+
+// int_a2_a0_V[26:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_a2_a0_V[26:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_A2_A0_V_DATA_0)
+            int_a2_a0_V[26:0] <= (WDATA[31:0] & wmask) | (int_a2_a0_V[26:0] & ~wmask);
     end
 end
 

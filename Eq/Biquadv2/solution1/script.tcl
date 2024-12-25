@@ -5,8 +5,8 @@
 ############################################################
 open_project Biquadv2
 set_top biquadv2
-add_files Biquadv2/biquadv2.hpp
 add_files Biquadv2/biquadv2.cpp
+add_files Biquadv2/biquadv2.hpp
 add_files -tb Biquadv2/biquadv2_test.cpp
 open_solution "solution1"
 set_part {xc7z010clg400-1} -tool vivado

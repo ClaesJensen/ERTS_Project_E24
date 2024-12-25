@@ -6,7 +6,7 @@
 <Project Version="7" Minor="20" Path="C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2/solution1/impl/verilog/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="7104bf14870d4c48a1e7c13bf81f49ae"/>
+    <Option Name="Id" Val="5f0ea21aff9d4bb2908cffc04e630d38"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -64,14 +64,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/biquadv2_coeffs.v">
+      <File Path="$PPRDIR/biquadv2_coeffs_V.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/biquadv2_mul_24s_bkb.v">
+      <File Path="$PPRDIR/biquadv2_mul_27s_bkb.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

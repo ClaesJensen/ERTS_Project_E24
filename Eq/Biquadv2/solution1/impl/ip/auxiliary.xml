@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="biquadv2" xd:componentRef="biquadv2" xd:initiationInterval="39" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="biquadv2" xd:componentRef="biquadv2" xd:initiationInterval="41" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="inData" xd:originalName="inData" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="24"/>
-  <xd:arg xd:name="*(outData)" xd:originalName="outData" xd:direction="out" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x18" xd:statusOffset="0x1C" xd:handshakeRef="ap_vld" xd:dataWidth="24"/>
-  <xd:latencyEstimates xd:best-case="38" xd:worst-case="38" xd:average-case="38"/>
-  <xd:resourceEstimates xd:LUT="606" xd:FF="759" xd:BRAM="2" xd:DSP="3"/>
+  <xd:arg xd:name="b0_a0" xd:originalName="b0_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="b1_a0" xd:originalName="b1_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="b2_a0" xd:originalName="b2_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="a1_a0" xd:originalName="a1_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="a2_a0" xd:originalName="a2_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="inData" xd:originalName="inData" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x38" xd:handshakeRef="ap_none" xd:dataWidth="24"/>
+  <xd:arg xd:name="*(outData)" xd:originalName="outData" xd:direction="out" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x40" xd:statusOffset="0x44" xd:handshakeRef="ap_vld" xd:dataWidth="24"/>
+  <xd:latencyEstimates xd:best-case="40" xd:worst-case="40" xd:average-case="40"/>
+  <xd:resourceEstimates xd:LUT="1041" xd:FF="1011" xd:BRAM="4" xd:DSP="3"/>
 </xd:acceleratorMap>

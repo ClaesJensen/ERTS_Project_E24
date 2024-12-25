@@ -1,0 +1,103 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>in0b0_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>in0b1_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>in0b2_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>in0a1_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>in0a2_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>out0b0_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>out0b1_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>out0b2_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>out0a1_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>out0a2_a0_V</name>
+<CType>
+<TypeName>ap_fixed 27 3 0 0 0</TypeName>
+<TypeWidth>27</TypeWidth>
+<PhysicalWidth>27</PhysicalWidth>
+</CType>
+<CFractionWidth>24</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+

@@ -17,15 +17,15 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.28</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.42</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>38</Best-caseLatency>
-<Average-caseLatency>38</Average-caseLatency>
-<Worst-caseLatency>38</Worst-caseLatency>
-<Interval-min>39</Interval-min>
-<Interval-max>39</Interval-max>
+<Best-caseLatency>40</Best-caseLatency>
+<Average-caseLatency>40</Average-caseLatency>
+<Worst-caseLatency>40</Worst-caseLatency>
+<Interval-min>41</Interval-min>
+<Interval-max>41</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Loop1>
@@ -38,10 +38,10 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>2</BRAM_18K>
+<BRAM_18K>4</BRAM_18K>
 <DSP48E>3</DSP48E>
-<FF>759</FF>
-<LUT>606</LUT>
+<FF>1011</FF>
+<LUT>1041</LUT>
 </Resources>
 <AvailableResources>
 <BRAM_18K>120</BRAM_18K>
@@ -86,7 +86,7 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>7</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -177,7 +177,7 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>5</Bits>
+<Bits>7</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="biquadv2start.cpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2Start\biquadv2start.cpp"/>
+    <originFiles name="biquadv2start.hpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2Start\biquadv2start.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="biquadv2start_test.cpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2Start\biquadv2start_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

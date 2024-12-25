@@ -76,6 +76,91 @@ void XBiquadv2_DisableAutoRestart(XBiquadv2 *InstancePtr) {
     XBiquadv2_WriteReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_AP_CTRL, 0);
 }
 
+void XBiquadv2_Set_b0_a0_V(XBiquadv2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBiquadv2_WriteReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_B0_A0_V_DATA, Data);
+}
+
+u32 XBiquadv2_Get_b0_a0_V(XBiquadv2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBiquadv2_ReadReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_B0_A0_V_DATA);
+    return Data;
+}
+
+void XBiquadv2_Set_b1_a0_V(XBiquadv2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBiquadv2_WriteReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_B1_A0_V_DATA, Data);
+}
+
+u32 XBiquadv2_Get_b1_a0_V(XBiquadv2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBiquadv2_ReadReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_B1_A0_V_DATA);
+    return Data;
+}
+
+void XBiquadv2_Set_b2_a0_V(XBiquadv2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBiquadv2_WriteReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_B2_A0_V_DATA, Data);
+}
+
+u32 XBiquadv2_Get_b2_a0_V(XBiquadv2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBiquadv2_ReadReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_B2_A0_V_DATA);
+    return Data;
+}
+
+void XBiquadv2_Set_a1_a0_V(XBiquadv2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBiquadv2_WriteReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_A1_A0_V_DATA, Data);
+}
+
+u32 XBiquadv2_Get_a1_a0_V(XBiquadv2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBiquadv2_ReadReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_A1_A0_V_DATA);
+    return Data;
+}
+
+void XBiquadv2_Set_a2_a0_V(XBiquadv2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XBiquadv2_WriteReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_A2_A0_V_DATA, Data);
+}
+
+u32 XBiquadv2_Get_a2_a0_V(XBiquadv2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XBiquadv2_ReadReg(InstancePtr->Biquadv2_BaseAddress, XBIQUADV2_BIQUADV2_ADDR_A2_A0_V_DATA);
+    return Data;
+}
+
 void XBiquadv2_Set_inData_V(XBiquadv2 *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

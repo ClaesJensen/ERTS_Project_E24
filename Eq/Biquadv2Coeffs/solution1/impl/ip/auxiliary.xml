@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="Biquadv2coeffs" xd:componentRef="Biquadv2coeffs" xd:initiationInterval="1" xd:clockPeriod="10.000000" xd:sequential="false" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="in0b0_a0" xd:originalName="in0b0_a0" xd:direction="in" xd:interfaceRef="s_axi_coeffs" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="in0b1_a0" xd:originalName="in0b1_a0" xd:direction="in" xd:interfaceRef="s_axi_coeffs" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="in0b2_a0" xd:originalName="in0b2_a0" xd:direction="in" xd:interfaceRef="s_axi_coeffs" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="in0a1_a0" xd:originalName="in0a1_a0" xd:direction="in" xd:interfaceRef="s_axi_coeffs" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="in0a2_a0" xd:originalName="in0a2_a0" xd:direction="in" xd:interfaceRef="s_axi_coeffs" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="*(out0b0_a0)" xd:originalName="out0b0_a0" xd:direction="out" xd:interfaceRef="out0b0_a0_V" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="27" xd:firstOut="0"/>
+  <xd:arg xd:name="*(out0b1_a0)" xd:originalName="out0b1_a0" xd:direction="out" xd:interfaceRef="out0b1_a0_V" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="27" xd:firstOut="0"/>
+  <xd:arg xd:name="*(out0b2_a0)" xd:originalName="out0b2_a0" xd:direction="out" xd:interfaceRef="out0b2_a0_V" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="27" xd:firstOut="0"/>
+  <xd:arg xd:name="*(out0a1_a0)" xd:originalName="out0a1_a0" xd:direction="out" xd:interfaceRef="out0a1_a0_V" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="27" xd:firstOut="0"/>
+  <xd:arg xd:name="*(out0a2_a0)" xd:originalName="out0a2_a0" xd:direction="out" xd:interfaceRef="out0a2_a0_V" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="27" xd:firstOut="0"/>
+  <xd:latencyEstimates xd:best-case="0" xd:worst-case="0" xd:average-case="0"/>
+  <xd:resourceEstimates xd:LUT="310" xd:FF="195" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

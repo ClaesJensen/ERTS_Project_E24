@@ -24,14 +24,34 @@
 //        bit 0  - Channel 0 (ap_done)
 //        bit 1  - Channel 1 (ap_ready)
 //        others - reserved
-// 0x10 : Data signal of inData_V
-//        bit 23~0 - inData_V[23:0] (Read/Write)
+// 0x10 : Data signal of b0_a0_V
+//        bit 26~0 - b0_a0_V[26:0] (Read/Write)
 //        others   - reserved
 // 0x14 : reserved
-// 0x18 : Data signal of outData_V
+// 0x18 : Data signal of b1_a0_V
+//        bit 26~0 - b1_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x1c : reserved
+// 0x20 : Data signal of b2_a0_V
+//        bit 26~0 - b2_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x24 : reserved
+// 0x28 : Data signal of a1_a0_V
+//        bit 26~0 - a1_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x2c : reserved
+// 0x30 : Data signal of a2_a0_V
+//        bit 26~0 - a2_a0_V[26:0] (Read/Write)
+//        others   - reserved
+// 0x34 : reserved
+// 0x38 : Data signal of inData_V
+//        bit 23~0 - inData_V[23:0] (Read/Write)
+//        others   - reserved
+// 0x3c : reserved
+// 0x40 : Data signal of outData_V
 //        bit 23~0 - outData_V[23:0] (Read)
 //        others   - reserved
-// 0x1c : Control signal of outData_V
+// 0x44 : Control signal of outData_V
 //        bit 0  - outData_V_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -40,9 +60,19 @@
 #define XBIQUADV2_BIQUADV2_ADDR_GIE            0x04
 #define XBIQUADV2_BIQUADV2_ADDR_IER            0x08
 #define XBIQUADV2_BIQUADV2_ADDR_ISR            0x0c
-#define XBIQUADV2_BIQUADV2_ADDR_INDATA_V_DATA  0x10
+#define XBIQUADV2_BIQUADV2_ADDR_B0_A0_V_DATA   0x10
+#define XBIQUADV2_BIQUADV2_BITS_B0_A0_V_DATA   27
+#define XBIQUADV2_BIQUADV2_ADDR_B1_A0_V_DATA   0x18
+#define XBIQUADV2_BIQUADV2_BITS_B1_A0_V_DATA   27
+#define XBIQUADV2_BIQUADV2_ADDR_B2_A0_V_DATA   0x20
+#define XBIQUADV2_BIQUADV2_BITS_B2_A0_V_DATA   27
+#define XBIQUADV2_BIQUADV2_ADDR_A1_A0_V_DATA   0x28
+#define XBIQUADV2_BIQUADV2_BITS_A1_A0_V_DATA   27
+#define XBIQUADV2_BIQUADV2_ADDR_A2_A0_V_DATA   0x30
+#define XBIQUADV2_BIQUADV2_BITS_A2_A0_V_DATA   27
+#define XBIQUADV2_BIQUADV2_ADDR_INDATA_V_DATA  0x38
 #define XBIQUADV2_BIQUADV2_BITS_INDATA_V_DATA  24
-#define XBIQUADV2_BIQUADV2_ADDR_OUTDATA_V_DATA 0x18
+#define XBIQUADV2_BIQUADV2_ADDR_OUTDATA_V_DATA 0x40
 #define XBIQUADV2_BIQUADV2_BITS_OUTDATA_V_DATA 24
-#define XBIQUADV2_BIQUADV2_ADDR_OUTDATA_V_CTRL 0x1c
+#define XBIQUADV2_BIQUADV2_ADDR_OUTDATA_V_CTRL 0x44
 

@@ -21,8 +21,12 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../IP"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2Start/solution1/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2End/solution1/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2Coeffs/solution1/impl/ip"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2/solution1/impl/ip"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquad/Biquad/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2Between/solution1/impl/ip"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>

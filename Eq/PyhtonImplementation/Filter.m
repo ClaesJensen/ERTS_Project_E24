@@ -8,10 +8,10 @@ t = [1/fs:1/fs:duration];
 % presented/calculated in "Notch filter.mcdx".
 
 % Create filter coefficients
-f0 = 40; %hz
-%Q = 0.7071;
-BW = 3; % In Octaves!
-dbGain = -10; % Does not matter in a notch filter!
+f0 = 10000; %hz
+Q = 4;
+%BW = 3; % In Octaves!
+dbGain = -40; % Does not matter in a notch filter!
 
 % Note that f0 is the target frequency for the filter.
 
@@ -21,16 +21,15 @@ r_p = 0.9; %Pole unit circle distance.
 
 A = 10^(dbGain/40);
 w0 = 2 * pi * f0/fs;
-%alpha = sin(w0) / (2 * Q); %Q
-alpha = sin(w0) * sinh((log(2)/2) * BW * (w0/sin(w0))); %BW
+alpha = sin(w0) / (2 * Q); %Q
+%alpha = sin(w0) * sinh((log(2)/2) * BW * (w0/sin(w0))); %BW
 
-%Bandpass
-b0 = alpha;
-b1 = 0;
-b2 = -alpha;
-a0 = 1 + alpha;
+b0 = 1 + alpha * A;
+b1 = -2*cos(w0);
+b2 = 1 - alpha * A;
+a0 = 1 + alpha/A;
 a1 = -2*cos(w0);
-a2 = 1 - alpha;
+a2 = 1 - alpha/A;
 
 b = [b0, b1, b2];
 a = [a0, a1, a2];
@@ -40,7 +39,7 @@ figure(7)
 freqz(b,a, 1024, fs/2*pi)
 
 %% Convert to fixed point
-frac = 21;
+frac = 24;
 
 f = 1000;
 signal = sin(2*pi*f*t);
@@ -134,6 +133,30 @@ plot(t, fpsignal, color='b')
 hold("on");
 plot(t, resultfpsignal, color='r')
 hold("off")
+
+%% Stuff
+b0 = 0.00391608;
+b1 = 0.00783215;
+b2 = 0.00391608;
+a0 = 1;
+a1 = -1.81531792;
+a2 = 0.83098222;
+
+frac = 23;
+
+b0_a0 = int64(b0 * (2^frac - 1))
+b1_a0 = int64(b1 * (2^frac - 1))
+b2_a0 = int64(b2 * (2^frac - 1))
+a1_a0 = int64(-a1 * (2^frac - 1))
+a2_a0 = int64(-a2 * (2^frac - 1))
+
+b = [b0, b1, b2];
+a = [a0, a1, a2];
+figure(6)
+zplane(b, a)
+figure(7)
+freqz(b,a, 1024, fs/2*pi)
+
 %% Filter:
 % See mathcad prime document "Notch filter.mcdx" for equations.
 % y(n) = b0*x(n) - b1*x(n-1) + b2*x(n-2) + a1*y(n-1) - a2*y(n-2)

@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity biquadv2_biquadv2_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 5;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -41,6 +41,11 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
+    b0_a0_V               :out  STD_LOGIC_VECTOR(26 downto 0);
+    b1_a0_V               :out  STD_LOGIC_VECTOR(26 downto 0);
+    b2_a0_V               :out  STD_LOGIC_VECTOR(26 downto 0);
+    a1_a0_V               :out  STD_LOGIC_VECTOR(26 downto 0);
+    a2_a0_V               :out  STD_LOGIC_VECTOR(26 downto 0);
     inData_V              :out  STD_LOGIC_VECTOR(23 downto 0);
     outData_V             :in   STD_LOGIC_VECTOR(23 downto 0);
     outData_V_ap_vld      :in   STD_LOGIC
@@ -66,14 +71,34 @@ end entity biquadv2_biquadv2_s_axi;
 --        bit 0  - Channel 0 (ap_done)
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
--- 0x10 : Data signal of inData_V
---        bit 23~0 - inData_V[23:0] (Read/Write)
+-- 0x10 : Data signal of b0_a0_V
+--        bit 26~0 - b0_a0_V[26:0] (Read/Write)
 --        others   - reserved
 -- 0x14 : reserved
--- 0x18 : Data signal of outData_V
+-- 0x18 : Data signal of b1_a0_V
+--        bit 26~0 - b1_a0_V[26:0] (Read/Write)
+--        others   - reserved
+-- 0x1c : reserved
+-- 0x20 : Data signal of b2_a0_V
+--        bit 26~0 - b2_a0_V[26:0] (Read/Write)
+--        others   - reserved
+-- 0x24 : reserved
+-- 0x28 : Data signal of a1_a0_V
+--        bit 26~0 - a1_a0_V[26:0] (Read/Write)
+--        others   - reserved
+-- 0x2c : reserved
+-- 0x30 : Data signal of a2_a0_V
+--        bit 26~0 - a2_a0_V[26:0] (Read/Write)
+--        others   - reserved
+-- 0x34 : reserved
+-- 0x38 : Data signal of inData_V
+--        bit 23~0 - inData_V[23:0] (Read/Write)
+--        others   - reserved
+-- 0x3c : reserved
+-- 0x40 : Data signal of outData_V
 --        bit 23~0 - outData_V[23:0] (Read)
 --        others   - reserved
--- 0x1c : Control signal of outData_V
+-- 0x44 : Control signal of outData_V
 --        bit 0  - outData_V_ap_vld (Read/COR)
 --        others - reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -87,11 +112,21 @@ architecture behave of biquadv2_biquadv2_s_axi is
     constant ADDR_GIE              : INTEGER := 16#04#;
     constant ADDR_IER              : INTEGER := 16#08#;
     constant ADDR_ISR              : INTEGER := 16#0c#;
-    constant ADDR_INDATA_V_DATA_0  : INTEGER := 16#10#;
-    constant ADDR_INDATA_V_CTRL    : INTEGER := 16#14#;
-    constant ADDR_OUTDATA_V_DATA_0 : INTEGER := 16#18#;
-    constant ADDR_OUTDATA_V_CTRL   : INTEGER := 16#1c#;
-    constant ADDR_BITS         : INTEGER := 5;
+    constant ADDR_B0_A0_V_DATA_0   : INTEGER := 16#10#;
+    constant ADDR_B0_A0_V_CTRL     : INTEGER := 16#14#;
+    constant ADDR_B1_A0_V_DATA_0   : INTEGER := 16#18#;
+    constant ADDR_B1_A0_V_CTRL     : INTEGER := 16#1c#;
+    constant ADDR_B2_A0_V_DATA_0   : INTEGER := 16#20#;
+    constant ADDR_B2_A0_V_CTRL     : INTEGER := 16#24#;
+    constant ADDR_A1_A0_V_DATA_0   : INTEGER := 16#28#;
+    constant ADDR_A1_A0_V_CTRL     : INTEGER := 16#2c#;
+    constant ADDR_A2_A0_V_DATA_0   : INTEGER := 16#30#;
+    constant ADDR_A2_A0_V_CTRL     : INTEGER := 16#34#;
+    constant ADDR_INDATA_V_DATA_0  : INTEGER := 16#38#;
+    constant ADDR_INDATA_V_CTRL    : INTEGER := 16#3c#;
+    constant ADDR_OUTDATA_V_DATA_0 : INTEGER := 16#40#;
+    constant ADDR_OUTDATA_V_CTRL   : INTEGER := 16#44#;
+    constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -113,6 +148,11 @@ architecture behave of biquadv2_biquadv2_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
+    signal int_b0_a0_V         : UNSIGNED(26 downto 0) := (others => '0');
+    signal int_b1_a0_V         : UNSIGNED(26 downto 0) := (others => '0');
+    signal int_b2_a0_V         : UNSIGNED(26 downto 0) := (others => '0');
+    signal int_a1_a0_V         : UNSIGNED(26 downto 0) := (others => '0');
+    signal int_a2_a0_V         : UNSIGNED(26 downto 0) := (others => '0');
     signal int_inData_V        : UNSIGNED(23 downto 0) := (others => '0');
     signal int_outData_V       : UNSIGNED(23 downto 0) := (others => '0');
     signal int_outData_V_ap_vld : STD_LOGIC;
@@ -237,6 +277,16 @@ begin
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
+                    when ADDR_B0_A0_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_b0_a0_V(26 downto 0), 32);
+                    when ADDR_B1_A0_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_b1_a0_V(26 downto 0), 32);
+                    when ADDR_B2_A0_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_b2_a0_V(26 downto 0), 32);
+                    when ADDR_A1_A0_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_a1_a0_V(26 downto 0), 32);
+                    when ADDR_A2_A0_V_DATA_0 =>
+                        rdata_data <= RESIZE(int_a2_a0_V(26 downto 0), 32);
                     when ADDR_INDATA_V_DATA_0 =>
                         rdata_data <= RESIZE(int_inData_V(23 downto 0), 32);
                     when ADDR_OUTDATA_V_DATA_0 =>
@@ -256,6 +306,11 @@ begin
     ap_start             <= int_ap_start;
     int_ap_idle          <= ap_idle;
     int_ap_ready         <= ap_ready;
+    b0_a0_V              <= STD_LOGIC_VECTOR(int_b0_a0_V);
+    b1_a0_V              <= STD_LOGIC_VECTOR(int_b1_a0_V);
+    b2_a0_V              <= STD_LOGIC_VECTOR(int_b2_a0_V);
+    a1_a0_V              <= STD_LOGIC_VECTOR(int_a1_a0_V);
+    a2_a0_V              <= STD_LOGIC_VECTOR(int_a2_a0_V);
     inData_V             <= STD_LOGIC_VECTOR(int_inData_V);
 
     process (ACLK)
@@ -352,6 +407,61 @@ begin
                     int_isr(1) <= '1';
                 elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
                     int_isr(1) <= int_isr(1) xor WDATA(1); -- toggle on write
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_B0_A0_V_DATA_0) then
+                    int_b0_a0_V(26 downto 0) <= (UNSIGNED(WDATA(26 downto 0)) and wmask(26 downto 0)) or ((not wmask(26 downto 0)) and int_b0_a0_V(26 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_B1_A0_V_DATA_0) then
+                    int_b1_a0_V(26 downto 0) <= (UNSIGNED(WDATA(26 downto 0)) and wmask(26 downto 0)) or ((not wmask(26 downto 0)) and int_b1_a0_V(26 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_B2_A0_V_DATA_0) then
+                    int_b2_a0_V(26 downto 0) <= (UNSIGNED(WDATA(26 downto 0)) and wmask(26 downto 0)) or ((not wmask(26 downto 0)) and int_b2_a0_V(26 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_A1_A0_V_DATA_0) then
+                    int_a1_a0_V(26 downto 0) <= (UNSIGNED(WDATA(26 downto 0)) and wmask(26 downto 0)) or ((not wmask(26 downto 0)) and int_a1_a0_V(26 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_A2_A0_V_DATA_0) then
+                    int_a2_a0_V(26 downto 0) <= (UNSIGNED(WDATA(26 downto 0)) and wmask(26 downto 0)) or ((not wmask(26 downto 0)) and int_a2_a0_V(26 downto 0));
                 end if;
             end if;
         end if;

@@ -17,6 +17,41 @@
 <directive functionLabel="" functionName="biquadv2" label="">
 <pragma name="INTERFACE">
 <option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="b0_a0"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="b1_a0"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="b2_a0"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="a1_a0"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="a2_a0"/>
+<option name="bundle" value="biquadv2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="biquadv2" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
 <option name="port" positionalBoolean="4" value="return"/>
 <option name="bundle" value="biquadv2"/>
 </pragma>

@@ -33141,22 +33141,39 @@ typedef ap_fixed<24, 1, SC_RND, SC_SAT> outData_t;
 typedef ap_fixed<27, 3, SC_RND, SC_SAT> coeff_t;
 typedef ap_fixed<24, 1, SC_RND, SC_SAT> sample_t;
 typedef ap_fixed<24, 1, SC_RND, SC_SAT> result_t;
+
+/*static coeff_t coeffs[5] = {
+	0.006437504285881,//8314060,
+	0,//-16558260,
+	-0.006437504285881,//8245108,
+	-(-1.987097752410524),//-(-16558260),
+	-(0.987124991428238)//-(8170561)
+};*/
 #2 "Biquadv2/biquadv2.cpp" 2
 
-void biquadv2(inData_t inData, outData_t* outData) {
+void biquadv2(coeff_t b0_a0, coeff_t b1_a0, coeff_t b2_a0, coeff_t a1_a0, coeff_t a2_a0, inData_t inData, outData_t* outData) {
+
 _ssdm_op_SpecInterface(outData, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(&inData, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&b0_a0, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&b1_a0, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&b2_a0, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&a1_a0, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&a2_a0, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "biquadv2", "", "", 0, 0, 0, 0, "", "");
- const coeff_t coeffs[5] = {
-  0.006437504285881,//8314060,
-  0,//-16558260,
-  -0.006437504285881,//8245108,
-  -(-1.987097752410524),//-(-16558260),
-  -(0.987124991428238)//-(8170561)
-    };
-_ssdm_SpecConstant(coeffs);
-#13 "Biquadv2/biquadv2.cpp"
+ static coeff_t coeffs[5];
+ //Set parameters
+ coeffs[0] = b0_a0;
+ coeffs[1] = b1_a0;
+ coeffs[2] = b2_a0;
+ coeffs[3] = a1_a0;
+ coeffs[4] = a2_a0;
 
+ //coeffs[0] = 0.006437504285881;//8314060,
+ //coeffs[1] = 0;//-16558260,
+ //coeffs[2] = -0.006437504285881;//8245108,
+ //coeffs[3] = -(-1.987097752410524);//-(-16558260),
+ //coeffs[4] = -(0.987124991428238);//-(8170561)
 
  static sample_t samples[5]; //STATIC is very important since this array should be persistant across runs!
     samples[0] = inData; //x0

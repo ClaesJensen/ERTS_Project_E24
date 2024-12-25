@@ -23,32 +23,59 @@
 
 /******************************************************************/
 
-/* Definitions for driver BIQUADV2 */
-#define XPAR_XBIQUADV2_NUM_INSTANCES 2
+/* Definitions for driver BIQUADV2BETWEEN */
+#define XPAR_XBIQUADV2BETWEEN_NUM_INSTANCES 1
 
-/* Definitions for peripheral BIQUADV2_0 */
-#define XPAR_BIQUADV2_0_DEVICE_ID 0
-#define XPAR_BIQUADV2_0_S_AXI_BIQUADV2_BASEADDR 0x43C10000
-#define XPAR_BIQUADV2_0_S_AXI_BIQUADV2_HIGHADDR 0x43C1FFFF
-
-
-/* Definitions for peripheral BIQUADV2_1 */
-#define XPAR_BIQUADV2_1_DEVICE_ID 1
-#define XPAR_BIQUADV2_1_S_AXI_BIQUADV2_BASEADDR 0x43C00000
-#define XPAR_BIQUADV2_1_S_AXI_BIQUADV2_HIGHADDR 0x43C0FFFF
+/* Definitions for peripheral PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT */
+#define XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_DEVICE_ID 0
+#define XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_S_AXI_BIQUADV2_BASEADDR 0x43C00000
+#define XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_S_AXI_BIQUADV2_HIGHADDR 0x43C0FFFF
 
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral BIQUADV2_0 */
-#define XPAR_XBIQUADV2_0_DEVICE_ID XPAR_BIQUADV2_0_DEVICE_ID
-#define XPAR_XBIQUADV2_0_S_AXI_BIQUADV2_BASEADDR 0x43C10000
-#define XPAR_XBIQUADV2_0_S_AXI_BIQUADV2_HIGHADDR 0x43C1FFFF
+/* Canonical definitions for peripheral PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT */
+#define XPAR_XBIQUADV2BETWEEN_0_DEVICE_ID XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_DEVICE_ID
+#define XPAR_XBIQUADV2BETWEEN_0_S_AXI_BIQUADV2_BASEADDR 0x43C00000
+#define XPAR_XBIQUADV2BETWEEN_0_S_AXI_BIQUADV2_HIGHADDR 0x43C0FFFF
 
-/* Canonical definitions for peripheral BIQUADV2_1 */
-#define XPAR_XBIQUADV2_1_DEVICE_ID XPAR_BIQUADV2_1_DEVICE_ID
-#define XPAR_XBIQUADV2_1_S_AXI_BIQUADV2_BASEADDR 0x43C00000
-#define XPAR_XBIQUADV2_1_S_AXI_BIQUADV2_HIGHADDR 0x43C0FFFF
+
+/******************************************************************/
+
+/* Definitions for driver BIQUADV2END */
+#define XPAR_XBIQUADV2END_NUM_INSTANCES 1
+
+/* Definitions for peripheral PARAMETRICEQ_BIQUADV2END_0 */
+#define XPAR_PARAMETRICEQ_BIQUADV2END_0_DEVICE_ID 0
+#define XPAR_PARAMETRICEQ_BIQUADV2END_0_S_AXI_BIQUADV2_BASEADDR 0x43C10000
+#define XPAR_PARAMETRICEQ_BIQUADV2END_0_S_AXI_BIQUADV2_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PARAMETRICEQ_BIQUADV2END_0 */
+#define XPAR_XBIQUADV2END_0_DEVICE_ID XPAR_PARAMETRICEQ_BIQUADV2END_0_DEVICE_ID
+#define XPAR_XBIQUADV2END_0_S_AXI_BIQUADV2_BASEADDR 0x43C10000
+#define XPAR_XBIQUADV2END_0_S_AXI_BIQUADV2_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver BIQUADV2START */
+#define XPAR_XBIQUADV2START_NUM_INSTANCES 1
+
+/* Definitions for peripheral PARAMETRICEQ_BIQUADV2START_0_LEFT */
+#define XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_DEVICE_ID 0
+#define XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_S_AXI_BIQUADV2_BASEADDR 0x43C20000
+#define XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_S_AXI_BIQUADV2_HIGHADDR 0x43C2FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PARAMETRICEQ_BIQUADV2START_0_LEFT */
+#define XPAR_XBIQUADV2START_0_DEVICE_ID XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_DEVICE_ID
+#define XPAR_XBIQUADV2START_0_S_AXI_BIQUADV2_BASEADDR 0x43C20000
+#define XPAR_XBIQUADV2START_0_S_AXI_BIQUADV2_HIGHADDR 0x43C2FFFF
 
 
 /******************************************************************/
@@ -200,7 +227,7 @@
 
 /* Definitions for peripheral ZYBO_AUDIO_CTRL_0 */
 #define XPAR_ZYBO_AUDIO_CTRL_0_BASEADDR 0x60000000
-#define XPAR_ZYBO_AUDIO_CTRL_0_HIGHADDR 0x6007FFFF
+#define XPAR_ZYBO_AUDIO_CTRL_0_HIGHADDR 0x7FFFFFFF
 
 
 /******************************************************************/
@@ -250,8 +277,7 @@
 /******************************************************************/
 
 /* Definitions for Fabric interrupts connected to ps7_scugic_0 */
-#define XPAR_FABRIC_BIQUADV2_0_INTERRUPT_INTR 61U
-#define XPAR_FABRIC_BIQUADV2_1_INTERRUPT_INTR 62U
+#define XPAR_FABRIC_PARAMETRICEQ_BIQUADV2END_0_INTERRUPT_INTR 61U
 
 /******************************************************************/
 

@@ -87,6 +87,16 @@ u32 XBiquadv2_IsReady(XBiquadv2 *InstancePtr);
 void XBiquadv2_EnableAutoRestart(XBiquadv2 *InstancePtr);
 void XBiquadv2_DisableAutoRestart(XBiquadv2 *InstancePtr);
 
+void XBiquadv2_Set_b0_a0_V(XBiquadv2 *InstancePtr, u32 Data);
+u32 XBiquadv2_Get_b0_a0_V(XBiquadv2 *InstancePtr);
+void XBiquadv2_Set_b1_a0_V(XBiquadv2 *InstancePtr, u32 Data);
+u32 XBiquadv2_Get_b1_a0_V(XBiquadv2 *InstancePtr);
+void XBiquadv2_Set_b2_a0_V(XBiquadv2 *InstancePtr, u32 Data);
+u32 XBiquadv2_Get_b2_a0_V(XBiquadv2 *InstancePtr);
+void XBiquadv2_Set_a1_a0_V(XBiquadv2 *InstancePtr, u32 Data);
+u32 XBiquadv2_Get_a1_a0_V(XBiquadv2 *InstancePtr);
+void XBiquadv2_Set_a2_a0_V(XBiquadv2 *InstancePtr, u32 Data);
+u32 XBiquadv2_Get_a2_a0_V(XBiquadv2 *InstancePtr);
 void XBiquadv2_Set_inData_V(XBiquadv2 *InstancePtr, u32 Data);
 u32 XBiquadv2_Get_inData_V(XBiquadv2 *InstancePtr);
 u32 XBiquadv2_Get_outData_V(XBiquadv2 *InstancePtr);

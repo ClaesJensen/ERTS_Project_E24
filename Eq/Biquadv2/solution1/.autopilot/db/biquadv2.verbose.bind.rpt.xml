@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'biquadv2'" level="0">
-<item name = "Date">Fri Dec 20 13:46:55 2024
+<item name = "Date">Sun Dec 22 21:59:44 2024
 </item>
 <item name = "Version">2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)</item>
 <item name = "Project">Biquadv2</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.28, 1.25</column>
+<column name="ap_clk">10.00, 8.42, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">38, 38, 39, 39, none</column>
+<column name="">40, 40, 41, 41, none</column>
 </table>
 </item>
 <item name = "Detail">

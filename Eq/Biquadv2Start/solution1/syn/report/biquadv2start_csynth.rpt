@@ -1,0 +1,280 @@
+
+
+================================================================
+== Vivado HLS Report for 'biquadv2start'
+================================================================
+* Date:           Mon Dec 23 23:05:01 2024
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        Biquadv2Start
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.42|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   49|   49|   50|   50|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                   |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- LOOP_PROCESSING  |   40|   40|         8|          -|          -|     5|    no    |
+        +-------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|DSP              |        -|      -|      -|      -|
+|Expression       |        -|      -|    518|    424|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        0|      3|    420|    586|
+|Memory           |        2|      -|      0|      0|
+|Multiplexer      |        -|      -|      -|    397|
+|Register         |        -|      -|    724|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        2|      3|   1662|   1407|
++-----------------+---------+-------+-------+-------+
+|Available        |      120|     80|  35200|  17600|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        1|      3|      4|      7|
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------+------------------------------+---------+-------+-----+-----+
+    |            Instance            |            Module            | BRAM_18K| DSP48E|  FF | LUT |
+    +--------------------------------+------------------------------+---------+-------+-----+-----+
+    |biquadv2start_biquadv2_s_axi_U  |biquadv2start_biquadv2_s_axi  |        0|      0|  255|  406|
+    |biquadv2start_mulcud_U0         |biquadv2start_mulcud          |        0|      3|  165|  180|
+    +--------------------------------+------------------------------+---------+-------+-----+-----+
+    |Total                           |                              |        0|      3|  420|  586|
+    +--------------------------------+------------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-----------+----------------------+---------+---+----+------+-----+------+-------------+
+    |   Memory  |        Module        | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-----------+----------------------+---------+---+----+------+-----+------+-------------+
+    |array_r_U  |biquadv2start_arrbkb  |        2|  0|   0|    15|   27|     1|          405|
+    +-----------+----------------------+---------+---+----+------+-----+------+-------------+
+    |Total      |                      |        2|  0|   0|    15|   27|     1|          405|
+    +-----------+----------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+-----+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E|  FF | LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+-----+----+------------+------------+
+    |addr1_fu_349_p2                   |     +    |      0|   17|   9|           4|           4|
+    |addr5_fu_334_p2                   |     +    |      0|   17|   9|           3|           4|
+    |i_V_fu_319_p2                     |     +    |      0|   14|   9|           3|           1|
+    |p_Val2_2_fu_387_p2                |     +    |      0|  158|  56|          51|          51|
+    |p_Val2_4_fu_422_p2                |     +    |      0|   77|  29|          24|          24|
+    |p_Val2_7_fu_581_p2                |     +    |      0|  158|  56|          51|          51|
+    |p_Val2_9_fu_616_p2                |     +    |      0|   77|  29|          24|          24|
+    |brmerge40_demorgan_i_1_fu_764_p2  |    and   |      0|    0|   2|           1|           1|
+    |brmerge40_demorgan_i_fu_541_p2    |    and   |      0|    0|   2|           1|           1|
+    |carry_1_fu_636_p2                 |    and   |      0|    0|   2|           1|           1|
+    |carry_fu_442_p2                   |    and   |      0|    0|   2|           1|           1|
+    |overflow_1_fu_758_p2              |    and   |      0|    0|   2|           1|           1|
+    |overflow_fu_535_p2                |    and   |      0|    0|   2|           1|           1|
+    |p_38_i_i1_fu_738_p2               |    and   |      0|    0|   2|           1|           1|
+    |p_38_i_i_fu_515_p2                |    and   |      0|    0|   2|           1|           1|
+    |p_41_i_i1_fu_727_p2               |    and   |      0|    0|   2|           1|           1|
+    |p_41_i_i_fu_504_p2                |    and   |      0|    0|   2|           1|           1|
+    |underflow_1_fu_781_p2             |    and   |      0|    0|   2|           1|           1|
+    |underflow_fu_558_p2               |    and   |      0|    0|   2|           1|           1|
+    |Range1_all_ones_1_fu_668_p2       |   icmp   |      0|    0|   1|           3|           2|
+    |Range1_all_ones_fu_474_p2         |   icmp   |      0|    0|   1|           3|           2|
+    |Range1_all_zeros_1_fu_674_p2      |   icmp   |      0|    0|   1|           3|           1|
+    |Range1_all_zeros_fu_480_p2        |   icmp   |      0|    0|   1|           3|           1|
+    |Range2_all_ones_1_fu_652_p2       |   icmp   |      0|    0|   1|           2|           2|
+    |Range2_all_ones_fu_458_p2         |   icmp   |      0|    0|   1|           2|           2|
+    |tmp_2_fu_313_p2                   |   icmp   |      0|    0|   1|           3|           3|
+    |ap_block_state16_io               |    or    |      0|    0|   2|           1|           1|
+    |brmerge_i_i1_fu_748_p2            |    or    |      0|    0|   2|           1|           1|
+    |brmerge_i_i_fu_525_p2             |    or    |      0|    0|   2|           1|           1|
+    |brmerge_i_i_i1_fu_786_p2          |    or    |      0|    0|   2|           1|           1|
+    |brmerge_i_i_i_fu_563_p2           |    or    |      0|    0|   2|           1|           1|
+    |tmp1_fu_680_p2                    |    or    |      0|    0|   2|           1|           1|
+    |tmp2_demorgan_fu_769_p2           |    or    |      0|    0|   2|           1|           1|
+    |tmp3_fu_792_p2                    |    or    |      0|    0|   2|           1|           1|
+    |tmp_demorgan_fu_546_p2            |    or    |      0|    0|   2|           1|           1|
+    |underflow_1_not_fu_796_p2         |    or    |      0|    0|   2|           1|           1|
+    |underflow_not_fu_684_p2           |    or    |      0|    0|   2|           1|           1|
+    |deleted_ones_1_fu_732_p3          |  select  |      0|    0|   2|           1|           1|
+    |deleted_ones_fu_509_p3            |  select  |      0|    0|   2|           1|           1|
+    |deleted_zeros_1_fu_716_p3         |  select  |      0|    0|   2|           1|           1|
+    |deleted_zeros_fu_493_p3           |  select  |      0|    0|   2|           1|           1|
+    |p_Val2_4_4_fu_695_p3              |  select  |      0|    0|  25|           1|          25|
+    |p_Val2_4_mux_fu_689_p3            |  select  |      0|    0|  24|           1|          23|
+    |p_Val2_9_5_fu_807_p3              |  select  |      0|    0|  25|           1|          25|
+    |p_Val2_9_mux_fu_801_p3            |  select  |      0|    0|  24|           1|          23|
+    |resultLeft_V_fu_701_p3            |  select  |      0|    0|  24|           1|          24|
+    |resultRight_V_fu_813_p3           |  select  |      0|    0|  24|           1|          24|
+    |p_not_i_i1_fu_742_p2              |    xor   |      0|    0|   2|           1|           2|
+    |p_not_i_i_fu_519_p2               |    xor   |      0|    0|   2|           1|           2|
+    |tmp2_fu_775_p2                    |    xor   |      0|    0|   2|           1|           2|
+    |tmp_12_fu_630_p2                  |    xor   |      0|    0|   2|           1|           2|
+    |tmp_15_fu_721_p2                  |    xor   |      0|    0|   2|           1|           2|
+    |tmp_16_fu_753_p2                  |    xor   |      0|    0|   2|           1|           2|
+    |tmp_1_fu_498_p2                   |    xor   |      0|    0|   2|           1|           2|
+    |tmp_9_fu_530_p2                   |    xor   |      0|    0|   2|           1|           2|
+    |tmp_fu_552_p2                     |    xor   |      0|    0|   2|           1|           2|
+    |tmp_s_fu_436_p2                   |    xor   |      0|    0|   2|           1|           2|
+    +----------------------------------+----------+-------+-----+----+------------+------------+
+    |Total                             |          |      0|  518| 424|         222|         363|
+    +----------------------------------+----------+-------+-----+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------+----+-----------+-----+-----------+
+    |                 Name                 | LUT| Input Size| Bits| Total Bits|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                             |  89|         18|    1|         18|
+    |ap_sig_ioackin_outDataLeft_V_ap_ack   |   9|          2|    1|          2|
+    |ap_sig_ioackin_outDataRight_V_ap_ack  |   9|          2|    1|          2|
+    |array_r_address0                      |  65|         12|    4|         48|
+    |array_r_address1                      |  55|         10|    4|         40|
+    |array_r_d0                            |  50|          9|   27|        243|
+    |array_r_d1                            |  45|          8|   27|        216|
+    |grp_fu_279_p0                         |  15|          3|   27|         81|
+    |grp_fu_279_p1                         |  15|          3|   24|         72|
+    |outDataLeft_V_blk_n                   |   9|          2|    1|          2|
+    |outDataRight_V_blk_n                  |   9|          2|    1|          2|
+    |p_Val2_5_reg_242                      |   9|          2|   24|         48|
+    |p_Val2_s_reg_255                      |   9|          2|   24|         48|
+    |p_s_reg_268                           |   9|          2|    3|          6|
+    +--------------------------------------+----+-----------+-----+-----------+
+    |Total                                 | 397|         77|  169|        828|
+    +--------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |OP1_V_reg_936                         |  51|   0|   51|          0|
+    |Range1_all_ones_1_reg_1073            |   1|   0|    1|          0|
+    |Range1_all_ones_reg_996               |   1|   0|    1|          0|
+    |Range1_all_zeros_1_reg_1080           |   1|   0|    1|          0|
+    |Range1_all_zeros_reg_1003             |   1|   0|    1|          0|
+    |Range2_all_ones_1_reg_1068            |   1|   0|    1|          0|
+    |Range2_all_ones_reg_991               |   1|   0|    1|          0|
+    |a1_a0_V_read_reg_878                  |  27|   0|   27|          0|
+    |a2_a0_V_read_reg_873                  |  27|   0|   27|          0|
+    |ap_CS_fsm                             |  17|   0|   17|          0|
+    |ap_reg_ioackin_outDataLeft_V_ap_ack   |   1|   0|    1|          0|
+    |ap_reg_ioackin_outDataRight_V_ap_ack  |   1|   0|    1|          0|
+    |array_load_4_reg_921                  |  27|   0|   27|          0|
+    |b2_a0_V_read_reg_883                  |  27|   0|   27|          0|
+    |brmerge40_demorgan_i_1_reg_1100       |   1|   0|    1|          0|
+    |brmerge40_demorgan_i_reg_1023         |   1|   0|    1|          0|
+    |brmerge_i_i_i1_reg_1110               |   1|   0|    1|          0|
+    |brmerge_i_i_i_reg_1033                |   1|   0|    1|          0|
+    |carry_1_reg_1061                      |   1|   0|    1|          0|
+    |carry_reg_984                         |   1|   0|    1|          0|
+    |i_V_reg_901                           |   3|   0|    3|          0|
+    |inDataLeft_V_read_reg_868             |  24|   0|   24|          0|
+    |inDataLeft_V_trunc_reg_888            |  24|   0|   27|          3|
+    |inDataRight_V_read_reg_863            |  24|   0|   24|          0|
+    |inDataRight_V_trunc_reg_893           |  24|   0|   27|          3|
+    |newsignbit_1_reg_1055                 |   1|   0|    1|          0|
+    |newsignbit_reg_978                    |   1|   0|    1|          0|
+    |p_38_i_i1_reg_1090                    |   1|   0|    1|          0|
+    |p_38_i_i_reg_1013                     |   1|   0|    1|          0|
+    |p_Val2_2_reg_961                      |  51|   0|   51|          0|
+    |p_Val2_4_reg_972                      |  24|   0|   24|          0|
+    |p_Val2_5_reg_242                      |  24|   0|   24|          0|
+    |p_Val2_7_reg_1038                     |  51|   0|   51|          0|
+    |p_Val2_9_reg_1049                     |  24|   0|   24|          0|
+    |p_Val2_s_reg_255                      |  24|   0|   24|          0|
+    |p_s_reg_268                           |   3|   0|    3|          0|
+    |reg_301                               |  51|   0|   51|          0|
+    |resultLeft_V_reg_1085                 |  24|   0|   24|          0|
+    |signbit_1_reg_1043                    |   1|   0|    1|          0|
+    |signbit_reg_966                       |   1|   0|    1|          0|
+    |tmp_16_reg_1095                       |   1|   0|    1|          0|
+    |tmp_17_reg_1125                       |  24|   0|   24|          0|
+    |tmp_18_reg_1130                       |  24|   0|   24|          0|
+    |tmp_19_reg_1135                       |  24|   0|   24|          0|
+    |tmp_20_reg_926                        |  24|   0|   24|          0|
+    |tmp_22_reg_951                        |   1|   0|    1|          0|
+    |tmp_26_reg_946                        |  24|   0|   24|          0|
+    |tmp_28_reg_1008                       |   1|   0|    1|          0|
+    |tmp_3_cast_reg_906                    |   3|   0|    4|          1|
+    |tmp_4_reg_1120                        |  24|   0|   24|          0|
+    |tmp_9_reg_1018                        |   1|   0|    1|          0|
+    |underflow_1_reg_1105                  |   1|   0|    1|          0|
+    |underflow_reg_1028                    |   1|   0|    1|          0|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 | 724|   0|  731|          7|
+    +--------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+--------------+----------------+--------------+
+|        RTL Ports       | Dir | Bits|   Protocol   |  Source Object |    C Type    |
++------------------------+-----+-----+--------------+----------------+--------------+
+|s_axi_biquadv2_AWVALID  |  in |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_AWREADY  | out |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_AWADDR   |  in |    7|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_WVALID   |  in |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_WREADY   | out |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_WDATA    |  in |   32|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_WSTRB    |  in |    4|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_ARVALID  |  in |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_ARREADY  | out |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_ARADDR   |  in |    7|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_RVALID   | out |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_RREADY   |  in |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_RDATA    | out |   32|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_RRESP    | out |    2|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_BVALID   | out |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_BREADY   |  in |    1|     s_axi    |    biquadv2    |    scalar    |
+|s_axi_biquadv2_BRESP    | out |    2|     s_axi    |    biquadv2    |    scalar    |
+|ap_clk                  |  in |    1| ap_ctrl_none |  biquadv2start | return value |
+|ap_rst_n                |  in |    1| ap_ctrl_none |  biquadv2start | return value |
+|outDataLeft_V           | out |   24|     ap_hs    |  outDataLeft_V |    pointer   |
+|outDataLeft_V_ap_vld    | out |    1|     ap_hs    |  outDataLeft_V |    pointer   |
+|outDataLeft_V_ap_ack    |  in |    1|     ap_hs    |  outDataLeft_V |    pointer   |
+|outDataRight_V          | out |   24|     ap_hs    | outDataRight_V |    pointer   |
+|outDataRight_V_ap_vld   | out |    1|     ap_hs    | outDataRight_V |    pointer   |
+|outDataRight_V_ap_ack   |  in |    1|     ap_hs    | outDataRight_V |    pointer   |
++------------------------+-----+-----+--------------+----------------+--------------+
+
