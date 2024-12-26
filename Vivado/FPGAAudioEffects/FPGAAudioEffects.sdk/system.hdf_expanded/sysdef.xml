@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Project Version="1" Minor="3" DIGEST="">
+	<TOOL_VERSION Version="2017.2"/>
+	<MODE Name="Post-Synthesis"/>
+	<SYSTEMINFO BOARD="digilentinc.com:zybo:1.0" PART="xc7z010clg400-1" ARCH="zynq" PACKAGE="clg400" DEVICE="7z010" SPEED="-1" LUT="17600" FF="35200" BRAM="60" DSP="80"/>
+	<HIERARCHY Name="system_wrapper"/>
+	<File Type="HW_HANDOFF" Name="system.hwh" DESIGN_HIERARCHY="system_i" BD_TYPE="DEFAULT_BD"/>
+	<File Type="BD_TCL" Name="system_bd.tcl"/>
+	<File Type="PS_FSBL_INIT" Name="ps7_init.c"/>
+	<File Type="PS_FSBL_INIT" Name="ps7_init.h"/>
+	<File Type="PS_FSBL_INIT_GPL" Name="ps7_init_gpl.c"/>
+	<File Type="PS_FSBL_INIT_GPL" Name="ps7_init_gpl.h"/>
+	<File Type="PS_INIT_HELP" Name="ps7_init.html"/>
+	<File Type="PS_XMD_INIT" Name="ps7_init.tcl"/>
+	<File Type="BIT" Name="system_wrapper.bit"/>
+	<DRIVERS>
+		<DRIVER IP_VLNV="xilinx.com:hls:biquadv2between:1.0">
+			<File PATH="drivers/biquadv2between_v1_0/data/biquadv2between.mdd"/>
+			<File PATH="drivers/biquadv2between_v1_0/data/biquadv2between.tcl"/>
+			<File PATH="drivers/biquadv2between_v1_0/src/Makefile"/>
+			<File PATH="drivers/biquadv2between_v1_0/src/xbiquadv2between.c"/>
+			<File PATH="drivers/biquadv2between_v1_0/src/xbiquadv2between.h"/>
+			<File PATH="drivers/biquadv2between_v1_0/src/xbiquadv2between_hw.h"/>
+			<File PATH="drivers/biquadv2between_v1_0/src/xbiquadv2between_linux.c"/>
+			<File PATH="drivers/biquadv2between_v1_0/src/xbiquadv2between_sinit.c"/>
+		</DRIVER>
+		<DRIVER IP_VLNV="xilinx.com:hls:biquadv2end:1.0">
+			<File PATH="drivers/biquadv2end_v1_0/data/biquadv2end.mdd"/>
+			<File PATH="drivers/biquadv2end_v1_0/data/biquadv2end.tcl"/>
+			<File PATH="drivers/biquadv2end_v1_0/src/Makefile"/>
+			<File PATH="drivers/biquadv2end_v1_0/src/xbiquadv2end.c"/>
+			<File PATH="drivers/biquadv2end_v1_0/src/xbiquadv2end.h"/>
+			<File PATH="drivers/biquadv2end_v1_0/src/xbiquadv2end_hw.h"/>
+			<File PATH="drivers/biquadv2end_v1_0/src/xbiquadv2end_linux.c"/>
+			<File PATH="drivers/biquadv2end_v1_0/src/xbiquadv2end_sinit.c"/>
+		</DRIVER>
+		<DRIVER IP_VLNV="xilinx.com:hls:biquadv2start:1.0">
+			<File PATH="drivers/biquadv2start_v1_0/data/biquadv2start.mdd"/>
+			<File PATH="drivers/biquadv2start_v1_0/data/biquadv2start.tcl"/>
+			<File PATH="drivers/biquadv2start_v1_0/src/Makefile"/>
+			<File PATH="drivers/biquadv2start_v1_0/src/xbiquadv2start.c"/>
+			<File PATH="drivers/biquadv2start_v1_0/src/xbiquadv2start.h"/>
+			<File PATH="drivers/biquadv2start_v1_0/src/xbiquadv2start_hw.h"/>
+			<File PATH="drivers/biquadv2start_v1_0/src/xbiquadv2start_linux.c"/>
+			<File PATH="drivers/biquadv2start_v1_0/src/xbiquadv2start_sinit.c"/>
+		</DRIVER>
+	</DRIVERS>
+	<USEDRESOURCES LUT="0" FF="3439" BRAM="3" DSP="6"/>
+</Project>
+

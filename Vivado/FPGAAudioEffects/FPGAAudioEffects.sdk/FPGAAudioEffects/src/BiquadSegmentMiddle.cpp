@@ -1,6 +1,11 @@
 #include "BiquadSegmentMiddle.hpp"
 
-BiquadSegmentMiddle::BiquadSegmentMiddle(uint32_t DeviceID) {
+BiquadSegmentMiddle::BiquadSegmentMiddle() {
+	this->isReady = false;
+}
+
+BiquadSegmentMiddle::BiquadSegmentMiddle(uint16_t DeviceID) {
+	xil_printf("%i\n", DeviceID);
 	if (this->InitBiquad(DeviceID) == XST_FAILURE) {
 		this->isReady = false;
 	}
@@ -9,7 +14,7 @@ BiquadSegmentMiddle::BiquadSegmentMiddle(uint32_t DeviceID) {
 	}
 }
 
-int BiquadSegmentMiddle::InitBiquad(uint32_t DeviceID) {
+int BiquadSegmentMiddle::InitBiquad(uint16_t DeviceID) {
 	XBiquadv2between_Config *cfg;
 	int status;
 	cfg = XBiquadv2between_LookupConfig(DeviceID);
@@ -34,6 +39,6 @@ void BiquadSegmentMiddle::SetCoefficients(int32_t b0_a0, int32_t b1_a0, int32_t 
 	XBiquadv2between_Set_b0_a0_V(&this->biquad, b0_a0);
 	XBiquadv2between_Set_b1_a0_V(&this->biquad, b1_a0);
 	XBiquadv2between_Set_b2_a0_V(&this->biquad, b2_a0);
-	XBiquadv2between_Set_a1_a0_V(&this->biquad, -(a1_a0));
-	XBiquadv2between_Set_a2_a0_V(&this->biquad, -(a2_a0));
+	XBiquadv2between_Set_a1_a0_V(&this->biquad, a1_a0);
+	XBiquadv2between_Set_a2_a0_V(&this->biquad, a2_a0);
 }

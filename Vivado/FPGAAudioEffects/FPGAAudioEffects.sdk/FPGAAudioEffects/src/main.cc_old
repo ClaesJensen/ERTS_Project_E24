@@ -7,14 +7,9 @@
 #include <xscugic.h>
 #include "zybo_audio.hpp"
 #undef str //Have to do this because of some weird bug...
-#include <ap_fixed.h>
 #include <xbiquadv2start.h>
 #include <xbiquadv2between.h>
 #include <xbiquadv2end.h>
-
-
-
-typedef ap_fixed<27, 3, AP_RND, AP_SAT> coeff_t; //typedef ap_fixed<27, 3, AP_RND, AP_SAT> coeff_t;
 
 #define TIMER_FREQ_HZ (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ / 2)
 #define N_BIQUAD_BETWEEN 1
@@ -256,8 +251,6 @@ int main() {
 	biquad_end_done = 0;
 
 	xil_printf("Setup done...\r\n");
-
-	coeff_t scale = 1.0;
 
 	//Configure biquad with coeffs
 	//Notch f0 = 40 Hz

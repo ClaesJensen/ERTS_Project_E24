@@ -6,10 +6,11 @@
 
 class BiquadSegmentMiddle {
 public:
-	BiquadSegmentMiddle(uint32_t DeviceID);
+	BiquadSegmentMiddle();
+	BiquadSegmentMiddle(uint16_t DeviceID);
 	void SetCoefficients(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0);
 private:
-	int InitBiquad(uint32_t DeviceID);
+	int InitBiquad(uint16_t DeviceID);
 
 	bool isReady;
 
