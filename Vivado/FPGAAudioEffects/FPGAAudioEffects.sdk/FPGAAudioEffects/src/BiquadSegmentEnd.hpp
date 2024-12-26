@@ -8,8 +8,8 @@ class BiquadSegmentEnd {
 public:
 	BiquadSegmentEnd();
 	BiquadSegmentEnd(uint16_t DeviceID);
-	void OutputData(uint32_t *outDataL, uint32_t *outDataR);
-	void SetCoefficientsEnd(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0);
+	void Output(uint32_t *outDataL, uint32_t *outDataR);
+	void SetCoefficients(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0);
 	void Start();
 	void ClearInterruptEnd();
 	bool isDone;

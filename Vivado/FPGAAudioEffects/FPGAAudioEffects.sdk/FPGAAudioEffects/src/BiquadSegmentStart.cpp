@@ -30,12 +30,12 @@ int BiquadSegmentStart::InitBiquad(uint16_t DeviceID) {
 	return status;
 }
 
-void BiquadSegmentStart::InputData(uint32_t inDataL, uint32_t inDataR) {
+void BiquadSegmentStart::Input(uint32_t inDataL, uint32_t inDataR) {
 	XBiquadv2start_Set_inDataLeft_V(&this->biquad, inDataL);
 	XBiquadv2start_Set_inDataRight_V(&this->biquad, inDataR);
 }
 
-void BiquadSegmentStart::SetCoefficientsStart(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0) {
+void BiquadSegmentStart::SetCoefficients(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0) {
 	if (!this->isReady) {
 		xil_printf("BiquadSegmentMiddle is not ready!\n");
 		return;

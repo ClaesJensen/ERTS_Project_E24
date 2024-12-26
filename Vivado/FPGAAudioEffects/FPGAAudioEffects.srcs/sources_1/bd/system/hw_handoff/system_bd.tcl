@@ -157,7 +157,12 @@ proc create_hier_cell_ParametricEQ { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv2
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv3
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv4
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv5
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv6
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv7
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv8
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_biquadv9
 
   # Create pins
@@ -165,51 +170,111 @@ proc create_hier_cell_ParametricEQ { parentCell nameHier } {
   create_bd_pin -dir I -type rst ap_rst_n
   create_bd_pin -dir O -type intr interrupt
 
-  # Create instance: biquadv2between_0_left, and set properties
-  set biquadv2between_0_left [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_0_left ]
+  # Create instance: biquadv2between_0, and set properties
+  set biquadv2between_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_0 ]
+
+  # Create instance: biquadv2between_1, and set properties
+  set biquadv2between_1 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_1 ]
 
   set_property -dict [ list \
 CONFIG.NUM_READ_OUTSTANDING {1} \
 CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /ParametricEQ/biquadv2between_0_left/s_axi_biquadv2]
+ ] [get_bd_intf_pins /ParametricEQ/biquadv2between_1/s_axi_biquadv2]
+
+  # Create instance: biquadv2between_2, and set properties
+  set biquadv2between_2 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_2 ]
+
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /ParametricEQ/biquadv2between_2/s_axi_biquadv2]
+
+  # Create instance: biquadv2between_3, and set properties
+  set biquadv2between_3 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_3 ]
+
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /ParametricEQ/biquadv2between_3/s_axi_biquadv2]
+
+  # Create instance: biquadv2between_4, and set properties
+  set biquadv2between_4 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_4 ]
+
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /ParametricEQ/biquadv2between_4/s_axi_biquadv2]
+
+  # Create instance: biquadv2between_5, and set properties
+  set biquadv2between_5 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2between:1.0 biquadv2between_5 ]
+
+  set_property -dict [ list \
+CONFIG.NUM_READ_OUTSTANDING {1} \
+CONFIG.NUM_WRITE_OUTSTANDING {1} \
+ ] [get_bd_intf_pins /ParametricEQ/biquadv2between_5/s_axi_biquadv2]
 
   # Create instance: biquadv2end_0, and set properties
   set biquadv2end_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2end:1.0 biquadv2end_0 ]
 
-  set_property -dict [ list \
-CONFIG.NUM_READ_OUTSTANDING {1} \
-CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /ParametricEQ/biquadv2end_0/s_axi_biquadv2]
-
-  # Create instance: biquadv2start_0_left, and set properties
-  set biquadv2start_0_left [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2start:1.0 biquadv2start_0_left ]
-
-  set_property -dict [ list \
-CONFIG.NUM_READ_OUTSTANDING {1} \
-CONFIG.NUM_WRITE_OUTSTANDING {1} \
- ] [get_bd_intf_pins /ParametricEQ/biquadv2start_0_left/s_axi_biquadv2]
+  # Create instance: biquadv2start_0, and set properties
+  set biquadv2start_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:biquadv2start:1.0 biquadv2start_0 ]
 
   # Create interface connections
-  connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins s_axi_biquadv2] [get_bd_intf_pins biquadv2start_0_left/s_axi_biquadv2]
-  connect_bd_intf_net -intf_net Conn5 [get_bd_intf_pins s_axi_biquadv6] [get_bd_intf_pins biquadv2between_0_left/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins s_axi_biquadv2] [get_bd_intf_pins biquadv2start_0/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins s_axi_biquadv3] [get_bd_intf_pins biquadv2between_1/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn3 [get_bd_intf_pins s_axi_biquadv4] [get_bd_intf_pins biquadv2between_2/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn4 [get_bd_intf_pins s_axi_biquadv5] [get_bd_intf_pins biquadv2between_3/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn5 [get_bd_intf_pins s_axi_biquadv6] [get_bd_intf_pins biquadv2between_0/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn6 [get_bd_intf_pins s_axi_biquadv7] [get_bd_intf_pins biquadv2between_4/s_axi_biquadv2]
+  connect_bd_intf_net -intf_net Conn7 [get_bd_intf_pins s_axi_biquadv8] [get_bd_intf_pins biquadv2between_5/s_axi_biquadv2]
   connect_bd_intf_net -intf_net Conn8 [get_bd_intf_pins s_axi_biquadv9] [get_bd_intf_pins biquadv2end_0/s_axi_biquadv2]
 
   # Create port connections
-  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins biquadv2between_0_left/ap_clk] [get_bd_pins biquadv2end_0/ap_clk] [get_bd_pins biquadv2start_0_left/ap_clk]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins biquadv2between_0_left/ap_rst_n] [get_bd_pins biquadv2end_0/ap_rst_n] [get_bd_pins biquadv2start_0_left/ap_rst_n]
-  connect_bd_net -net biquadv2between_0_left_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_0_left/inDataLeft_V_ap_ack] [get_bd_pins biquadv2start_0_left/outDataLeft_V_ap_ack]
-  connect_bd_net -net biquadv2between_0_left_inDataRight_V_ap_ack [get_bd_pins biquadv2between_0_left/inDataRight_V_ap_ack] [get_bd_pins biquadv2start_0_left/outDataRight_V_ap_ack]
-  connect_bd_net -net biquadv2between_0_left_outDataLeft_V [get_bd_pins biquadv2between_0_left/outDataLeft_V] [get_bd_pins biquadv2end_0/inDataLeft_V]
-  connect_bd_net -net biquadv2between_0_left_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_0_left/outDataLeft_V_ap_vld] [get_bd_pins biquadv2end_0/inDataLeft_V_ap_vld]
-  connect_bd_net -net biquadv2between_0_left_outDataRight_V [get_bd_pins biquadv2between_0_left/outDataRight_V] [get_bd_pins biquadv2end_0/inDataRight_V]
-  connect_bd_net -net biquadv2between_0_left_outDataRight_V_ap_vld [get_bd_pins biquadv2between_0_left/outDataRight_V_ap_vld] [get_bd_pins biquadv2end_0/inDataRight_V_ap_vld]
-  connect_bd_net -net biquadv2end_0_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_0_left/outDataLeft_V_ap_ack] [get_bd_pins biquadv2end_0/inDataLeft_V_ap_ack]
-  connect_bd_net -net biquadv2end_0_inDataRight_V_ap_ack [get_bd_pins biquadv2between_0_left/outDataRight_V_ap_ack] [get_bd_pins biquadv2end_0/inDataRight_V_ap_ack]
+  connect_bd_net -net ap_clk_1 [get_bd_pins ap_clk] [get_bd_pins biquadv2between_0/ap_clk] [get_bd_pins biquadv2between_1/ap_clk] [get_bd_pins biquadv2between_2/ap_clk] [get_bd_pins biquadv2between_3/ap_clk] [get_bd_pins biquadv2between_4/ap_clk] [get_bd_pins biquadv2between_5/ap_clk] [get_bd_pins biquadv2end_0/ap_clk] [get_bd_pins biquadv2start_0/ap_clk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins biquadv2between_0/ap_rst_n] [get_bd_pins biquadv2between_1/ap_rst_n] [get_bd_pins biquadv2between_2/ap_rst_n] [get_bd_pins biquadv2between_3/ap_rst_n] [get_bd_pins biquadv2between_4/ap_rst_n] [get_bd_pins biquadv2between_5/ap_rst_n] [get_bd_pins biquadv2end_0/ap_rst_n] [get_bd_pins biquadv2start_0/ap_rst_n]
+  connect_bd_net -net biquadv2between_0_left_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_0/inDataLeft_V_ap_ack] [get_bd_pins biquadv2start_0/outDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2between_0_left_inDataRight_V_ap_ack [get_bd_pins biquadv2between_0/inDataRight_V_ap_ack] [get_bd_pins biquadv2start_0/outDataRight_V_ap_ack]
+  connect_bd_net -net biquadv2between_0_outDataLeft_V [get_bd_pins biquadv2between_0/outDataLeft_V] [get_bd_pins biquadv2between_1/inDataLeft_V]
+  connect_bd_net -net biquadv2between_0_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_0/outDataLeft_V_ap_vld] [get_bd_pins biquadv2between_1/inDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2between_0_outDataRight_V [get_bd_pins biquadv2between_0/outDataRight_V] [get_bd_pins biquadv2between_1/inDataRight_V]
+  connect_bd_net -net biquadv2between_0_outDataRight_V_ap_vld [get_bd_pins biquadv2between_0/outDataRight_V_ap_vld] [get_bd_pins biquadv2between_1/inDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2between_1_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_0/outDataLeft_V_ap_ack] [get_bd_pins biquadv2between_1/inDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2between_1_inDataRight_V_ap_ack [get_bd_pins biquadv2between_0/outDataRight_V_ap_ack] [get_bd_pins biquadv2between_1/inDataRight_V_ap_ack]
+  connect_bd_net -net biquadv2between_1_outDataLeft_V [get_bd_pins biquadv2between_1/outDataLeft_V] [get_bd_pins biquadv2between_2/inDataLeft_V]
+  connect_bd_net -net biquadv2between_1_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_1/outDataLeft_V_ap_vld] [get_bd_pins biquadv2between_2/inDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2between_1_outDataRight_V [get_bd_pins biquadv2between_1/outDataRight_V] [get_bd_pins biquadv2between_2/inDataRight_V]
+  connect_bd_net -net biquadv2between_1_outDataRight_V_ap_vld [get_bd_pins biquadv2between_1/outDataRight_V_ap_vld] [get_bd_pins biquadv2between_2/inDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2between_2_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_1/outDataLeft_V_ap_ack] [get_bd_pins biquadv2between_2/inDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2between_2_inDataRight_V_ap_ack [get_bd_pins biquadv2between_1/outDataRight_V_ap_ack] [get_bd_pins biquadv2between_2/inDataRight_V_ap_ack]
+  connect_bd_net -net biquadv2between_2_outDataLeft_V [get_bd_pins biquadv2between_2/outDataLeft_V] [get_bd_pins biquadv2between_3/inDataLeft_V]
+  connect_bd_net -net biquadv2between_2_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_2/outDataLeft_V_ap_vld] [get_bd_pins biquadv2between_3/inDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2between_2_outDataRight_V [get_bd_pins biquadv2between_2/outDataRight_V] [get_bd_pins biquadv2between_3/inDataRight_V]
+  connect_bd_net -net biquadv2between_2_outDataRight_V_ap_vld [get_bd_pins biquadv2between_2/outDataRight_V_ap_vld] [get_bd_pins biquadv2between_3/inDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2between_3_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_2/outDataLeft_V_ap_ack] [get_bd_pins biquadv2between_3/inDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2between_3_inDataRight_V_ap_ack [get_bd_pins biquadv2between_2/outDataRight_V_ap_ack] [get_bd_pins biquadv2between_3/inDataRight_V_ap_ack]
+  connect_bd_net -net biquadv2between_3_outDataLeft_V [get_bd_pins biquadv2between_3/outDataLeft_V] [get_bd_pins biquadv2between_4/inDataLeft_V]
+  connect_bd_net -net biquadv2between_3_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_3/outDataLeft_V_ap_vld] [get_bd_pins biquadv2between_4/inDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2between_3_outDataRight_V [get_bd_pins biquadv2between_3/outDataRight_V] [get_bd_pins biquadv2between_4/inDataRight_V]
+  connect_bd_net -net biquadv2between_3_outDataRight_V_ap_vld [get_bd_pins biquadv2between_3/outDataRight_V_ap_vld] [get_bd_pins biquadv2between_4/inDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2between_4_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_3/outDataLeft_V_ap_ack] [get_bd_pins biquadv2between_4/inDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2between_4_inDataRight_V_ap_ack [get_bd_pins biquadv2between_3/outDataRight_V_ap_ack] [get_bd_pins biquadv2between_4/inDataRight_V_ap_ack]
+  connect_bd_net -net biquadv2between_4_outDataLeft_V [get_bd_pins biquadv2between_4/outDataLeft_V] [get_bd_pins biquadv2between_5/inDataLeft_V]
+  connect_bd_net -net biquadv2between_4_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_4/outDataLeft_V_ap_vld] [get_bd_pins biquadv2between_5/inDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2between_4_outDataRight_V [get_bd_pins biquadv2between_4/outDataRight_V] [get_bd_pins biquadv2between_5/inDataRight_V]
+  connect_bd_net -net biquadv2between_4_outDataRight_V_ap_vld [get_bd_pins biquadv2between_4/outDataRight_V_ap_vld] [get_bd_pins biquadv2between_5/inDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2between_5_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_4/outDataLeft_V_ap_ack] [get_bd_pins biquadv2between_5/inDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2between_5_inDataRight_V_ap_ack [get_bd_pins biquadv2between_4/outDataRight_V_ap_ack] [get_bd_pins biquadv2between_5/inDataRight_V_ap_ack]
+  connect_bd_net -net biquadv2between_5_outDataLeft_V [get_bd_pins biquadv2between_5/outDataLeft_V] [get_bd_pins biquadv2end_0/inDataLeft_V]
+  connect_bd_net -net biquadv2between_5_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_5/outDataLeft_V_ap_vld] [get_bd_pins biquadv2end_0/inDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2between_5_outDataRight_V [get_bd_pins biquadv2between_5/outDataRight_V] [get_bd_pins biquadv2end_0/inDataRight_V]
+  connect_bd_net -net biquadv2between_5_outDataRight_V_ap_vld [get_bd_pins biquadv2between_5/outDataRight_V_ap_vld] [get_bd_pins biquadv2end_0/inDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2end_0_inDataLeft_V_ap_ack [get_bd_pins biquadv2between_5/outDataLeft_V_ap_ack] [get_bd_pins biquadv2end_0/inDataLeft_V_ap_ack]
+  connect_bd_net -net biquadv2end_0_inDataRight_V_ap_ack [get_bd_pins biquadv2between_5/outDataRight_V_ap_ack] [get_bd_pins biquadv2end_0/inDataRight_V_ap_ack]
   connect_bd_net -net biquadv2end_0_interrupt [get_bd_pins interrupt] [get_bd_pins biquadv2end_0/interrupt]
-  connect_bd_net -net biquadv2start_0_left_outDataLeft_V [get_bd_pins biquadv2between_0_left/inDataLeft_V] [get_bd_pins biquadv2start_0_left/outDataLeft_V]
-  connect_bd_net -net biquadv2start_0_left_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_0_left/inDataLeft_V_ap_vld] [get_bd_pins biquadv2start_0_left/outDataLeft_V_ap_vld]
-  connect_bd_net -net biquadv2start_0_left_outDataRight_V [get_bd_pins biquadv2between_0_left/inDataRight_V] [get_bd_pins biquadv2start_0_left/outDataRight_V]
-  connect_bd_net -net biquadv2start_0_left_outDataRight_V_ap_vld [get_bd_pins biquadv2between_0_left/inDataRight_V_ap_vld] [get_bd_pins biquadv2start_0_left/outDataRight_V_ap_vld]
+  connect_bd_net -net biquadv2start_0_left_outDataLeft_V [get_bd_pins biquadv2between_0/inDataLeft_V] [get_bd_pins biquadv2start_0/outDataLeft_V]
+  connect_bd_net -net biquadv2start_0_left_outDataLeft_V_ap_vld [get_bd_pins biquadv2between_0/inDataLeft_V_ap_vld] [get_bd_pins biquadv2start_0/outDataLeft_V_ap_vld]
+  connect_bd_net -net biquadv2start_0_left_outDataRight_V [get_bd_pins biquadv2between_0/inDataRight_V] [get_bd_pins biquadv2start_0/outDataRight_V]
+  connect_bd_net -net biquadv2start_0_left_outDataRight_V_ap_vld [get_bd_pins biquadv2between_0/inDataRight_V_ap_vld] [get_bd_pins biquadv2start_0/outDataRight_V_ap_vld]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -587,7 +652,7 @@ CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
   # Create instance: processing_system7_0_axi_periph, and set properties
   set processing_system7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 processing_system7_0_axi_periph ]
   set_property -dict [ list \
-CONFIG.NUM_MI {5} \
+CONFIG.NUM_MI {10} \
  ] $processing_system7_0_axi_periph
 
   # Create instance: rst_processing_system7_0_50M, and set properties
@@ -613,15 +678,20 @@ CONFIG.NUM_PORTS {1} \
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M02_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv6] [get_bd_intf_pins processing_system7_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M03_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv9] [get_bd_intf_pins processing_system7_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M04_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv2] [get_bd_intf_pins processing_system7_0_axi_periph/M04_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M05_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv3] [get_bd_intf_pins processing_system7_0_axi_periph/M05_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M06_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv4] [get_bd_intf_pins processing_system7_0_axi_periph/M06_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M07_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv5] [get_bd_intf_pins processing_system7_0_axi_periph/M07_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M08_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv7] [get_bd_intf_pins processing_system7_0_axi_periph/M08_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M09_AXI [get_bd_intf_pins ParametricEQ/s_axi_biquadv8] [get_bd_intf_pins processing_system7_0_axi_periph/M09_AXI]
 
   # Create port connections
   connect_bd_net -net RECDAT_1 [get_bd_ports RECDAT] [get_bd_pins zybo_audio_ctrl_0/RECDAT]
   connect_bd_net -net hier_0_interrupt [get_bd_pins ParametricEQ/interrupt] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins ParametricEQ/ap_clk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/M03_ACLK] [get_bd_pins processing_system7_0_axi_periph/M04_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ACLK]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins ParametricEQ/ap_clk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/M03_ACLK] [get_bd_pins processing_system7_0_axi_periph/M04_ACLK] [get_bd_pins processing_system7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0_axi_periph/M06_ACLK] [get_bd_pins processing_system7_0_axi_periph/M07_ACLK] [get_bd_pins processing_system7_0_axi_periph/M08_ACLK] [get_bd_pins processing_system7_0_axi_periph/M09_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins rst_processing_system7_0_50M/slowest_sync_clk] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ACLK]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_ports FCLK_CLK1] [get_bd_pins processing_system7_0/FCLK_CLK1]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_50M/ext_reset_in]
   connect_bd_net -net rst_processing_system7_0_50M_interconnect_aresetn [get_bd_pins processing_system7_0_axi_periph/ARESETN] [get_bd_pins rst_processing_system7_0_50M/interconnect_aresetn]
-  connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins ParametricEQ/ap_rst_n] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M04_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ARESETN]
+  connect_bd_net -net rst_processing_system7_0_50M_peripheral_aresetn [get_bd_pins ParametricEQ/ap_rst_n] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M04_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M05_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M06_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M07_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M08_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M09_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn] [get_bd_pins zybo_audio_ctrl_0/S_AXI_ARESETN]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net zybo_audio_ctrl_0_BCLK [get_bd_ports BCLK] [get_bd_pins zybo_audio_ctrl_0/BCLK]
   connect_bd_net -net zybo_audio_ctrl_0_PBDATA [get_bd_ports PBDATA] [get_bd_pins zybo_audio_ctrl_0/PBDATA]
@@ -630,9 +700,14 @@ CONFIG.NUM_PORTS {1} \
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_0_left/s_axi_biquadv2/Reg] SEG_biquadv2between_0_left_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_0/s_axi_biquadv2/Reg] SEG_biquadv2between_0_left_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_1/s_axi_biquadv2/Reg] SEG_biquadv2between_1_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_2/s_axi_biquadv2/Reg] SEG_biquadv2between_2_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_3/s_axi_biquadv2/Reg] SEG_biquadv2between_3_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C60000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_4/s_axi_biquadv2/Reg] SEG_biquadv2between_4_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C70000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2between_5/s_axi_biquadv2/Reg] SEG_biquadv2between_5_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2end_0/s_axi_biquadv2/Reg] SEG_biquadv2end_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2start_0_left/s_axi_biquadv2/Reg] SEG_biquadv2start_0_left_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs ParametricEQ/biquadv2start_0/s_axi_biquadv2/Reg] SEG_biquadv2start_0_left_Reg
   create_bd_addr_seg -range 0x20000000 -offset 0x60000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs zybo_audio_ctrl_0/S_AXI/reg0] SEG_zybo_audio_ctrl_0_reg0
 
 

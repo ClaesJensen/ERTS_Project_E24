@@ -4464,3 +4464,38 @@ com.xilinx.sdk.targetmanager.TMException:
 19:07:49 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
 19:07:50 INFO  : ps7_init is completed.
 19:07:50 INFO  : ps7_post_config is completed.
+19:12:11 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:12:13 INFO  : System reset is completed.
+19:12:15 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+19:12:16 INFO  : ps7_init is completed.
+19:12:16 INFO  : ps7_post_config is completed.
+19:13:31 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:13:33 INFO  : System reset is completed.
+19:13:35 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+19:13:35 INFO  : ps7_init is completed.
+19:13:36 INFO  : ps7_post_config is completed.
+19:56:06 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: 
+    Unknown Error Occured
+    Cable is not powered-on
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(TM.java:484)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:464)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+19:56:19 INFO  : System reset is completed.
+19:56:20 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+19:56:22 INFO  : ps7_init is completed.
+19:56:22 INFO  : ps7_post_config is completed.
+19:57:44 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:57:45 INFO  : System reset is completed.
+19:57:47 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+19:57:48 INFO  : ps7_init is completed.
+19:57:48 INFO  : ps7_post_config is completed.
+20:17:47 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

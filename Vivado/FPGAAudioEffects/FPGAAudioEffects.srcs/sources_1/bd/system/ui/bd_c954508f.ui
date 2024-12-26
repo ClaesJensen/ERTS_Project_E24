@@ -1,72 +1,55 @@
 {
    guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 50 -defaultsOSRD
-preplace port PBLRCLK -pg 1 -y 320 -defaultsOSRD
-preplace port BCLK -pg 1 -y 300 -defaultsOSRD
-preplace port RECDAT -pg 1 -y 320 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
-preplace port IIC_1 -pg 1 -y 90 -defaultsOSRD
-preplace port PBDATA -pg 1 -y 360 -defaultsOSRD
-preplace port FCLK_CLK1 -pg 1 -y 150 -defaultsOSRD
-preplace port RECLRCLK -pg 1 -y 340 -defaultsOSRD
-preplace port GPIO -pg 1 -y 470 -defaultsOSRD
-preplace inst ParametricEQ|biquadv2end_0 -pg 1 -lvl 3 -y 786 -defaultsOSRD
-preplace inst ParametricEQ|biquadv2start_0_left -pg 1 -lvl 1 -y 656 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 3 -y 120 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 4 -y 466 -defaultsOSRD
-preplace inst rst_processing_system7_0_50M -pg 1 -lvl 2 -y 430 -defaultsOSRD
-preplace inst ParametricEQ|biquadv2between_0_left -pg 1 -lvl 2 -y 876 -defaultsOSRD
-preplace inst ParametricEQ -pg 1 -lvl 4 -y 666 -defaultsOSRD -resize 516 200
-preplace inst zybo_audio_ctrl_0 -pg 1 -lvl 4 -y 326 -defaultsOSRD
-preplace inst processing_system7_0_axi_periph -pg 1 -lvl 3 -y 550 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 4 -y 110 -defaultsOSRD
-preplace netloc ParametricEQ|biquadv2end_0_inDataRight_V_ap_ack 1 1 3 1770 656 NJ 656 2680
-preplace netloc ParametricEQ|ap_clk_1 1 0 3 1240 766 1760 736 2240J
-preplace netloc processing_system7_0_DDR 1 4 1 NJ
-preplace netloc hier_0_interrupt 1 2 3 730 240 NJ 240 2790
-preplace netloc ParametricEQ|biquadv2start_0_left_outDataLeft_V_ap_vld 1 1 1 1750
-preplace netloc ParametricEQ|ap_rst_n_1 1 0 3 1250 776 1740 696 2250J
-preplace netloc ParametricEQ|biquadv2start_0_left_outDataLeft_V 1 1 1 1700
-preplace netloc processing_system7_0_axi_periph_M03_AXI 1 3 1 1030
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 3 1 1030
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 2 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 2 3 720 0 NJ 0 2800
-preplace netloc ParametricEQ|biquadv2start_0_left_outDataRight_V_ap_vld 1 1 1 1730
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 4 210J 220 NJ 220 NJ 220 2790
-preplace netloc ParametricEQ|Conn1 1 0 1 N
-preplace netloc ParametricEQ|biquadv2between_0_left_inDataRight_V_ap_ack 1 0 3 1270 756 1710J 706 2210
-preplace netloc ParametricEQ|biquadv2between_0_left_outDataLeft_V_ap_vld 1 2 1 2220
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 2 2 720 760 1070
-preplace netloc processing_system7_0_IIC_1 1 4 1 NJ
-preplace netloc processing_system7_0_axi_periph_M02_AXI 1 3 1 1050
-preplace netloc xlconcat_0_dout 1 3 1 NJ
-preplace netloc ParametricEQ|biquadv2between_0_left_inDataLeft_V_ap_ack 1 0 3 1260 746 NJ 746 2200
-preplace netloc processing_system7_0_FIXED_IO 1 4 1 NJ
-preplace netloc zybo_audio_ctrl_0_RECLRCLK 1 4 1 2800J
-preplace netloc ParametricEQ|Conn5 1 0 2 NJ 796 N
-preplace netloc axi_gpio_0_GPIO 1 4 1 2800J
-preplace netloc zybo_audio_ctrl_0_PBLRCLK 1 4 1 2800J
-preplace netloc zybo_audio_ctrl_0_BCLK 1 4 1 2800J
-preplace netloc ParametricEQ|biquadv2between_0_left_outDataRight_V 1 2 1 2250
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 220 520 730 750 1060 230 2800
-preplace netloc ParametricEQ|biquadv2start_0_left_outDataRight_V 1 1 1 1690
-preplace netloc ParametricEQ|biquadv2end_0_inDataLeft_V_ap_ack 1 1 3 1780 676 NJ 676 2670
-preplace netloc ParametricEQ|biquadv2end_0_interrupt 1 3 1 N
-preplace netloc processing_system7_0_FCLK_CLK1 1 4 1 NJ
-preplace netloc ParametricEQ|Conn8 1 0 3 NJ 816 1720J 726 N
-preplace netloc ParametricEQ|biquadv2between_0_left_outDataRight_V_ap_vld 1 2 1 2230
-preplace netloc ParametricEQ|biquadv2between_0_left_outDataLeft_V 1 2 1 2240
-preplace netloc processing_system7_0_axi_periph_M04_AXI 1 3 1 1040
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 3 1 1080
-preplace netloc RECDAT_1 1 0 4 10J 310 NJ 310 NJ 310 1080J
-preplace netloc zybo_audio_ctrl_0_PBDATA 1 4 1 2800J
-levelinfo -pg 1 -10 190 550 880 1500 2820 -top -180 -bot 1030
-levelinfo -hier ParametricEQ * 1480 1990 2470 *
+preplace port DDR -pg 1 -y 1020 -defaultsOSRD
+preplace port PBLRCLK -pg 1 -y 870 -defaultsOSRD
+preplace port BCLK -pg 1 -y 850 -defaultsOSRD
+preplace port RECDAT -pg 1 -y 870 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 1040 -defaultsOSRD
+preplace port IIC_1 -pg 1 -y 1060 -defaultsOSRD
+preplace port PBDATA -pg 1 -y 910 -defaultsOSRD
+preplace port FCLK_CLK1 -pg 1 -y 1120 -defaultsOSRD
+preplace port RECLRCLK -pg 1 -y 890 -defaultsOSRD
+preplace port GPIO -pg 1 -y 730 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -y 1090 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -y 380 -defaultsOSRD
+preplace inst rst_processing_system7_0_50M -pg 1 -lvl 1 -y 130 -defaultsOSRD
+preplace inst ParametricEQ -pg 1 -lvl 3 -y 120 -defaultsOSRD -resize 516 200
+preplace inst zybo_audio_ctrl_0 -pg 1 -lvl 3 -y 530 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 350 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -y 730 -defaultsOSRD
+preplace netloc processing_system7_0_axi_periph_M08_AXI 1 2 1 740
+preplace netloc processing_system7_0_FIXED_IO 1 3 1 1450J
+preplace netloc zybo_audio_ctrl_0_PBDATA 1 3 1 1470J
+preplace netloc xlconcat_0_dout 1 2 1 840J
+preplace netloc zybo_audio_ctrl_0_RECLRCLK 1 3 1 1480J
+preplace netloc axi_gpio_0_GPIO 1 3 1 1510J
+preplace netloc processing_system7_0_axi_periph_M06_AXI 1 2 1 720
+preplace netloc processing_system7_0_DDR 1 3 1 1460J
+preplace netloc processing_system7_0_axi_periph_M05_AXI 1 2 1 710
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 1 N
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 20 960 NJ 960 830J 610 1420
+preplace netloc processing_system7_0_axi_periph_M02_AXI 1 2 1 680
+preplace netloc processing_system7_0_axi_periph_M03_AXI 1 2 1 700
+preplace netloc processing_system7_0_axi_periph_M07_AXI 1 2 1 730
+preplace netloc processing_system7_0_axi_periph_M09_AXI 1 2 1 770
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 2 1 750
+preplace netloc processing_system7_0_IIC_1 1 3 1 1440J
+preplace netloc hier_0_interrupt 1 1 3 380 800 800J 450 1500
+preplace netloc zybo_audio_ctrl_0_BCLK 1 3 1 1500J
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 40 370 650 810 620 1400
+preplace netloc zybo_audio_ctrl_0_PBLRCLK 1 3 1 1490J
+preplace netloc processing_system7_0_FCLK_CLK1 1 3 1 1430J
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 760
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 2 360 670 780
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 3 380 660 790J 310 1410
+preplace netloc RECDAT_1 1 0 3 NJ 870 NJ 870 820J
+preplace netloc processing_system7_0_axi_periph_M04_AXI 1 2 1 690
+levelinfo -pg 1 0 190 530 1120 1530 -top 0 -bot 1190
 ",
 }
 {
-   da_axi4_cnt: "44",
+   da_axi4_cnt: "49",
    da_board_cnt: "2",
    da_bram_cntlr_cnt: "2",
    da_clkrst_cnt: "8",

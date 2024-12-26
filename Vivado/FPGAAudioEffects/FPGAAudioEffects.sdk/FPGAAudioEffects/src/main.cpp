@@ -12,6 +12,7 @@
 #include "BiquadSegmentStart.hpp"
 #include "BiquadSegmentMiddle.hpp"
 #include "BiquadSegmentEnd.hpp"
+#include "ParametricEQ.hpp"
 
 #define TIMER_FREQ_HZ (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ / 2)
 #define N_BIQUAD_BETWEEN 1
@@ -23,12 +24,15 @@ XScuGic ScuGic;
 BiquadSegmentStart start = BiquadSegmentStart(XPAR_XBIQUADV2START_0_DEVICE_ID);
 BiquadSegmentMiddle middle = BiquadSegmentMiddle(XPAR_XBIQUADV2BETWEEN_0_DEVICE_ID);
 BiquadSegmentEnd end = BiquadSegmentEnd(XPAR_XBIQUADV2END_0_DEVICE_ID);
+BiquadSegmentMiddle *middleCollection[] = {&middle};
+ParametricEQ eq = ParametricEQ(&start, middleCollection, 1, &end);
+
 uint8_t biquad_end_done = 0;
 
 void biquad_end_interrupt_callback(void* InstancePtr) {
 	XBiquadv2end *pBiquad = (XBiquadv2end*) InstancePtr;
 	XBiquadv2end_InterruptClear(pBiquad, 1);
-	biquad_end_done = 1;
+	eq.isDone = true;
 }
 
 
@@ -189,14 +193,13 @@ int main() {
 	XBiquadv2end_InterruptEnable(&end.biquad_end, 1);
 	XBiquadv2end_InterruptGlobalEnable(&end.biquad_end);
 
-	start.SetCoefficientsStart(15364841, -30155609, 15050980, -(-30155609), -(13638606));
-	middle.SetCoefficients(16622562, -33207912, 16588195, -(-33207912), -(16433542));
-	end.SetCoefficientsEnd(7692185, -3934265, 7508649, -(-3934265), -(-1576382));
+	eq.SetCoefficients(0, 15364841, -30155609, 15050980, -(-30155609), -(13638606));
+	eq.SetCoefficients(1, 16622562, -33207912, 16588195, -(-33207912), -(16433542));
+	eq.SetCoefficients(2, 7692185, -3934265, 7508649, -(-3934265), -(-1576382));
 	xil_printf("Coeffs set...\r\n");
 
 	//Enable output
 	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, 0x00000001);
-
 
 	uint32_t temp = 0;
 	while(1) {
@@ -212,14 +215,10 @@ int main() {
 		uint32_t dataL = Xil_In32(I2S_DATA_RX_L_REG);
 		uint32_t dataR = Xil_In32(I2S_DATA_RX_R_REG);
 
-		start.InputData(dataL, dataR);
-		biquad_end_done = 0;
-		end.Start();
-		while(!biquad_end_done);
-		end.OutputData(&dataL, &dataR);
-
-		//xil_printf("%i | %i\r\n", I2S_DATA_RX_L_REG, I2S_DATA_TX_L_REG);
-		//xil_printf("0x%.8X | 0x%.8X\r\n", dataL, dataR);
+		//Using the EQ
+		eq.Input(dataL, dataR);
+		while(!eq.isDone);
+		eq.Output(&dataL, &dataR);
 
 		//Write to output
 		Xil_Out32(I2S_DATA_TX_L_REG, dataL);

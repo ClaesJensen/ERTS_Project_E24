@@ -16,7 +16,7 @@ BiquadSegmentEnd::BiquadSegmentEnd(uint16_t DeviceID) {
 	}
 }
 
-void BiquadSegmentEnd::OutputData(uint32_t *outDataL, uint32_t *outDataR) {
+void BiquadSegmentEnd::Output(uint32_t *outDataL, uint32_t *outDataR) {
 	*outDataL = XBiquadv2end_Get_outDataLeft_V(&this->biquad_end);
 	*outDataR = XBiquadv2end_Get_outDataRight_V(&this->biquad_end);
 }
@@ -72,7 +72,7 @@ void BiquadSegmentEnd::Start() {
 	XBiquadv2end_Start(&this->biquad_end);
 }
 
-void BiquadSegmentEnd::SetCoefficientsEnd(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0) {
+void BiquadSegmentEnd::SetCoefficients(int32_t b0_a0, int32_t b1_a0, int32_t b2_a0, int32_t a1_a0, int32_t a2_a0) {
 	if (!this->isReady) {
 		xil_printf("BiquadSegmentEnd is not ready!\n");
 		return;
