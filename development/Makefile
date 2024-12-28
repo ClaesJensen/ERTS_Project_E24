@@ -1,6 +1,7 @@
 # Thanks to Job Vranish (https://spin.atomicobject.com/2016/08/26/makefile-c-projects/)
 TARGET_EXEC := main
 
+#SYSTEMC = ${SYSTEMC}
 BUILD_DIR := ./build
 SRC_DIRS := ./src
 
@@ -15,13 +16,13 @@ OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 # String substitution (suffix version without %).
 # As an example, ./build/hello.cpp.o turns into ./build/hello.cpp.d
 DEPS := $(OBJS:.o=.d)
-#sdasd
+
 # Ost
-SYSTEMC_LIB_DIR := $(SYSTEMC)/lib-linux64
+SYSTEMC_LIB_DIR := $(SYSTEMC)/lib-macosarm64
 SYSTEMC_LIB := systemc
 SYSTEMC_INCLUDE := $(SYSTEMC)/include
 
-LDFLAGS := -static -L$(SYSTEMC_LIB_DIR) -l$(SYSTEMC_LIB)
+LDFLAGS := -L$(SYSTEMC_LIB_DIR) -l$(SYSTEMC_LIB)
 
 
 # Every folder in ./src will need to be passed to GCC so that it can find header files
@@ -37,22 +38,22 @@ CPPFLAGS := $(INC_FLAGS) -MMD -MP -std=c++17
 
 # The final build step.
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
-	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
+    $(CXX) $(OBJS) -o $@ $(LDFLAGS)
 
 # Build step for C source
 $(BUILD_DIR)/%.c.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+    mkdir -p $(dir $@)
+    $(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # Build step for C++ source
 $(BUILD_DIR)/%.cpp.o: %.cpp
-	mkdir -p $(dir $@)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+    mkdir -p $(dir $@)
+    $(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
 
 .PHONY: clean
 clean:
-	rm -r $(BUILD_DIR)
+    rm -r $(BUILD_DIR)
 
 # Include the .d makefiles. The - at the front suppresses the errors of missing
 # Makefiles. Initially, all the .d files will be missing, and we don't want those
