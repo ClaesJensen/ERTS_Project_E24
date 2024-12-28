@@ -3,6 +3,7 @@
 #include "libfixmath/fix16.h"
 #include "libfixmath/fixmath.h"
 #include "sysc/kernel/sc_macros.h"
+#include <cmath>
 #include <systemc.h>
 
 void PHASE_VOCODER::process_phase_vocoder()
@@ -33,17 +34,21 @@ void PHASE_VOCODER::process_phase_vocoder()
     }
 
     // First iteration must read all samples if ready
-    // Muligvist nødvendigt at implementere en wait funktion
+    
     // så processering først sker når data er klar
+    SC_WAIT_UNTIL(audio_in_valid);
     for ( int i = 0; i < FFT_SIZE; i++ )
     {
         input_buffer[ i ] = audio_in.read();
     }
     bool first_iter = true;
-    
+    fix16_t pitch_shift;
     complex_sample single_sample;
     while ( 1 )
     {
+        // Read current pitch shift value from processor 
+        pitch_shift = in_pitch_shift.read();
+        SC_WAIT_UNTIL(audio_in_valid);
         // Only read new samples equating to the hop size in to buffer
         if ( !first_iter )
         {
@@ -58,7 +63,6 @@ void PHASE_VOCODER::process_phase_vocoder()
         // Imaginary part is zero as audio data is real only 
         single_sample.imag = 0;
         // Wait until to be sure that the fft is ready to process the next block
-        SC_WAIT_UNTIL(fft_out_valid);
         for(uint n = 0; n < FFT_SIZE; n++) {
           // Hanning window 
           input_buffer[n] = fix16_mul(input_buffer[n], hanning_window[n]);
@@ -67,15 +71,18 @@ void PHASE_VOCODER::process_phase_vocoder()
           // Send to fft
           fft_in_data.write(single_sample);
         }
+        fft_in_valid.write(true);
         // Read data from fft ip core
         // Make sure that fft has processed block before continuing 
         // single sample is reused 
-        SC_WAIT_UNTIL(fft_in_valid);
+        SC_WAIT_UNTIL(fft_out_valid);
         for(uint n = 0; n < FFT_SIZE; n++) {
           fft_out_data.read(single_sample);
           fft_real[n] = single_sample.real;
           fft_imag[n] = single_sample.imag;
         }
+        // FFT processing is not needed until new data is written
+        fft_in_valid.write(false);
         // Calculating instantaneous frequencies
         for(uint n = 0; n <= FFT_SIZE / 2; n++){
           // Pythagoras (:
@@ -98,8 +105,68 @@ void PHASE_VOCODER::process_phase_vocoder()
           analysis_magnitudes[n] = amplitude;
 
           last_input_phases[n] = phase;
+}
+        
+        // Zero synthesis arrays
+        for(uint n = 0; n <= FFT_SIZE / 2; n++){ 
+          synthesis_magnitudes[n] = synthesis_frequencies[n] = fix16_from_int(0);
+        }
+        // Handle pitch shift  
+        for(uint n = 0; n <= FFT_SIZE / 2; n++){ 
+          fix16_t new_bin = fix16_floor(fix16_add(fix16_mul(fix16_from_int(n), pitch_shift), + fix16_from_float(0.5)));
+          // Only pitch shift if the new bin is below nyq bin 
+          if(new_bin <= fix16_div(FFT_SIZE_FIX,  two)) {
+            synthesis_magnitudes[n] += analysis_magnitudes[n];
+            synthesis_frequencies[n] = fix16_mul(analysis_frequencies[n], pitch_shift);
+          }
+        // Calculating instantaneous frequencies
+        complex_sample fft_synth[FFT_SIZE];
+        for(uint n = 0; n <= FFT_SIZE / 2; n++) {
+          fix16_t mag = synthesis_magnitudes[n];
+          fix16_t inst_freq = fix16_div(synthesis_frequencies[n], FFT_SIZE_FIX);
+          fix16_t inst_freq_rad = fix16_deg_to_rad(inst_freq);
+          fix16_t phase_diff = fix16_mul(inst_freq_rad, HOP_SIZE_FIX);
+
+          fix16_t out_phase = wrap_phase(fix16_add(last_output_phases[n], phase_diff));
+          last_output_phases[n] = out_phase;
+          
+          // Complex conjugate as we want to calculate ifft using the fft block
+          single_sample.real = fix16_mul(mag, fix16_cos(out_phase));
+          single_sample.imag = fix16_mul(fix16_from_int(-1), fix16_mul(mag, fix16_sin(out_phase)));
+          fft_synth[n] = single_sample;
+          if(n > 0 && n < FFT_SIZE / 2){
+            // Taking account for hermithan symmetry 
+            single_sample.imag = fix16_mul(-1, single_sample.imag);
+            fft_synth[FFT_SIZE-n].real = single_sample.real;
+            fft_synth[FFT_SIZE-n].imag = single_sample.imag;
+          }
         }
         
+        // Finally ready for inverse fft 
+        // Send data to fft ip core 
+        for(uint n = 0; n < FFT_SIZE; n++)
+        {
+          fft_in_data.write(fft_synth[n]); 
+        }
+        fft_in_valid.write(true);
+
+        SC_WAIT_UNTIL(fft_out_valid);
+        for(uint n = 0; n < FFT_SIZE; n++) {
+          fft_out_data.read(single_sample);
+          single_sample.real = fix16_mul(single_sample.real, hanning_window[n]); // We only need the real part 
+          output_buffer[HOP_SIZE_FIX + n] += fix16_div(single_sample.real, FFT_SIZE_FIX);
+        }
+        fft_in_valid.write(false);
+        for(uint n = 0; n < fft_out_valid; n++)
+        {
+          // Shift output_buffer down to get correct overlap for next hop 
+          output_buffer[n] = output_buffer[HOP_SIZE + n];
+          if(n < HOP_SIZE)
+            audio_out.write(output_buffer[n]);
+        }
+        // audio data is ready
+        audio_out_valid.write(true);
+      }
     }
 }
 

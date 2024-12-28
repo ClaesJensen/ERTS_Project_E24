@@ -28,8 +28,15 @@ SC_MODULE( PHASE_VOCODER )
     sc_in<bool > in_clk;
     sc_in<bool > in_reset;
 
+    sc_in<float> in_pitch_shift;
     // Audio Input 
     sc_fifo<sc_uint<32> > audio_in;
+    // Audio otput circular buffer 
+    fix16_t output_buffer[FFT_SIZE+HOP_SIZE];
+    sc_fifo<sc_uint<32> > audio_out;
+    sc_in<bool> audio_in_valid;
+    sc_out<bool> audio_out_valid;
+
     // FFT Input
     sc_fifo<complex_sample > fft_in_data;
     sc_fifo<bool > fft_in_valid;
@@ -41,7 +48,6 @@ SC_MODULE( PHASE_VOCODER )
     // Internal memory
     fix16_t hanning_window[FFT_SIZE];
     fix16_t input_buffer[FFT_SIZE];
-    fix16_t output_buffer[FFT_SIZE*6];
 
     fix16_t fft_real[FFT_SIZE];
     fix16_t fft_imag[FFT_SIZE];
@@ -60,13 +66,13 @@ SC_MODULE( PHASE_VOCODER )
 
     SC_CTOR(PHASE_VOCODER) {
       SC_CTHREAD(process_phase_vocoder, in_clk.pos());
+      sensitive << audio_in; 
+      sensitive << fft_out_valid;
       reset_signal_is(in_reset, true);
     } 
     // Methods 
     void process_phase_vocoder();
     fix16_t wrap_phase(fix16_t phase_in);
-    
-    
 };
 
 #endif   // !PHASE_VOCODER_H__
