@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="biquadv2between" xd:componentRef="biquadv2between" xd:initiationInterval="50" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="b0_a0" xd:originalName="b0_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="b1_a0" xd:originalName="b1_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x18" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="b2_a0" xd:originalName="b2_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x20" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="a1_a0" xd:originalName="a1_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x28" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="a2_a0" xd:originalName="a2_a0" xd:direction="in" xd:interfaceRef="s_axi_biquadv2" xd:busTypeRef="axilite" xd:offset="0x30" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="inDataLeft" xd:originalName="inDataLeft" xd:direction="in" xd:interfaceRef="inDataLeft_V" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="24"/>
+  <xd:arg xd:name="inDataRight" xd:originalName="inDataRight" xd:direction="in" xd:interfaceRef="inDataRight_V" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="24"/>
+  <xd:arg xd:name="*(outDataLeft)" xd:originalName="outDataLeft" xd:direction="out" xd:interfaceRef="outDataLeft_V" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="24" xd:firstOut="8"/>
+  <xd:arg xd:name="*(outDataRight)" xd:originalName="outDataRight" xd:direction="out" xd:interfaceRef="outDataRight_V" xd:busTypeRef="register" xd:handshakeRef="ap_hs" xd:dataWidth="24" xd:firstOut="8"/>
+  <xd:latencyEstimates xd:best-case="49" xd:worst-case="49" xd:average-case="49"/>
+  <xd:resourceEstimates xd:LUT="1331" xd:FF="1602" xd:BRAM="2" xd:DSP="3"/>
+</xd:acceleratorMap>

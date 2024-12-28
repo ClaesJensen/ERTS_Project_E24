@@ -169,6 +169,29 @@ class Biquad:
 
     def single(self, x0: float, x1: float, x2: float, y1: float, y2: float): 
         return np.float32(self.b0 / self.a0 * x0 + self.b1 / self.a0 * x1 + self.b2 / self.a0 * x2 - self.a1 / self.a0 * y1 - self.a2 / self.a0 * y2)
+    
+    def GetFpCoeffs(self, frac: int):
+        self.fp_b0_a0: int = int(self.b0/self.a0 * (2**frac - 1))
+        self.fp_b1_a0: int = int(self.b1/self.a0 * (2**frac - 1))
+        self.fp_b2_a0: int = int(self.b2/self.a0 * (2**frac - 1))
+        self.fp_a1_a0: int = int(self.a1/self.a0 * (2**frac - 1))
+        self.fp_a2_a0: int = int(self.a2/self.a0 * (2**frac - 1))
+
+        return [self.fp_b0_a0, self.fp_b1_a0, self.fp_b2_a0, self.fp_a1_a0, self.fp_a2_a0]
+
+    def processFp(self, x: np.ndarray[int], frac: int):
+        self.fp_b0_a0: int = int(self.b0/self.a0 * (2**frac - 1))
+        self.fp_b1_a0: int = int(self.b1/self.a0 * (2**frac - 1))
+        self.fp_b2_a0: int = int(self.b2/self.a0 * (2**frac - 1))
+        self.fp_a1_a0: int = int(self.a1/self.a0 * (2**frac - 1))
+        self.fp_a2_a0: int = int(self.a2/self.a0 * (2**frac - 1))
+
+        x = np.concat([np.zeros(shape=(2), dtype=np.int64), x])
+        y: np.array = np.zeros(shape=(len(x)), dtype=np.int64)
+        return np.array([self.singleFp(x[i], x[i-1], x[i-2], y[i-1], y[i-2], frac) for i in range(2, len(x))], dtype=np.int64)
+    
+    def singleFp(self, x0: int, x1: int, x2: int, y1: int, y2: int, frac: int): 
+        return (int(self.fp_b0_a0 * x0) >> frac) + (int(self.fp_b1_a0 * x1) >> frac) + (int(self.fp_b2_a0 * x2) >> frac) - (int(self.fp_a1_a0 * y1) >> frac) - (int(self.fp_a2_a0 * y2) >> frac)
 
 class Lowpass(Biquad):
     def __init__(self, filter: FilterParameters):
@@ -315,13 +338,39 @@ class FilterCollection:
 
         return phase
     
+    def coeffs(self, fixedPoint: bool = False, fractional_bits: int = 15): 
+        coeffs: list[list[float]] = []
+
+        if (fixedPoint):
+            for filter in self.filters:
+                coeffs.append(filter.GetFpCoeffs(fractional_bits))
+        else:
+             for filter in self.filters:
+                coeffs.append([filter.b0 / filter.a0, filter.b1 / filter.a0, filter.b2 / filter.a0, filter.a1 / filter.a0, filter.a2 / filter.a0])
+
+        return coeffs
+    
+    @staticmethod
+    def toFixedPoint(coeffs: list[int], fractional_bits: int):
+        for i in range(len(coeffs)):
+            coeffs[i] = int(round(coeffs[i] * (2**fractional_bits - 1)))
+        return coeffs
+        
+
+    
     def process(self, x: np.ndarray[np.float32]):
         y = x
         if (len(self.filters) > 0):
             for filter in self.filters:
                 y = filter.process(y)
         return y
-
+    
+    def processFp(self, x: np.ndarray[np.int64], frac: int):
+        y = x
+        if (len(self.filters) > 0):
+            for filter in self.filters:
+                y = filter.processFp(y, frac)
+        return y
 
         
     def freqResponse(self, db: bool, angle: bool):

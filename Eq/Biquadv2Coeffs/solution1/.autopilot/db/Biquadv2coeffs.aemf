@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1734900594323">
+  <ports id="1" name="in0b0_a0_V" type="PortType" originalName="op.V" bitwidth="27">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="in0b1_a0_V" type="PortType" originalName="op.V" bitwidth="27">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="in0b2_a0_V" type="PortType" originalName="op.V" bitwidth="27">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="in0a1_a0_V" type="PortType" originalName="op.V" bitwidth="27">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="in0a2_a0_V" type="PortType" originalName="op.V" bitwidth="27">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="out0b0_a0_V" type="PortType" originalName="out0b0_a0.V" bitwidth="27" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="7" name="out0b1_a0_V" type="PortType" originalName="out0b1_a0.V" bitwidth="27" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="8" name="out0b2_a0_V" type="PortType" originalName="out0b2_a0.V" bitwidth="27" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="9" name="out0a1_a0_V" type="PortType" originalName="out0a1_a0.V" bitwidth="27" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="10" name="out0a2_a0_V" type="PortType" originalName="out0a2_a0.V" bitwidth="27" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="41" source_obj="//@ports.4" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="43" source_obj="//@ports.3" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="45" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="47" source_obj="//@ports.1" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="49" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="52" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@ports.5"/>
+  <edges id="53" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="55" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@ports.6"/>
+  <edges id="56" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="58" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@ports.7"/>
+  <edges id="59" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="61" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@ports.8"/>
+  <edges id="62" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="64" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@ports.9"/>
+  <edges id="65" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.9"/>
+  <blocks id="38" name="Biquadv2coeffs" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="in0a2_a0_V_read" originalName="op.V" bitwidth="27" opcode="read" m_display="0">
+      <dataInputObjs>in0a2_a0_V</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="in0a1_a0_V_read" originalName="op.V" bitwidth="27" opcode="read" m_display="0">
+      <dataInputObjs>in0a1_a0_V</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="in0b2_a0_V_read" originalName="op.V" bitwidth="27" opcode="read" m_display="0">
+      <dataInputObjs>in0b2_a0_V</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="in0b1_a0_V_read" originalName="op.V" bitwidth="27" opcode="read" m_display="0">
+      <dataInputObjs>in0b1_a0_V</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="in0b0_a0_V_read" originalName="op.V" bitwidth="27" opcode="read" m_display="0">
+      <dataInputObjs>in0b0_a0_V</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="node_32" lineNumber="16" fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" fileDirectory=".." contextFuncName="Biquadv2coeffs" opcode="write" m_display="0">
+      <inlineStackInfo fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" linenumber="16" fileDirectory="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq" functionName="Biquadv2coeffs"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>out0b0_a0_V</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="node_33" lineNumber="17" fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" fileDirectory=".." contextFuncName="Biquadv2coeffs" opcode="write" m_display="0">
+      <inlineStackInfo fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" linenumber="17" fileDirectory="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq" functionName="Biquadv2coeffs"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>out0b1_a0_V</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="node_34" lineNumber="18" fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" fileDirectory=".." contextFuncName="Biquadv2coeffs" opcode="write" m_display="0">
+      <inlineStackInfo fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" linenumber="18" fileDirectory="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq" functionName="Biquadv2coeffs"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>out0b2_a0_V</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="node_35" lineNumber="19" fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" fileDirectory=".." contextFuncName="Biquadv2coeffs" opcode="write" m_display="0">
+      <inlineStackInfo fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" linenumber="19" fileDirectory="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq" functionName="Biquadv2coeffs"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>out0a1_a0_V</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="node_36" lineNumber="20" fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" fileDirectory=".." contextFuncName="Biquadv2coeffs" opcode="write" m_display="0">
+      <inlineStackInfo fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" linenumber="20" fileDirectory="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq" functionName="Biquadv2coeffs"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>out0a2_a0_V</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="node_37" lineNumber="21" fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" fileDirectory=".." contextFuncName="Biquadv2coeffs" opcode="ret" m_display="0">
+      <inlineStackInfo fileName="Biquadv2Coeffs/biquadv2coeffs.cpp" linenumber="21" fileDirectory="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq" functionName="Biquadv2coeffs"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="Biquadv2Coeffs/biquadv2coeffs.cpp">
+      <validLinenumbers>16</validLinenumbers>
+      <validLinenumbers>17</validLinenumbers>
+      <validLinenumbers>18</validLinenumbers>
+      <validLinenumbers>19</validLinenumbers>
+      <validLinenumbers>20</validLinenumbers>
+      <validLinenumbers>21</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ioNodes realName="StgValue_24_write_fu_78">
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in0b2_a0_V_read_read_fu_52">
+    <nodeIds>24</nodeIds>
+  </ioNodes>
+  <ioNodes realName="StgValue_26_write_fu_94">
+    <nodeIds>35</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in0b0_a0_V_read_read_fu_64">
+    <nodeIds>26</nodeIds>
+  </ioNodes>
+  <ioNodes realName="StgValue_23_write_fu_70">
+    <nodeIds>32</nodeIds>
+  </ioNodes>
+  <ioNodes realName="StgValue_27_write_fu_102">
+    <nodeIds>36</nodeIds>
+  </ioNodes>
+  <ioNodes realName="StgValue_25_write_fu_86">
+    <nodeIds>34</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in0b1_a0_V_read_read_fu_58">
+    <nodeIds>25</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in0a1_a0_V_read_read_fu_46">
+    <nodeIds>23</nodeIds>
+  </ioNodes>
+  <ioNodes realName="in0a2_a0_V_read_read_fu_40">
+    <nodeIds>22</nodeIds>
+  </ioNodes>
+  <ioPorts name="in0a1_a0_V">
+    <contents name="read">
+      <nodeIds>23</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in0a2_a0_V">
+    <contents name="read">
+      <nodeIds>22</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in0b0_a0_V">
+    <contents name="read">
+      <nodeIds>26</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in0b1_a0_V">
+    <contents name="read">
+      <nodeIds>25</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="in0b2_a0_V">
+    <contents name="read">
+      <nodeIds>24</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out0a1_a0_V">
+    <contents name="write">
+      <nodeIds>35</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out0a2_a0_V">
+    <contents name="write">
+      <nodeIds>36</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out0b0_a0_V">
+    <contents name="write">
+      <nodeIds>32</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out0b1_a0_V">
+    <contents name="write">
+      <nodeIds>33</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="out0b2_a0_V">
+    <contents name="write">
+      <nodeIds>34</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="Biquadv2coeffs" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="-1">
+      <basicBlocks>38</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

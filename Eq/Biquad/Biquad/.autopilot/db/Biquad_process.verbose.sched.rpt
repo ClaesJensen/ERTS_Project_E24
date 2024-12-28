@@ -1,0 +1,380 @@
+
+
+================================================================
+== Vivado HLS Report for 'Biquad_process'
+================================================================
+* Date:           Thu Dec 19 15:08:35 2024
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        Biquad
+* Solution:       Biquad
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.91|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   32|   32|   32|   32|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |   30|   30|        30|          -|          -|  inf |    no    |
+        | + Loop 1.1  |   25|   25|         5|          -|          -|     5|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 11
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / (!exitcond)
+	10  / (exitcond)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	5  / true
+10 --> 
+	11  / true
+11 --> 
+	3  / true
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: StgValue_12 (6)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inClk), !map !95
+
+ST_1: StgValue_13 (7)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inReset), !map !99
+
+ST_1: StgValue_14 (8)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32* %inData), !map !103
+
+ST_1: StgValue_15 (9)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outData), !map !107
+
+ST_1: samples_V (10)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:18
+:4  %samples_V = alloca [5 x i32], align 4
+
+ST_1: StgValue_17 (11)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:5
+:5  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [6 x i8]* @p_str2, i32 0, i32 0, i1* %inClk) nounwind
+
+ST_1: StgValue_18 (12)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:6
+:6  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [8 x i8]* @p_str3, i32 0, i32 0, i1* %inReset) nounwind
+
+ST_1: StgValue_19 (13)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:7
+:7  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [7 x i8]* @p_str5, i32 0, i32 0, i32* %inData) nounwind
+
+ST_1: StgValue_20 (14)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:8
+:8  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 1, [13 x i8]* @p_str4, [8 x i8]* @p_str6, i32 0, i32 0, i32* %outData) nounwind
+
+ST_1: StgValue_21 (15)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:9
+:9  call void (...)* @_ssdm_op_SpecProcessDef([7 x i8]* @p_str, i32 2, [8 x i8]* @p_str7) nounwind
+
+ST_1: tmp_2 (16)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:9
+:10  %tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([15 x i8]* @p_str8)
+
+ST_1: StgValue_23 (17)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:9
+:11  call void (...)* @_ssdm_op_SpecProtocol(i32 1, [1 x i8]* @p_str9) nounwind
+
+ST_1: p_ssdm_reset_v (18)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:9
+:12  %p_ssdm_reset_v = call i32 (...)* @_ssdm_op_SpecStateBegin(i32 0, i32 0, i32 1) nounwind
+
+ST_1: StgValue_25 (19)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:6
+:13  call void (...)* @_ssdm_op_SpecIFCore(i32* %inData, [1 x i8]* @p_str9, [10 x i8]* @p_str11, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [22 x i8]* @p_str12)
+
+ST_1: StgValue_26 (20)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:7
+:14  call void (...)* @_ssdm_op_SpecIFCore(i32* %outData, [1 x i8]* @p_str9, [10 x i8]* @p_str11, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [22 x i8]* @p_str12)
+
+ST_1: empty (21)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:18
+:15  %empty = call i32 (...)* @_ssdm_op_SpecStateEnd(i32 %p_ssdm_reset_v) nounwind
+
+ST_1: empty_6 (22)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:18
+:16  %empty_6 = call i32 (...)* @_ssdm_op_SpecRegionEnd([15 x i8]* @p_str8, i32 %tmp_2)
+
+
+ <State 2>: 0.00ns
+ST_2: samples_V_addr (23)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:28
+:17  %samples_V_addr = getelementptr [5 x i32]* %samples_V, i32 0, i32 0
+
+ST_2: samples_V_addr_1 (24)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:50
+:18  %samples_V_addr_1 = getelementptr [5 x i32]* %samples_V, i32 0, i32 3
+
+ST_2: samples_V_addr_2 (25)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:50
+:19  %samples_V_addr_2 = getelementptr [5 x i32]* %samples_V, i32 0, i32 4
+
+ST_2: samples_V_addr_3 (26)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:52
+:20  %samples_V_addr_3 = getelementptr [5 x i32]* %samples_V, i32 0, i32 1
+
+ST_2: samples_V_addr_4 (27)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:52
+:21  %samples_V_addr_4 = getelementptr [5 x i32]* %samples_V, i32 0, i32 2
+
+ST_2: StgValue_34 (28)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:18
+:22  br label %_ZN7_ap_sc_7sc_core4waitEi.exit2
+
+
+ <State 3>: 2.32ns
+ST_3: val_V (31)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:28
+_ZN7_ap_sc_7sc_core4waitEi.exit2:1  %val_V = call i32 @_ssdm_op_Read.ap_auto.volatile.i32P(i32* %inData)
+
+ST_3: StgValue_36 (32)  [1/1] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:28
+_ZN7_ap_sc_7sc_core4waitEi.exit2:2  store i32 %val_V, i32* %samples_V_addr, align 4
+
+
+ <State 4>: 1.59ns
+ST_4: loop_begin (30)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit2:0  %loop_begin = call i32 (...)* @_ssdm_op_SpecLoopBegin() nounwind
+
+ST_4: StgValue_38 (33)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:29
+_ZN7_ap_sc_7sc_core4waitEi.exit2:3  call void (...)* @_ssdm_op_Wait(i32 1) nounwind
+
+ST_4: StgValue_39 (34)  [1/1] 1.59ns  loc: SystemCImplementation/src/biquad.cpp:35
+_ZN7_ap_sc_7sc_core4waitEi.exit2:4  br label %1
+
+
+ <State 5>: 3.25ns
+ST_5: v_V (36)  [1/1] 0.00ns
+:0  %v_V = phi i32 [ 0, %_ZN7_ap_sc_7sc_core4waitEi.exit2 ], [ %result_V, %_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit ]
+
+ST_5: t_V (37)  [1/1] 0.00ns
+:1  %t_V = phi i3 [ 0, %_ZN7_ap_sc_7sc_core4waitEi.exit2 ], [ %i_V, %_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit ]
+
+ST_5: exitcond (38)  [1/1] 2.07ns  loc: SystemCImplementation/src/biquad.cpp:35
+:2  %exitcond = icmp eq i3 %t_V, -3
+
+ST_5: empty_7 (39)  [1/1] 0.00ns
+:3  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)
+
+ST_5: i_V (40)  [1/1] 2.26ns  loc: SystemCImplementation/src/biquad.cpp:35
+:4  %i_V = add i3 %t_V, 1
+
+ST_5: StgValue_45 (41)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:35
+:5  br i1 %exitcond, label %_ZN7_ap_sc_7sc_core4waitEi.exit, label %_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit
+
+ST_5: tmp (43)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:36
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:0  %tmp = zext i3 %t_V to i32
+
+ST_5: coeffs_addr (44)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:36
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:1  %coeffs_addr = getelementptr [5 x i25]* @coeffs, i32 0, i32 %tmp
+
+ST_5: coeffs_load (45)  [2/2] 3.25ns  loc: SystemCImplementation/src/biquad.cpp:36
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:2  %coeffs_load = load i25* %coeffs_addr, align 4
+
+ST_5: samples_V_addr_5 (46)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:37
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:3  %samples_V_addr_5 = getelementptr [5 x i32]* %samples_V, i32 0, i32 %tmp
+
+ST_5: samples_V_load_2 (47)  [2/2] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:37
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:4  %samples_V_load_2 = load i32* %samples_V_addr_5, align 4
+
+ST_5: samples_V_load (55)  [2/2] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:50
+_ZN7_ap_sc_7sc_core4waitEi.exit:0  %samples_V_load = load i32* %samples_V_addr_1, align 4
+
+ST_5: samples_V_load_1 (58)  [2/2] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:52
+_ZN7_ap_sc_7sc_core4waitEi.exit:3  %samples_V_load_1 = load i32* %samples_V_addr_3, align 4
+
+
+ <State 6>: 3.25ns
+ST_6: coeffs_load (45)  [1/2] 3.25ns  loc: SystemCImplementation/src/biquad.cpp:36
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:2  %coeffs_load = load i25* %coeffs_addr, align 4
+
+ST_6: samples_V_load_2 (47)  [1/2] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:37
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:4  %samples_V_load_2 = load i32* %samples_V_addr_5, align 4
+
+
+ <State 7>: 6.91ns
+ST_7: lhs_V_cast (48)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:38
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:5  %lhs_V_cast = sext i25 %coeffs_load to i56
+
+ST_7: rhs_V_cast (49)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:38
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:6  %rhs_V_cast = sext i32 %samples_V_load_2 to i56
+
+ST_7: r_V (50)  [2/2] 6.91ns  loc: SystemCImplementation/src/biquad.cpp:38
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:7  %r_V = mul i56 %lhs_V_cast, %rhs_V_cast
+
+
+ <State 8>: 6.91ns
+ST_8: r_V (50)  [1/2] 6.91ns  loc: SystemCImplementation/src/biquad.cpp:38
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:7  %r_V = mul i56 %lhs_V_cast, %rhs_V_cast
+
+ST_8: phitmp (51)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:38
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:8  %phitmp = call i32 @_ssdm_op_PartSelect.i32.i56.i32.i32(i56 %r_V, i32 24, i32 55)
+
+
+ <State 9>: 2.90ns
+ST_9: result_V (52)  [1/1] 2.90ns  loc: SystemCImplementation/src/biquad.cpp:38
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:9  %result_V = add i32 %phitmp, %v_V
+
+ST_9: StgValue_61 (53)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:35
+_ZrsILi128ELb1EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit:10  br label %1
+
+
+ <State 10>: 4.64ns
+ST_10: samples_V_load (55)  [1/2] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:50
+_ZN7_ap_sc_7sc_core4waitEi.exit:0  %samples_V_load = load i32* %samples_V_addr_1, align 4
+
+ST_10: StgValue_63 (56)  [1/1] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:50
+_ZN7_ap_sc_7sc_core4waitEi.exit:1  store i32 %samples_V_load, i32* %samples_V_addr_2, align 4
+
+ST_10: StgValue_64 (57)  [1/1] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:51
+_ZN7_ap_sc_7sc_core4waitEi.exit:2  store i32 %v_V, i32* %samples_V_addr_1, align 4
+
+ST_10: samples_V_load_1 (58)  [1/2] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:52
+_ZN7_ap_sc_7sc_core4waitEi.exit:3  %samples_V_load_1 = load i32* %samples_V_addr_3, align 4
+
+ST_10: StgValue_66 (61)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:56
+_ZN7_ap_sc_7sc_core4waitEi.exit:6  call void @_ssdm_op_Write.ap_auto.volatile.i32P(i32* %outData, i32 %v_V)
+
+
+ <State 11>: 2.32ns
+ST_11: StgValue_67 (59)  [1/1] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:52
+_ZN7_ap_sc_7sc_core4waitEi.exit:4  store i32 %samples_V_load_1, i32* %samples_V_addr_4, align 4
+
+ST_11: StgValue_68 (60)  [1/1] 2.32ns  loc: SystemCImplementation/src/biquad.cpp:53
+_ZN7_ap_sc_7sc_core4waitEi.exit:5  store i32 %val_V, i32* %samples_V_addr_3, align 4
+
+ST_11: StgValue_69 (62)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:57
+_ZN7_ap_sc_7sc_core4waitEi.exit:7  call void (...)* @_ssdm_op_Wait(i32 1) nounwind
+
+ST_11: StgValue_70 (63)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.cpp:58
+_ZN7_ap_sc_7sc_core4waitEi.exit:8  br label %_ZN7_ap_sc_7sc_core4waitEi.exit2
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	wire read on port 'inData' (SystemCImplementation/src/biquad.cpp:28) [31]  (0 ns)
+	'store' operation (SystemCImplementation/src/biquad.cpp:28) of variable 'val.V', SystemCImplementation/src/biquad.cpp:28 on array 'samples.V', SystemCImplementation/src/biquad.cpp:18 [32]  (2.32 ns)
+
+ <State 4>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('result.V') with incoming values : ('result.V', SystemCImplementation/src/biquad.cpp:38) [36]  (1.59 ns)
+
+ <State 5>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i.V') with incoming values : ('i.V', SystemCImplementation/src/biquad.cpp:35) [37]  (0 ns)
+	'getelementptr' operation ('coeffs_addr', SystemCImplementation/src/biquad.cpp:36) [44]  (0 ns)
+	'load' operation ('coeffs_load', SystemCImplementation/src/biquad.cpp:36) on array 'coeffs' [45]  (3.25 ns)
+
+ <State 6>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('coeffs_load', SystemCImplementation/src/biquad.cpp:36) on array 'coeffs' [45]  (3.25 ns)
+
+ <State 7>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('r.V', SystemCImplementation/src/biquad.cpp:38) [50]  (6.91 ns)
+
+ <State 8>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('r.V', SystemCImplementation/src/biquad.cpp:38) [50]  (6.91 ns)
+
+ <State 9>: 2.9ns
+The critical path consists of the following:
+	'add' operation ('result.V', SystemCImplementation/src/biquad.cpp:38) [52]  (2.9 ns)
+
+ <State 10>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('samples_V_load', SystemCImplementation/src/biquad.cpp:50) on array 'samples.V', SystemCImplementation/src/biquad.cpp:18 [55]  (2.32 ns)
+	'store' operation (SystemCImplementation/src/biquad.cpp:50) of variable 'samples_V_load', SystemCImplementation/src/biquad.cpp:50 on array 'samples.V', SystemCImplementation/src/biquad.cpp:18 [56]  (2.32 ns)
+
+ <State 11>: 2.32ns
+The critical path consists of the following:
+	'store' operation (SystemCImplementation/src/biquad.cpp:52) of variable 'samples_V_load_1', SystemCImplementation/src/biquad.cpp:52 on array 'samples.V', SystemCImplementation/src/biquad.cpp:18 [59]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

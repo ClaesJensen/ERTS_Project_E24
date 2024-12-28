@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="biquadv2coeffs.cpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2Coeffs\biquadv2coeffs.cpp"/>
+    <originFiles name="biquadv2coeffs.hpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2Coeffs\biquadv2coeffs.hpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -21,6 +21,12 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../IP"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2Start/solution1/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2End/solution1/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2Coeffs/solution1/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2/solution1/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquad/Biquad/impl/ip"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../Eq/Biquadv2Between/solution1/impl/ip"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -38,13 +44,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="2"/>
-    <Option Name="WTModelSimExportSim" Val="2"/>
-    <Option Name="WTQuestaExportSim" Val="2"/>
-    <Option Name="WTIesExportSim" Val="2"/>
-    <Option Name="WTVcsExportSim" Val="2"/>
-    <Option Name="WTRivieraExportSim" Val="2"/>
-    <Option Name="WTActivehdlExportSim" Val="2"/>
+    <Option Name="WTXSimExportSim" Val="4"/>
+    <Option Name="WTModelSimExportSim" Val="4"/>
+    <Option Name="WTQuestaExportSim" Val="4"/>
+    <Option Name="WTIesExportSim" Val="4"/>
+    <Option Name="WTVcsExportSim" Val="4"/>
+    <Option Name="WTRivieraExportSim" Val="4"/>
+    <Option Name="WTActivehdlExportSim" Val="4"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>

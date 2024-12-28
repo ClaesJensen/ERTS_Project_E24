@@ -23,6 +23,63 @@
 
 /******************************************************************/
 
+/* Definitions for driver BIQUADV2BETWEEN */
+#define XPAR_XBIQUADV2BETWEEN_NUM_INSTANCES 1
+
+/* Definitions for peripheral PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT */
+#define XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_DEVICE_ID 0
+#define XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_S_AXI_BIQUADV2_BASEADDR 0x43C00000
+#define XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_S_AXI_BIQUADV2_HIGHADDR 0x43C0FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT */
+#define XPAR_XBIQUADV2BETWEEN_0_DEVICE_ID XPAR_PARAMETRICEQ_BIQUADV2BETWEEN_0_LEFT_DEVICE_ID
+#define XPAR_XBIQUADV2BETWEEN_0_S_AXI_BIQUADV2_BASEADDR 0x43C00000
+#define XPAR_XBIQUADV2BETWEEN_0_S_AXI_BIQUADV2_HIGHADDR 0x43C0FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver BIQUADV2END */
+#define XPAR_XBIQUADV2END_NUM_INSTANCES 1
+
+/* Definitions for peripheral PARAMETRICEQ_BIQUADV2END_0 */
+#define XPAR_PARAMETRICEQ_BIQUADV2END_0_DEVICE_ID 0
+#define XPAR_PARAMETRICEQ_BIQUADV2END_0_S_AXI_BIQUADV2_BASEADDR 0x43C10000
+#define XPAR_PARAMETRICEQ_BIQUADV2END_0_S_AXI_BIQUADV2_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PARAMETRICEQ_BIQUADV2END_0 */
+#define XPAR_XBIQUADV2END_0_DEVICE_ID XPAR_PARAMETRICEQ_BIQUADV2END_0_DEVICE_ID
+#define XPAR_XBIQUADV2END_0_S_AXI_BIQUADV2_BASEADDR 0x43C10000
+#define XPAR_XBIQUADV2END_0_S_AXI_BIQUADV2_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver BIQUADV2START */
+#define XPAR_XBIQUADV2START_NUM_INSTANCES 1
+
+/* Definitions for peripheral PARAMETRICEQ_BIQUADV2START_0_LEFT */
+#define XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_DEVICE_ID 0
+#define XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_S_AXI_BIQUADV2_BASEADDR 0x43C20000
+#define XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_S_AXI_BIQUADV2_HIGHADDR 0x43C2FFFF
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral PARAMETRICEQ_BIQUADV2START_0_LEFT */
+#define XPAR_XBIQUADV2START_0_DEVICE_ID XPAR_PARAMETRICEQ_BIQUADV2START_0_LEFT_DEVICE_ID
+#define XPAR_XBIQUADV2START_0_S_AXI_BIQUADV2_BASEADDR 0x43C20000
+#define XPAR_XBIQUADV2START_0_S_AXI_BIQUADV2_HIGHADDR 0x43C2FFFF
+
+
+/******************************************************************/
+
 
 /* Definitions for peripheral PS7_DDR_0 */
 #define XPAR_PS7_DDR_0_S_AXI_BASEADDR 0x00100000
@@ -169,8 +226,31 @@
 
 
 /* Definitions for peripheral ZYBO_AUDIO_CTRL_0 */
-#define XPAR_ZYBO_AUDIO_CTRL_0_BASEADDR 0x40000000
+#define XPAR_ZYBO_AUDIO_CTRL_0_BASEADDR 0x60000000
 #define XPAR_ZYBO_AUDIO_CTRL_0_HIGHADDR 0x7FFFFFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver GPIO */
+#define XPAR_XGPIO_NUM_INSTANCES 1
+
+/* Definitions for peripheral AXI_GPIO_0 */
+#define XPAR_AXI_GPIO_0_BASEADDR 0x41200000
+#define XPAR_AXI_GPIO_0_HIGHADDR 0x4120FFFF
+#define XPAR_AXI_GPIO_0_DEVICE_ID 0
+#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_0_IS_DUAL 0
+
+
+/******************************************************************/
+
+/* Canonical definitions for peripheral AXI_GPIO_0 */
+#define XPAR_GPIO_0_BASEADDR 0x41200000
+#define XPAR_GPIO_0_HIGHADDR 0x4120FFFF
+#define XPAR_GPIO_0_DEVICE_ID XPAR_AXI_GPIO_0_DEVICE_ID
+#define XPAR_GPIO_0_INTERRUPT_PRESENT 0
+#define XPAR_GPIO_0_IS_DUAL 0
 
 
 /******************************************************************/
@@ -193,6 +273,15 @@
 #define XPAR_XIICPS_0_HIGHADDR 0xE0005FFF
 #define XPAR_XIICPS_0_I2C_CLK_FREQ_HZ 108333336
 
+
+/******************************************************************/
+
+/* Definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_PARAMETRICEQ_BIQUADV2END_0_INTERRUPT_INTR 61U
+
+/******************************************************************/
+
+/* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
 
 /******************************************************************/
 

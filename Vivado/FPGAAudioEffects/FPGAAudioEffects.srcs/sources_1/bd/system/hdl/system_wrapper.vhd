@@ -1,8 +1,8 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
---Date        : Tue Dec 17 00:58:31 2024
---Host        : Jeppe running 64-bit major release  (build 9200)
+--Date        : Thu Dec 26 20:16:53 2024
+--Host        : LAPTOP-OSBGC643 running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
 --Purpose     : IP block netlist
@@ -29,6 +29,7 @@ entity system_wrapper is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    FCLK_CLK1 : out STD_LOGIC;
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -38,7 +39,10 @@ entity system_wrapper is
     PBDATA : out STD_LOGIC;
     PBLRCLK : out STD_LOGIC;
     RECDAT : in STD_LOGIC;
-    RECLRCLK : out STD_LOGIC
+    RECLRCLK : out STD_LOGIC;
+    gpio_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    iic_1_scl_io : inout STD_LOGIC;
+    iic_1_sda_io : inout STD_LOGIC
   );
 end system_wrapper;
 
@@ -66,14 +70,50 @@ architecture STRUCTURE of system_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
+    IIC_1_sda_i : in STD_LOGIC;
+    IIC_1_sda_o : out STD_LOGIC;
+    IIC_1_sda_t : out STD_LOGIC;
+    IIC_1_scl_i : in STD_LOGIC;
+    IIC_1_scl_o : out STD_LOGIC;
+    IIC_1_scl_t : out STD_LOGIC;
+    GPIO_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     BCLK : out STD_LOGIC;
     PBLRCLK : out STD_LOGIC;
     RECLRCLK : out STD_LOGIC;
     PBDATA : out STD_LOGIC;
-    RECDAT : in STD_LOGIC
+    RECDAT : in STD_LOGIC;
+    FCLK_CLK1 : out STD_LOGIC
   );
   end component system;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal iic_1_scl_i : STD_LOGIC;
+  signal iic_1_scl_o : STD_LOGIC;
+  signal iic_1_scl_t : STD_LOGIC;
+  signal iic_1_sda_i : STD_LOGIC;
+  signal iic_1_sda_o : STD_LOGIC;
+  signal iic_1_sda_t : STD_LOGIC;
 begin
+iic_1_scl_iobuf: component IOBUF
+     port map (
+      I => iic_1_scl_o,
+      IO => iic_1_scl_io,
+      O => iic_1_scl_i,
+      T => iic_1_scl_t
+    );
+iic_1_sda_iobuf: component IOBUF
+     port map (
+      I => iic_1_sda_o,
+      IO => iic_1_sda_io,
+      O => iic_1_sda_i,
+      T => iic_1_sda_t
+    );
 system_i: component system
      port map (
       BCLK => BCLK,
@@ -92,12 +132,20 @@ system_i: component system
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
+      FCLK_CLK1 => FCLK_CLK1,
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      GPIO_tri_o(0) => gpio_tri_o(0),
+      IIC_1_scl_i => iic_1_scl_i,
+      IIC_1_scl_o => iic_1_scl_o,
+      IIC_1_scl_t => iic_1_scl_t,
+      IIC_1_sda_i => iic_1_sda_i,
+      IIC_1_sda_o => iic_1_sda_o,
+      IIC_1_sda_t => iic_1_sda_t,
       PBDATA => PBDATA,
       PBLRCLK => PBLRCLK,
       RECDAT => RECDAT,

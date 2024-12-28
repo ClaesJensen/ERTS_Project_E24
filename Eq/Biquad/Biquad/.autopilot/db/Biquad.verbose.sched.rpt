@@ -1,0 +1,171 @@
+
+
+================================================================
+== Vivado HLS Report for 'Biquad'
+================================================================
+* Date:           Thu Dec 19 15:08:35 2024
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        Biquad
+* Solution:       Biquad
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      6.91|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|   33|    1|   34|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (Biquad_ssdm_threa)
+2 --> 
+* FSM state operations: 
+
+ <State 1>: 2.32ns
+ST_1: StgValue_3 (7)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecIFCore(i32* %outData, [1 x i8]* @p_str9, [10 x i8]* @p_str11, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [22 x i8]* @p_str12)
+
+ST_1: StgValue_4 (8)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecIFCore(i32* %inData, [1 x i8]* @p_str9, [10 x i8]* @p_str11, [1 x i8]* @p_str9, i32 -1, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [1 x i8]* @p_str9, [22 x i8]* @p_str12)
+
+ST_1: StgValue_5 (9)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inClk), !map !95
+
+ST_1: StgValue_6 (10)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i1* %inReset), !map !99
+
+ST_1: StgValue_7 (11)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i32* %inData), !map !103
+
+ST_1: StgValue_8 (12)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32* %outData), !map !107
+
+ST_1: StgValue_9 (13)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:18
+:6  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @p_str, [7 x i8]* @p_str) nounwind
+
+ST_1: Biquad_ssdm_threa (14)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:7  %Biquad_ssdm_threa = load i1* @Biquad_ssdm_thread_M_process, align 1
+
+ST_1: StgValue_11 (15)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:8  br i1 %Biquad_ssdm_threa, label %1, label %2
+
+ST_1: StgValue_12 (17)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:0  call void (...)* @_ssdm_op_SpecProcessDecl([7 x i8]* @p_str, i32 2, [8 x i8]* @p_str7) nounwind
+
+ST_1: StgValue_13 (18)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:20
+:1  call void (...)* @_ssdm_op_SpecSensitive([8 x i8]* @p_str7, [6 x i8]* @p_str2, i1* %inClk, i32 1) nounwind
+
+ST_1: StgValue_14 (19)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:21
+:2  call void (...)* @_ssdm_op_SpecSensitive([8 x i8]* @p_str7, [8 x i8]* @p_str3, i1* %inReset, i32 3) nounwind
+
+ST_1: StgValue_15 (20)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:22
+:3  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [6 x i8]* @p_str2, i32 0, i32 0, i1* %inClk) nounwind
+
+ST_1: StgValue_16 (21)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:23
+:4  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [8 x i8]* @p_str3, i32 0, i32 0, i1* %inReset) nounwind
+
+ST_1: StgValue_17 (22)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:24
+:5  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [7 x i8]* @p_str5, i32 0, i32 0, i32* %inData) nounwind
+
+ST_1: StgValue_18 (23)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:25
+:6  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 1, [13 x i8]* @p_str4, [8 x i8]* @p_str6, i32 0, i32 0, i32* %outData) nounwind
+
+ST_1: StgValue_19 (24)  [1/1] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:39
+:7  ret void
+
+ST_1: StgValue_20 (26)  [2/2] 2.32ns  loc: SystemCImplementation/src/biquad.hpp:19
+:0  call void @"Biquad::process"(i1* %inClk, i1* %inReset, i32* %inData, i32* %outData)
+
+
+ <State 2>: 0.00ns
+ST_2: StgValue_21 (26)  [1/2] 0.00ns  loc: SystemCImplementation/src/biquad.hpp:19
+:0  call void @"Biquad::process"(i1* %inClk, i1* %inReset, i32* %inData, i32* %outData)
+
+ST_2: StgValue_22 (27)  [1/1] 0.00ns
+:1  unreachable
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'call' operation (SystemCImplementation/src/biquad.hpp:19) to 'Biquad::process' [26]  (2.32 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
