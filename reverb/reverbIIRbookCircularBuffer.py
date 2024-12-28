@@ -6,6 +6,7 @@ import math
 import matplotlib.pyplot as plt
 from typing import Callable
 import wave
+import csv
 
 class allPassReverberatorSection:
     def __init__(self, a: float, D: int, input_size: int):
@@ -104,8 +105,8 @@ class reverbEffect:
 
     def process(self, input: np.ndarray) -> np.ndarray:
         dry_signal = input
-        processed_audio = self.comb_filter.process(input)
-        processed_audio = self.allpass_reverberator.process(processed_audio)
+        processed_audio = self.allpass_reverberator.process(input)
+        processed_audio = self.comb_filter.process(processed_audio)
         
         # Mix dry and wet signals
         output = (1 - self.mix) * dry_signal + self.mix * processed_audio
@@ -126,7 +127,7 @@ class AudioEffectApplier:
         raw_input_audio_buffer = self.audiofile.readframes(self.frames)
         pcm_int16 = np.frombuffer(raw_input_audio_buffer, dtype=np.int16)
 
-        #Convert and normalize
+        # Convert and normalize
         pcm_float32 = pcm_int16.astype(np.float32) / 2**fractional_bits
 
         self.pcm_left = np.array([pcm_float32[i] for i in range(0, len(pcm_float32) - 1, 2)], dtype=np.float32)
@@ -162,35 +163,17 @@ class AudioEffectApplier:
         return b
 
 
-    def process(self, f: Callable[[np.ndarray], np.ndarray]):
-        filtered_pcm_left: np.ndarray[np.float32] = f(np.copy(self.pcm_left)).astype(np.float32)
-        filtered_pcm_right: np.ndarray[np.float32] = f(np.copy(self.pcm_right)).astype(np.float32)
+    def process(self, effect_function: Callable[[np.ndarray], np.ndarray]):
+        # Apply the effect function to the audio data
+        processed_audio = effect_function(self.pcm_left)
 
-        # Normalize
-        filtered_pcm_left: np.ndarray[np.float32] = np.array(filtered_pcm_left / np.max(filtered_pcm_left)).astype(np.float32)
-        filtered_pcm_right: np.ndarray[np.float32] = np.array(filtered_pcm_right / np.max(filtered_pcm_right)).astype(np.float32)
+        # Convert back to int16
+        processed_audio_int16 = (processed_audio * 2**self.fractional_bits).astype(np.int16)
 
-        #Convert back to fixedpoint integers
-        converted_pcm_left: np.ndarray[np.int16] = np.array([pcm * (2**self.fractional_bits - 1) for pcm in filtered_pcm_left]).astype(dtype=np.int16)
-        converted_pcm_right: np.ndarray[np.int16] = np.array([pcm * (2**self.fractional_bits - 1) for pcm in filtered_pcm_right]).astype(dtype=np.int16)
+        # Write the processed audio to the output .wav file
+        sf.write(self.outputFilePath, processed_audio_int16, self.fs)
 
-        raw_write: bytes = b'' 
-        for i_pcm in range(len(converted_pcm_left)):
-            raw_write += np.int16.tobytes(converted_pcm_left[i_pcm])
-            raw_write += np.int16.tobytes(converted_pcm_right[i_pcm])
-
-        outputFile = open(self.outputFilePath, "wb")
-        writer = wave.Wave_write(outputFile)
-        writer.setframerate(self.fs)
-        writer.setnchannels(self.channels)
-        writer.setnframes(self.frames)
-        writer.setsampwidth(self.sampleWidth)
-        writer.setcomptype('NONE', 'not compressed')
-        writer.writeframesraw(raw_write)
-        writer.close()
-        outputFile.close()
-
-        return filtered_pcm_left, filtered_pcm_right
+        return processed_audio
 
 # Example usage
 if __name__ == "__main__":
@@ -204,17 +187,17 @@ if __name__ == "__main__":
     # Create a single reverberator
 
     # Create an instance of AudioEffectApplier
-    audio_effect_applier = AudioEffectApplier("klap.wav", "OutputCircular.wav", fractional_bits=15)
+    audio_effect_applier = AudioEffectApplier("klap.wav", "OutputCircular4test.wav", fractional_bits=15)
 
     # Allpass values
-    M_values = [89, 131, 563, 3001, 7001]
+    M_values = [89, 131, 563, 3001]
     a = 0.85
-    a_values_allpass = [a, a, a, a, a]
+    a_values_allpass = [a, a, a, a]
     
     # Comb values, 0.8 is chosen for a long natural sounding reverb
-    a_values_comb = [0.65, 0.75, 0.67, 0.75, 0.85, 0.66, 0.85, 0.75, 0.81]
+    a_values_comb = [0.65, 0.75, 0.75, 0.66, 0.85, 0.81]
     fs = audio_effect_applier.fs
-    K_values = [1511, 1723, 1999, 2137, 2411, 2731, 3163,3571,4001]
+    K_values = [1511, 1723, 2137, 2731, 3163, 4001]
 
     reverbEffectInstance = reverbEffect(a_values_allpass, a_values_comb, M_values, K_values, len(audio_effect_applier.pcm_left), 1.0)
 
@@ -224,12 +207,28 @@ if __name__ == "__main__":
     #Combine left and right to WAV format and write to output.wav
     audio_effect_applier.process(lambda x: processed_audio_left)
 
+    # Save 10,000 samples of the input data from the left channel to a CSV file
+    with open('input_left_channel.csv', 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(['Sample Index', 'Amplitude'])
+        for i in range(min(10000, len(audio_effect_applier.pcm_left))):
+            csvwriter.writerow([i, audio_effect_applier.pcm_left[i]])
+
+    # Save 10,000 samples of the processed audio left channel to a CSV file
+    with open('processed_audio_left_channel.csv', 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(['Sample Index', 'Amplitude'])
+        for i in range(min(10000, len(processed_audio_left))):
+            csvwriter.writerow([i, processed_audio_left[i]])
+
     # (Optional) Plot the result
     """ plt.plot((processed_audio_left), label="Left Channel")
     plt.title("Output Signal")
     plt.xlabel("Sample Index")
     plt.ylabel("Amplitude")
     plt.show() """
+
+    
 
     # Take the difference between the klap.wav and the output.wav
     # to see the effect of the all-pass reverberator
