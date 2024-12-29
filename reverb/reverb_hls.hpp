@@ -8,7 +8,7 @@ typedef ap_fixed<24, 1, AP_RND, AP_SAT> result_t;
 static coeff_t mix = 1.0;
 
 void reverb(data_t inputData, data_t* outputData);
-void updateMix(coeff_t newMixVal);
+void tuneMix(coeff_t newMixVal);
 // Perhaps a function for adjusting roomsize?
 
 // Define delay values for 5 allpasses
