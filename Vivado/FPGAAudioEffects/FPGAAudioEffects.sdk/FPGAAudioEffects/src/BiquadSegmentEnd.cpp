@@ -16,7 +16,7 @@ BiquadSegmentEnd::BiquadSegmentEnd(uint16_t DeviceID) {
 	}
 }
 
-void BiquadSegmentEnd::Output(uint32_t *outDataL, uint32_t *outDataR) {
+void BiquadSegmentEnd::Read(uint32_t *outDataL, uint32_t *outDataR) {
 	*outDataL = XBiquadv2end_Get_outDataLeft_V(&this->biquad_end);
 	*outDataR = XBiquadv2end_Get_outDataRight_V(&this->biquad_end);
 }
@@ -58,6 +58,11 @@ int BiquadSegmentEnd::InitBiquadIRQ(XScuGic *ScuGic, uint16_t InterruptID, Xil_I
 	xil_printf("After Enable\n");
 
 	return result;
+}
+
+void BiquadSegmentEnd::EnableInterrupt() {
+	XBiquadv2end_InterruptEnable(&biquad_end, 1);
+	XBiquadv2end_InterruptGlobalEnable(&biquad_end);
 }
 
 void BiquadSegmentEnd::ClearInterruptEnd() {

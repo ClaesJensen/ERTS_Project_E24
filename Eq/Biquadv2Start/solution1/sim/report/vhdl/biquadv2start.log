@@ -1,12 +1,2 @@
-@I [SIM-47] Using XSIM for RTL simulation.
-@I [SIM-14] Instrumenting C test bench ...
-   Build using "D:/Xilinx/Vivado_HLS/2017.2/msys/bin/g++.exe"
-   Compiling apatb_biquadv2start.cpp
-   Compiling biquadv2start.cpp_pre.cpp.tb.cpp
-   Compiling biquadv2start_test.cpp_pre.cpp.tb.cpp
-   Generating cosim.tv.exe
-@I [SIM-302] Starting C TB testing ... 
-@I [SIM-333] Generating C post check test bench ...
-@I [SIM-12] Generating RTL test bench ...
-@E [SIM-372] This design has AXI_lite interface port but function-level handshaking signals are not bundled to AXI_lite slave.
-@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***
+@E [SIM-345] Cosim only supports the following 'ap_ctrl_none' designs: (1) combinational designs; (2) pipelined design with task inteveral of 1; (3) designs with array streaming or hls_stream or AXI4 stream ports.
+@E [SIM-5] *** C/RTL co-simulation file generate finished: FAIL ***

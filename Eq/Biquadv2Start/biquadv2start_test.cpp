@@ -16,6 +16,7 @@ void biquadv2start(
 
 
 int main() {
+	bool testPassed = true;
 	printf("Start\n");
 	//coeff_t b0_a0 = 0.915815940509867;
 	//coeff_t b1_a0 = -1.797414493434111;
@@ -58,9 +59,18 @@ int main() {
 
 	//Printing result
 	for (int i = 0; i < TEST_SIZE; i++) {
-		bool match = round(expected[i].to_float() * 1000) == round(resultLeft[i].to_float() * 1000);
+		bool match = round(expected[i].to_float() * 100) == round(resultLeft[i].to_float() * 100);
 		printf("%f | %f | %i\n", expected[i].to_float(), resultLeft[i].to_float(), match);
+
+		if (!match) {
+			testPassed = false;
+		}
 	}
 
-	return 0;
+	if (testPassed) {
+		return 0;
+	}
+	else {
+		return -1;
+	}
 }

@@ -1,12 +1,12 @@
 set C_TypeInfoList {{ 
 "biquadv2start" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"b0_a0": [[],"0"] }, {"b1_a0": [[],"0"] }, {"b2_a0": [[],"0"] }, {"a1_a0": [[],"0"] }, {"a2_a0": [[],"0"] }, {"inDataLeft": [[],"1"] }, {"inDataRight": [[],"1"] }, {"outDataLeft": [[],{ "pointer": "2"}] }, {"outDataRight": [[],{ "pointer": "2"}] }],[],""], 
-"0": [ "coeff_t", {"typedef": [[[],"3"],""]}], 
-"3": [ "ap_fixed<27, 3, 0, 0, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 27}}],[[], {"scalar": { "int": 3}}],[[], {"scalar": { "4": 0}}],[[], {"scalar": { "5": 0}}],[[], {"scalar": { "int": 0}}]],""]}}], 
+"1": [ "inData_t", {"typedef": [[[],"3"],""]}], 
+"3": [ "ap_fixed<24, 1, 0, 0, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 24}}],[[], {"scalar": { "int": 1}}],[[], {"scalar": { "4": 0}}],[[], {"scalar": { "5": 0}}],[[], {"scalar": { "int": 0}}]],""]}}], 
 "4": [ "sc_q_mode", {"enum": [[],[],[{"SC_RND":  {"scalar": "__integer__"}},{"SC_RND_ZERO":  {"scalar": "__integer__"}},{"SC_RND_MIN_INF":  {"scalar": "__integer__"}},{"SC_RND_INF":  {"scalar": "__integer__"}},{"SC_RND_CONV":  {"scalar": "__integer__"}},{"SC_TRN":  {"scalar": "__integer__"}},{"SC_TRN_ZERO":  {"scalar": "__integer__"}}],""]}], 
 "5": [ "sc_o_mode", {"enum": [[],[],[{"SC_SAT":  {"scalar": "__integer__"}},{"SC_SAT_ZERO":  {"scalar": "__integer__"}},{"SC_SAT_SYM":  {"scalar": "__integer__"}},{"SC_WRAP":  {"scalar": "__integer__"}},{"SC_WRAP_SM":  {"scalar": "__integer__"}}],""]}], 
-"1": [ "inData_t", {"typedef": [[[],"6"],""]}], 
-"6": [ "ap_fixed<24, 1, 0, 0, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 24}}],[[], {"scalar": { "int": 1}}],[[], {"scalar": { "4": 0}}],[[], {"scalar": { "5": 0}}],[[], {"scalar": { "int": 0}}]],""]}}], 
-"2": [ "outData_t", {"typedef": [[[],"6"],""]}]
+"2": [ "outData_t", {"typedef": [[[],"3"],""]}], 
+"0": [ "coeff_t", {"typedef": [[[],"6"],""]}], 
+"6": [ "ap_fixed<27, 3, 0, 0, 0>", {"hls_type": {"ap_fixed": [[[[], {"scalar": { "int": 27}}],[[], {"scalar": { "int": 3}}],[[], {"scalar": { "4": 0}}],[[], {"scalar": { "5": 0}}],[[], {"scalar": { "int": 0}}]],""]}}]
 }}
 set moduleName biquadv2start
 set isCombinational 0

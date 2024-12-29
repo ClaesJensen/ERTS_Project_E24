@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="biquadv2end.cpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2End\biquadv2end.cpp"/>
     <originFiles name="biquadv2end.hpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2End\biquadv2end.hpp"/>
+    <originFiles name="biquadv2end.cpp" path="C:\Users\lions\Desktop\Github\ERTS_Project_E24\Eq\Biquadv2End\biquadv2end.cpp"/>
   </source>
   <testbench/>
 </autopilotfilemapping:AutoPilotFileMapping>

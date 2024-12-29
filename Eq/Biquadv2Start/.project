@@ -37,26 +37,6 @@
 			<location>C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/ap_fixed.h</name>
-			<type>1</type>
-			<location>D:/Xilinx/Vivado_HLS/2017.2/include/ap_fixed.h</location>
-		</link>
-		<link>
-			<name>.reference/ap_fixed_sim.h</name>
-			<type>1</type>
-			<location>D:/Xilinx/Vivado_HLS/2017.2/include/etc/ap_fixed_sim.h</location>
-		</link>
-		<link>
-			<name>.reference/ap_int.h</name>
-			<type>1</type>
-			<location>D:/Xilinx/Vivado_HLS/2017.2/include/ap_int.h</location>
-		</link>
-		<link>
-			<name>.reference/biquadv2start.pragma.1.cpp</name>
-			<type>1</type>
-			<location>C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/.autopilot/db/biquadv2start.pragma.1.cpp</location>
-		</link>
-		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/.tcls</location>

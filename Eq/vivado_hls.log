@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado_HLS/2017.2/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'lions' on host 'jeppe' (Windows NT_amd64 version 6.2) on Tue Dec 24 00:50:35 +0100 2024
+INFO: [HLS 200-10] For user 'lions' on host 'jeppe' (Windows NT_amd64 version 6.2) on Sun Dec 29 16:47:17 +0100 2024
 INFO: [HLS 200-10] In directory 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq'
 INFO: [HLS 200-10] Opening project 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start'.
 INFO: [HLS 200-10] Opening solution 'C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1'.
@@ -105,7 +105,7 @@ b0_a0: 0 | b1_a0: -1 | b2_a0: 0 | a1_a0: 1 | a2_a0: 0
 -0.079306 | -0.079305 | 1
 -0.086546 | -0.086545 | 1
 -0.092311 | -0.092311 | 1
--0.096500 | -0.096499 | 0
+-0.096500 | -0.096499 | 1
 -0.099040 | -0.099040 | 1
 -0.099888 | -0.099888 | 1
 -0.099028 | -0.099028 | 1

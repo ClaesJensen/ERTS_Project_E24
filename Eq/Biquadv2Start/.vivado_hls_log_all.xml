@@ -3,19 +3,28 @@
   <errorLogs>
     <logs>
       <synLog/>
-      <simLog/>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-5] *** C/RTL co-simulation file generate finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:52:54.500+0100"/>
+        <logs message="ERROR: [COSIM 212-345] Cosim only supports the following 'ap_ctrl_none' designs: (1) combinational designs; (2) pipelined design with task inteveral of 1; (3) designs with array streaming or hls_stream or AXI4 stream ports." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:52:54.423+0100"/>
+        <logs message="ERROR: [COSIM 212-5] *** C/RTL co-simulation file generate finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:50:18.082+0100"/>
+        <logs message="ERROR: [COSIM 212-345] Cosim only supports the following 'ap_ctrl_none' designs: (1) combinational designs; (2) pipelined design with task inteveral of 1; (3) designs with array streaming or hls_stream or AXI4 stream ports." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:50:18.008+0100"/>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:50:06.117+0100"/>
+        <logs message="ERROR: [COSIM 212-345] Cosim only supports the following 'ap_ctrl_none' designs: (1) combinational designs; (2) pipelined design with task inteveral of 1; (3) designs with array streaming or hls_stream or AXI4 stream ports." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:50:06.046+0100"/>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/lions/Desktop/Github/ERTS_Project_E24/Eq/Biquadv2Start/solution1/cosim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:49:43.717+0100"/>
+        <logs message="ERROR: [COSIM 212-345] Cosim only supports the following 'ap_ctrl_none' designs: (1) combinational designs; (2) pipelined design with task inteveral of 1; (3) designs with array streaming or hls_stream or AXI4 stream ports." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:49:43.573+0100"/>
+      </simLog>
       <mgLog/>
       <packageLog/>
       <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-24T00:32:01.362+0100"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-24T00:24:24.333+0100"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-29T16:46:51.023+0100"/>
+        <logs message="@E Simulation failed." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-29T16:46:51.014+0100"/>
       </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-107] Renaming port name 'biquadv2start/array' to 'biquadv2start/array_r' to avoid the conflict with HDL keywords or other object names." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-23T23:05:00.973+0100" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'biquadv2start/array' to 'biquadv2start/array_r' to avoid the conflict with HDL keywords or other object names." projectName="Biquadv2Start" solutionName="solution1" date="2024-12-28T13:46:51.065+0100" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

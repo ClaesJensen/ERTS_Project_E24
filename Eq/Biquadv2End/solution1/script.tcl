@@ -5,8 +5,8 @@
 ############################################################
 open_project Biquadv2End
 set_top biquadv2end
-add_files Biquadv2End/biquadv2end.cpp
 add_files Biquadv2End/biquadv2end.hpp
+add_files Biquadv2End/biquadv2end.cpp
 open_solution "solution1"
 set_part {xc7z010clg400-1} -tool vivado
 create_clock -period 10 -name default

@@ -14,5 +14,5 @@ create_clock -period 10 -name default
 #source "./Biquadv2Start/solution1/directives.tcl"
 csim_design
 csynth_design
-cosim_design -trace_level all -rtl vhdl
+cosim_design -setup -trace_level all -rtl vhdl
 export_design -rtl vhdl -format ip_catalog

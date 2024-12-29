@@ -5,8 +5,8 @@
 ############################################################
 open_project Biquadv2Between
 set_top biquadv2between
-add_files Biquadv2between/biquadv2between.cpp
 add_files Biquadv2between/biquadv2between.hpp
+add_files Biquadv2between/biquadv2between.cpp
 open_solution "solution1"
 set_part {xc7z010clg400-1} -tool vivado
 create_clock -period 10 -name default
