@@ -24,8 +24,11 @@ void AudioThread::Setup() {
 	this->audio->EnableOutput();
 }
 
+
+
 void AudioThread::run() {
 	//Run setup
+	xil_printf("Audio setup\r\n");
 	Setup();
 
 	//Declare data storage for audio samples
@@ -34,14 +37,16 @@ void AudioThread::run() {
 
 	//Run audio handling loop
 	while(this->isRunning) {
-		xil_printf("HERE\n");
-
-		//Read input
-		this->audio->ReadBlocking(&dataL, &dataR);
+		//Read input with custom blocking behaviour to yeild the thread and use the nonblocking read function.
+		while(this->audio->ReadStatus() == 0) {
+			yield();
+		}
+		this->audio->ClearReadyBit();
+		this->audio->ReadNonBlocking(&dataL, &dataR);
 
 		//Using the EQ
 		this->eq->Write(dataL, dataR);
-		while(!this->eq->isDone) {
+		while(!this->eq->IsDone()) {
 			yield();
 		}
 		this->eq->Read(&dataL, &dataR);

@@ -13,7 +13,6 @@ private:
 	int InitBiquad(uint16_t DeviceID);
 
 	bool isReady;
-
 	XBiquadv2between biquad;
 };
 #endif

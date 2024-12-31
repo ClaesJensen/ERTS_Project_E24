@@ -2,11 +2,16 @@
 #define UART_HPP_
 #include <stdint.h>
 #include <xuartps_hw.h>
+#include "../os/Thread.h"
+#define ECHO_DATA
 class UART {
 public:
 	UART(uint32_t uart_base_addr, uint32_t uart_fifo_offest);
 	bool nonBlockingRead(uint8_t *out, uint64_t blockingIterations);
 	bool nonBlockingRead4Bytes(uint32_t* result, uint64_t blockingIterations);
+	void BlockingRead(uint8_t *out, AbstractOS::Thread* thread);
+	void BlockingRead4Bytes(uint32_t* result, AbstractOS::Thread* thread);
+
 private:
 	uint32_t uart_base_addr;
 	uint32_t uart_fifo_offest;

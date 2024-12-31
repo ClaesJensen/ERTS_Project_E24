@@ -1,7 +1,8 @@
 #include "UI.hpp"
 
-UI::UI(UART *uart) {
+UI::UI(UART *uart, ParametricEQ *eq) {
 	this->uart = uart;
+	this->eq = eq;
 }
 
 void UI::Reset() {
@@ -10,10 +11,8 @@ void UI::Reset() {
 	memset(this->coeffs_aquired, false, sizeof(this->coeffs_aquired));
 }
 
-void UI::PollInput() {
+void UI::PollInput(AbstractOS::Thread *thread) {
 	DetermineCommandType();
-
-	//DetermineCommandType(type);
 }
 
 void UI::DetermineCommandType() {
@@ -33,6 +32,7 @@ void UI::DetermineCommandType() {
 		break;
 	default:
 		Reset();
+		break;
 	}
 }
 
@@ -49,12 +49,12 @@ void UI::DetermineFilterOperation() {
 
 	switch (this->operation) {
 	case 'S': //Set
-		if (GetFilterCoeffs()) {
-			//Set coeffs?
-			for (int i = 0; i < 5; i++) {
-				xil_printf("0x%02X\r\n", this->coeffs[i]);
+		if (GetFilterIndex()) {
+			if (GetFilterCoeffs()) {
+				//Set coeffs
+				this->eq->SetCoefficients(this->filter_index, this->coeffs[0], this->coeffs[1], this->coeffs[2], this->coeffs[3], this->coeffs[4]);
+				Reset();
 			}
-			Reset();
 		}
 		break;
 	case 'D': //Disable
@@ -65,7 +65,19 @@ void UI::DetermineFilterOperation() {
 		break;
 	default:
 		Reset();
+		break;
 	}
+}
+
+bool UI::GetFilterIndex() {
+	if (!this->filter_index_aquired) {
+		if (!this->uart->nonBlockingRead(&this->filter_index, BLOCKING_ITERATIONS)) {
+			return false;
+		}
+
+		this->filter_index_aquired = true;
+	}
+	return true;
 }
 
 bool UI::GetFilterCoeffs() {

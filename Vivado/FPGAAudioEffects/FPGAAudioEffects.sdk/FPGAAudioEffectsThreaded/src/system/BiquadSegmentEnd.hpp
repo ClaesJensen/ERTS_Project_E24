@@ -16,13 +16,10 @@ public:
 	void EnableInterrupt();
 	static void ProcessingDone(void *ptr);
 	bool isDone;
-	XBiquadv2end biquad_end;
 private:
-
 	int InitBiquad(uint16_t DeviceID);
-	int InitBiquadIRQ(XScuGic *ScuGic, uint16_t InterruptID, Xil_InterruptHandler CallbackISR);
-
 	bool isReady;
 	ISR *isr;
+	XBiquadv2end biquad_end;
 };
 #endif
