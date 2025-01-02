@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <xiicps.h>
 #include "Timer.hpp"
+#include "../os/Thread.h"
 //Base addresses
 #define AUDIO_BASE				XPAR_ZYBO_AUDIO_CTRL_0_BASEADDR
 
@@ -43,13 +44,14 @@ enum i2s_regs {
 class Audio {
 public:
 	Audio(Timer *timer, uint16_t IIC_DeviceID);
-	void EnableOutput();
 	void ReadBlocking(uint32_t *outDataL, uint32_t *outDataR);
 	void ReadNonBlocking(uint32_t *outDataL, uint32_t *outDataR);
 	void Write(uint32_t dataL, uint32_t dataR);
 	uint32_t ReadStatus();
 	void WriteStatus(uint32_t status);
 	void ClearReadyBit();
+	void EnableOutput();
+	void DisableOutput();
 private:
 	void InitAudio();
 	void InitI2C(uint16_t IIC_DeviceID);

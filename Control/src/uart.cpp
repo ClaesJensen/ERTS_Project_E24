@@ -57,11 +57,18 @@ UART::~UART() {
     CloseHandle(this->hSerial );
 }
 
-void UART::Write(std::string data) {
+void UART::Write(uint8_t *data, uint16_t len) {
     DWORD bytes_written;
-    if (!WriteFile(hSerial, data.c_str(), data.size(), &bytes_written, NULL)) {
+
+    std::cout << "Size: " << len << std::endl;
+
+    if (!WriteFile(hSerial, (LPCVOID)data, len, &bytes_written, NULL)) {
         std::cerr << "Error writing to serial port: " << GetLastError() << std::endl;
     } else {
-        std::cout << "Sent: " << data << std::endl;
+        printf("Sent: ");
+        for (int i = 0; i < len; i++) {
+            printf("0x%02X | ", data[i]);
+        }
+        printf("\r\n");
     }
 }

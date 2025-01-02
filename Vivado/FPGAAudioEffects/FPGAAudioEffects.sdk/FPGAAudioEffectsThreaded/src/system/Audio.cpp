@@ -70,6 +70,7 @@ void Audio::AudioWriteToReg(uint8_t RegAddr, uint16_t Data) {
 	while(XIicPs_BusIsBusy(&Iic));
 }
 
+
 void Audio::Write(uint32_t inDataL, uint32_t inDataR) {
 	Xil_Out32(I2S_DATA_TX_L_REG, inDataL);
 	Xil_Out32(I2S_DATA_TX_R_REG, inDataR);
@@ -110,4 +111,8 @@ void Audio::ClearReadyBit() {
 
 void Audio::EnableOutput() {
 	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, 0x00000001);
+}
+
+void Audio::DisableOutput() {
+	Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR, 0x00000000);
 }

@@ -1,13 +1,15 @@
 #include "UI.hpp"
 
-UI::UI(UART *uart, ParametricEQ *eq) {
+UI::UI(UART *uart, ParametricEQ *eq, AudioProcessing *ap) {
 	this->uart = uart;
 	this->eq = eq;
+	this->ap = ap;
 }
 
 void UI::Reset() {
 	this->type_aquired = false;
 	this->operation_aquired = false;
+	this->filter_index_aquired = false;
 	memset(this->coeffs_aquired, false, sizeof(this->coeffs_aquired));
 }
 
@@ -30,6 +32,26 @@ void UI::DetermineCommandType() {
 	case 'F': //Filter
 		DetermineFilterOperation();
 		break;
+	case 'P': //Passthrough
+		cmdPassthrough = Passthrough(this->ap);
+		cmdController.Execute(&cmdPassthrough);
+		Reset();
+		break;
+	case 'E': //Activate Effects
+		cmdActivateEffects = ActivateEffects(this->ap);
+		cmdController.Execute(&cmdActivateEffects);
+		Reset();
+		break;
+	case 'M': //Mute
+		cmdMute = Mute(this->ap);
+		cmdController.Execute(&cmdMute);
+		Reset();
+		break;
+	case 'U': //UnMute
+		cmdUnMute = UnMute(this->ap);
+		cmdController.Execute(&cmdUnMute);
+		Reset();
+		break;
 	default:
 		Reset();
 		break;
@@ -49,19 +71,16 @@ void UI::DetermineFilterOperation() {
 
 	switch (this->operation) {
 	case 'S': //Set
-		if (GetFilterIndex()) {
-			if (GetFilterCoeffs()) {
-				//Set coeffs
-				this->eq->SetCoefficients(this->filter_index, this->coeffs[0], this->coeffs[1], this->coeffs[2], this->coeffs[3], this->coeffs[4]);
-				Reset();
-			}
+		if (!GetFilterIndex()) {
+			return;
 		}
-		break;
-	case 'D': //Disable
-		Reset();
-		break;
-	case 'E': //Enable
-		Reset();
+		if (GetFilterCoeffs()) {
+			//Set coeffs (Note the negative signs on coeff a1_a0 and a2_a0 is very important!)
+			cmdSetEQCoefficients = SetEQCoefficients(this->eq, this->filter_index, this->coeffs[0], this->coeffs[1], this->coeffs[2], -this->coeffs[3], -this->coeffs[4]);
+			this->cmdController.Execute(&cmdSetEQCoefficients);
+			//this->eq->SetCoefficients(this->filter_index, this->coeffs[0], this->coeffs[1], this->coeffs[2], -this->coeffs[3], -this->coeffs[4]);
+			Reset();
+		}
 		break;
 	default:
 		Reset();
@@ -88,6 +107,7 @@ bool UI::GetFilterCoeffs() {
 
 		//Got a Coeff
 		this->coeffs_aquired[0] = true;
+		xil_printf("0x%02X\r\n", this->coeffs[0]);
 	}
 
 	if (!this->coeffs_aquired[1]) {
@@ -97,6 +117,7 @@ bool UI::GetFilterCoeffs() {
 
 		//Got a Coeff
 		this->coeffs_aquired[1] = true;
+		xil_printf("0x%02X\r\n", this->coeffs[1]);
 	}
 
 	if (!this->coeffs_aquired[2]) {
@@ -106,6 +127,7 @@ bool UI::GetFilterCoeffs() {
 
 		//Got a Coeff
 		this->coeffs_aquired[2] = true;
+		xil_printf("0x%02X\r\n", this->coeffs[2]);
 	}
 
 	if (!this->coeffs_aquired[3]) {
@@ -115,6 +137,7 @@ bool UI::GetFilterCoeffs() {
 
 		//Got a Coeff
 		this->coeffs_aquired[3] = true;
+		xil_printf("0x%02X\r\n", this->coeffs[3]);
 	}
 
 	if (!this->coeffs_aquired[4]) {
@@ -124,6 +147,7 @@ bool UI::GetFilterCoeffs() {
 
 		//Got a Coeff
 		this->coeffs_aquired[4] = true;
+		xil_printf("0x%02X\r\n", this->coeffs[4]);
 	}
 
 	return true;

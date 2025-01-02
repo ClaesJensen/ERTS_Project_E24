@@ -1,5 +1,6 @@
 #include "lpmk3.hpp"
 #include "control.hpp"
+#include "biquadCoefficients.hpp"
 
 static volatile bool isRunning = true;
 
@@ -31,10 +32,19 @@ int main() {
     //Assign handler for ctrl+c.
     SetConsoleCtrlHandler((PHANDLER_ROUTINE) signalInterruptHandler, true);
 
+    int64_t s = (1 << 24);
+    printf("0x%02X\n", s);
+
     //Create Launchpad instance.
     LPMK3 lp = LPMK3(1, 1, midiInCallback);
     UART uart = UART("\\\\.\\COM12", 115200);
-    c = new Control(&lp, &uart);
+    BiquadCoefficients biquad = BiquadCoefficients(48000);
+
+    double Q[MAX_COL] = {5, 5, 5, 5, 5, 5, 5, 5};//{2, 2, 2, 2, 2, 2, 2, 2};
+    double f0[MAX_COL] = {40, 80, 160, 320, 640, 1280, 2560, 5120}; //20, 10240, 20480
+    double dbGain[MAX_ROW] = {-12, -9, -6, -3, 0, 3, 6, 9}; // {9, 6, 3, 0, -3, -6, -9, -12};
+
+    c = new Control(&lp, &uart, &biquad, Q, f0, dbGain);
 
     while(isRunning) {
         Sleep(8);

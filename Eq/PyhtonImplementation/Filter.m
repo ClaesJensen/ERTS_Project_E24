@@ -8,10 +8,10 @@ t = [1/fs:1/fs:duration];
 % presented/calculated in "Notch filter.mcdx".
 
 % Create filter coefficients
-f0 = 10000; %hz
-Q = 4;
+f0 = 1000; %hz
+Q = 2;
 %BW = 3; % In Octaves!
-dbGain = -40; % Does not matter in a notch filter!
+dbGain = -10; % Does not matter in a notch filter!
 
 % Note that f0 is the target frequency for the filter.
 
@@ -58,6 +58,15 @@ fp_b1_a0 = int64(b1/a0 * (2^frac - 1))
 fp_b2_a0 = int64(b2/a0 * (2^frac - 1))
 fp_a1_a0 = int64(a1/a0 * (2^frac - 1))
 fp_a2_a0 = int64(a2/a0 * (2^frac - 1))
+
+
+v = sprintf("%c", dec2hex(int64(bitshift(1, 24))))
+
+sprintf("%c", dec2hex(fp_b0_a0))
+sprintf("%c", dec2hex(fp_b1_a0))
+sprintf("%c", dec2hex(fp_b2_a0))
+sprintf("%c", dec2hex(fp_a1_a0))
+sprintf("%c", dec2hex(fp_a2_a0))
 
 coeffs = [b0_a0, b1_a0, b2_a0, -a1_a0, -a2_a0];
 samples = [0, 0, 0, 0, 0];

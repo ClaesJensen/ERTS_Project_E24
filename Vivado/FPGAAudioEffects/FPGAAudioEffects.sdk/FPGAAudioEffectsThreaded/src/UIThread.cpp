@@ -12,13 +12,3 @@ void UIThread::run() {
 		Sleep(10);
 	}
 }
-/*
-void UIThread::run() {
-	while(this->isRunning) {
-		xil_printf("UI\r\n");
-		this->ui->PollInput(this);
-
-		//Do stuff
-		yield();
-	}
-}*/

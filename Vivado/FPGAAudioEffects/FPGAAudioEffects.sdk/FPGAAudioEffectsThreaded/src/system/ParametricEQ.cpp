@@ -22,6 +22,13 @@ void ParametricEQ::Read(uint32_t *outDataL, uint32_t *outDataR) {
 
 // Coefficients
 void ParametricEQ::SetCoefficients(uint8_t iFilter, uint32_t b0_a0, uint32_t b1_a0, uint32_t b2_a0, uint32_t a1_a0, uint32_t a2_a0) {
+	xil_printf("Coeffs: \r\n");
+	xil_printf("0x%02X\r\n", b0_a0);
+	xil_printf("0x%02X\r\n", b1_a0);
+	xil_printf("0x%02X\r\n", b2_a0);
+	xil_printf("0x%02X\r\n", a1_a0);
+	xil_printf("0x%02X\r\n", a2_a0);
+
 	if (iFilter == 0) {
 		this->start->SetCoefficients(b0_a0, b1_a0, b2_a0, a1_a0, a2_a0);
 	}

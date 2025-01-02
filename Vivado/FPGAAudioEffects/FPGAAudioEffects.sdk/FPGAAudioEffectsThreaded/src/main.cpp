@@ -18,6 +18,7 @@
 #include "system/Audio.hpp"
 #include "system/UART.hpp"
 #include "system/UI.hpp"
+#include "system/AudioProcessing.hpp"
 
 // Threads
 #include "AudioThread.hpp"
@@ -53,9 +54,12 @@ BiquadSegmentMiddle *bq_middleCollection[N_BIQUAD_BETWEEN] = {&bq_middle0, &bq_m
 //Create EQ with the created biquad segments
 ParametricEQ eq = ParametricEQ(&bq_start, bq_middleCollection, N_BIQUAD_BETWEEN, &bq_end);
 
+//Audio processing
+AudioProcessing ap = AudioProcessing(&audio, &eq);
+
 //Init uart and ui
 UART uart(STDIN_BASEADDRESS, XUARTPS_FIFO_OFFSET);
-UI ui(&uart, &eq);
+UI ui(&uart, &eq, &ap);
 
 int main()
 {
@@ -63,7 +67,7 @@ int main()
 	isr.Init();
 
 	//Create threads
-	AudioThread tAudioThread(Thread::PRIORITY_NORMAL, "AudioThread", &eq, &audio);
+	AudioThread tAudioThread(Thread::PRIORITY_NORMAL, "AudioThread", &ap);
 	UIThread tUIThread(Thread::PRIORITY_HIGH, "UIThread", &ui);
 
 	//Start RTOS task scheduling
