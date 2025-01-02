@@ -1,0 +1,22 @@
+<mxfile host="Electron" modified="2025-01-02T21:07:58.217Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="zNoXY3wVz-efNPQHAWkg" version="22.1.16" type="device">
+  <diagram name="Side-1" id="Jl7FX6HRfvSlJK8in7FE">
+    <mxGraphModel dx="1098" dy="1180" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Eu_z_E5O8Wh2B9Se8LQh-1" value="AudioProcessing" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="350" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Eu_z_E5O8Wh2B9Se8LQh-2" value="- eqProcessingEnabled: bool&lt;br&gt;- outputEnabled: bool&lt;br&gt;- audio: Audio*&lt;br&gt;- eq: ParametricEQ*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Eu_z_E5O8Wh2B9Se8LQh-1">
+          <mxGeometry y="26" width="350" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="Eu_z_E5O8Wh2B9Se8LQh-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Eu_z_E5O8Wh2B9Se8LQh-1">
+          <mxGeometry y="100" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Eu_z_E5O8Wh2B9Se8LQh-4" value="+ AudioProcessing(Audio*, ParametricEQ*): AudioProcessing&lt;br&gt;+ Init(): void&lt;br&gt;+ Process(AbstractOS::Thread*): void&lt;br&gt;+ SetParametricEQState(bool): void&lt;br&gt;+ SetAudioOutputState(bool): boid&lt;br&gt;&lt;br&gt;- ProcessEQ(uint32_t*, uint32_t*, AbstractOS::Thread*): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Eu_z_E5O8Wh2B9Se8LQh-1">
+          <mxGeometry y="108" width="350" height="112" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

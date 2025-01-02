@@ -78,7 +78,6 @@ void UI::DetermineFilterOperation() {
 			//Set coeffs (Note the negative signs on coeff a1_a0 and a2_a0 is very important!)
 			cmdSetEQCoefficients = SetEQCoefficients(this->eq, this->filter_index, this->coeffs[0], this->coeffs[1], this->coeffs[2], -this->coeffs[3], -this->coeffs[4]);
 			this->cmdController.Execute(&cmdSetEQCoefficients);
-			//this->eq->SetCoefficients(this->filter_index, this->coeffs[0], this->coeffs[1], this->coeffs[2], -this->coeffs[3], -this->coeffs[4]);
 			Reset();
 		}
 		break;

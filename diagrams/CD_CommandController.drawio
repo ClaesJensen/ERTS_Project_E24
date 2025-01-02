@@ -1,0 +1,16 @@
+<mxfile host="Electron" modified="2025-01-02T21:22:44.987Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.16 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="13TKBOkuwKJUyAocwAqW" version="22.1.16" type="device">
+  <diagram name="Side-1" id="myLnrfsrkA1Pv03qyxd5">
+    <mxGraphModel dx="1098" dy="1180" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fUQ0DnOvUgTdsIvpdiLp-1" value="CommandController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="340" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fUQ0DnOvUgTdsIvpdiLp-4" value="+ CommandController(): CommandController&lt;br&gt;+ Execute(Command*): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="fUQ0DnOvUgTdsIvpdiLp-1">
+          <mxGeometry y="26" width="250" height="44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
