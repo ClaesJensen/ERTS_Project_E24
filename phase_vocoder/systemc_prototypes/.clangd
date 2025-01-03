@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    [
+      -I/usr/local/share/systemc-3.0.0/include/,
+      -I./src/libfixmath/,
+      -I/home/lthamsen/ERTS_Project_E24/phase_vocoder/systemc_prototypes/libfixmath/,
+    ]
