@@ -52,7 +52,6 @@ void AudioProcessing::Process(AbstractOS::Thread *thread) {
 		ProcessEQ(&dataL, &dataR, thread);
 	}
 
-
 	//Write to output
 	this->audio->Write(dataL, dataR);
 }

@@ -5523,3 +5523,31 @@ com.xilinx.sdk.targetmanager.TMException:
 19:40:50 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
 19:40:50 INFO  : ps7_init is completed.
 19:40:51 INFO  : ps7_post_config is completed.
+01:34:52 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:47:48 INFO  : Registering command handlers for SDK TCF services
+16:47:49 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\lions\Desktop\Github\ERTS_Project_E24\Vivado\FPGAAudioEffects\FPGAAudioEffects.sdk\temp_xsdb_launch_script.tcl
+16:47:51 INFO  : XSCT server has started successfully.
+16:47:51 INFO  : Successfully done setting XSCT server connection channel  
+16:47:53 INFO  : Successfully done setting SDK workspace  
+16:47:53 INFO  : Processing command line option -hwspec C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper.hdf.
+16:47:53 INFO  : Checking for hwspec changes in the project system_wrapper_hw_platform_0.
+18:07:50 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: 
+    Unknown Error Occured
+    Cable is not powered-on
+
+	at com.xilinx.sdk.targetmanager.internal.TM.connectToProcessor(TM.java:484)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:464)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+18:08:10 INFO  : System reset is completed.
+18:08:11 INFO  : FPGA configured successfully with bitstream "C:/Users/lions/Desktop/Github/ERTS_Project_E24/Vivado/FPGAAudioEffects/FPGAAudioEffects.sdk/system_wrapper_hw_platform_0/system_wrapper.bit"
+18:08:14 INFO  : ps7_init is completed.
+18:08:14 INFO  : ps7_post_config is completed.
+20:12:59 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
